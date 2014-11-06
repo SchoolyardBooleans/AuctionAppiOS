@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SalesforceCommonUtils.h"
 
 @interface ViewController : UIViewController
 
