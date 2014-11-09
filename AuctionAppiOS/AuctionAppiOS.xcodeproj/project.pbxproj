@@ -1,0 +1,1107 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DCD7D5651A102A940012097F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD7D5641A102A940012097F /* main.m */; };
+		DCD7D5681A102A940012097F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD7D5671A102A940012097F /* AppDelegate.m */; };
+		DCD7D56B1A102A940012097F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD7D56A1A102A940012097F /* ViewController.m */; };
+		DCD7D56E1A102A940012097F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD7D56C1A102A940012097F /* Main.storyboard */; };
+		DCD7D5701A102A940012097F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCD7D56F1A102A940012097F /* Images.xcassets */; };
+		DCD7D5731A102A940012097F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD7D5711A102A940012097F /* LaunchScreen.xib */; };
+		DCD7D57F1A102A940012097F /* AuctionAppiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD7D57E1A102A940012097F /* AuctionAppiOSTests.m */; };
+		DCF2A8F51A102AC300170DBF /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A87C1A102AC300170DBF /* libCordova.a */; };
+		DCF2A8F61A102AC300170DBF /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A87C1A102AC300170DBF /* libCordova.a */; };
+		DCF2A8F71A102AC300170DBF /* libMKNetworkKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A87D1A102AC300170DBF /* libMKNetworkKit-iOS.a */; };
+		DCF2A8F81A102AC300170DBF /* libMKNetworkKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A87D1A102AC300170DBF /* libMKNetworkKit-iOS.a */; };
+		DCF2A8F91A102AC300170DBF /* libSalesforceHybridSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A87E1A102AC300170DBF /* libSalesforceHybridSDK.a */; };
+		DCF2A8FA1A102AC300170DBF /* libSalesforceHybridSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A87E1A102AC300170DBF /* libSalesforceHybridSDK.a */; };
+		DCF2A8FB1A102AC300170DBF /* libSalesforceNativeSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A87F1A102AC300170DBF /* libSalesforceNativeSDK.a */; };
+		DCF2A8FC1A102AC300170DBF /* libSalesforceNativeSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A87F1A102AC300170DBF /* libSalesforceNativeSDK.a */; };
+		DCF2A8FD1A102AC300170DBF /* libSalesforceNetworkSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8801A102AC300170DBF /* libSalesforceNetworkSDK.a */; };
+		DCF2A8FE1A102AC300170DBF /* libSalesforceNetworkSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8801A102AC300170DBF /* libSalesforceNetworkSDK.a */; };
+		DCF2A8FF1A102AC300170DBF /* libSalesforceOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8811A102AC300170DBF /* libSalesforceOAuth.a */; };
+		DCF2A9001A102AC300170DBF /* libSalesforceOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8811A102AC300170DBF /* libSalesforceOAuth.a */; };
+		DCF2A9011A102AC300170DBF /* libSalesforceSDKCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8821A102AC300170DBF /* libSalesforceSDKCore.a */; };
+		DCF2A9021A102AC300170DBF /* libSalesforceSDKCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8821A102AC300170DBF /* libSalesforceSDKCore.a */; };
+		DCF2A9031A102AC300170DBF /* libSalesforceSecurity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8831A102AC300170DBF /* libSalesforceSecurity.a */; };
+		DCF2A9041A102AC300170DBF /* libSalesforceSecurity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8831A102AC300170DBF /* libSalesforceSecurity.a */; };
+		DCF2A9051A102AC300170DBF /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8ED1A102AC300170DBF /* libCordova.a */; };
+		DCF2A9061A102AC300170DBF /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8ED1A102AC300170DBF /* libCordova.a */; };
+		DCF2A9071A102AC300170DBF /* libMKNetworkKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8EE1A102AC300170DBF /* libMKNetworkKit-iOS.a */; };
+		DCF2A9081A102AC300170DBF /* libMKNetworkKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8EE1A102AC300170DBF /* libMKNetworkKit-iOS.a */; };
+		DCF2A9091A102AC300170DBF /* libSalesforceHybridSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8EF1A102AC300170DBF /* libSalesforceHybridSDK.a */; };
+		DCF2A90A1A102AC300170DBF /* libSalesforceHybridSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8EF1A102AC300170DBF /* libSalesforceHybridSDK.a */; };
+		DCF2A90B1A102AC300170DBF /* libSalesforceNativeSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8F01A102AC300170DBF /* libSalesforceNativeSDK.a */; };
+		DCF2A90C1A102AC300170DBF /* libSalesforceNativeSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8F01A102AC300170DBF /* libSalesforceNativeSDK.a */; };
+		DCF2A90D1A102AC300170DBF /* libSalesforceNetworkSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8F11A102AC300170DBF /* libSalesforceNetworkSDK.a */; };
+		DCF2A90E1A102AC300170DBF /* libSalesforceNetworkSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8F11A102AC300170DBF /* libSalesforceNetworkSDK.a */; };
+		DCF2A90F1A102AC300170DBF /* libSalesforceOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8F21A102AC300170DBF /* libSalesforceOAuth.a */; };
+		DCF2A9101A102AC300170DBF /* libSalesforceOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8F21A102AC300170DBF /* libSalesforceOAuth.a */; };
+		DCF2A9111A102AC300170DBF /* libSalesforceSDKCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8F31A102AC300170DBF /* libSalesforceSDKCore.a */; };
+		DCF2A9121A102AC300170DBF /* libSalesforceSDKCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8F31A102AC300170DBF /* libSalesforceSDKCore.a */; };
+		DCF2A9131A102AC300170DBF /* libSalesforceSecurity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8F41A102AC300170DBF /* libSalesforceSecurity.a */; };
+		DCF2A9141A102AC300170DBF /* libSalesforceSecurity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF2A8F41A102AC300170DBF /* libSalesforceSecurity.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCD7D5791A102A940012097F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCD7D5571A102A940012097F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCD7D55E1A102A940012097F;
+			remoteInfo = AuctionAppiOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DCD7D55F1A102A940012097F /* AuctionAppiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionAppiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCD7D5631A102A940012097F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCD7D5641A102A940012097F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DCD7D5661A102A940012097F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DCD7D5671A102A940012097F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DCD7D5691A102A940012097F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DCD7D56A1A102A940012097F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DCD7D56D1A102A940012097F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCD7D56F1A102A940012097F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DCD7D5721A102A940012097F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DCD7D5781A102A940012097F /* AuctionAppiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuctionAppiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCD7D57D1A102A940012097F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCD7D57E1A102A940012097F /* AuctionAppiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuctionAppiOSTests.m; sourceTree = "<group>"; };
+		DCF2A8161A102AC300170DBF /* MKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
+		DCF2A8171A102AC300170DBF /* MKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
+		DCF2A8181A102AC300170DBF /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
+		DCF2A8191A102AC300170DBF /* NSDictionary+RequestEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RequestEncoding.h"; sourceTree = "<group>"; };
+		DCF2A81A1A102AC300170DBF /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		DCF2A81B1A102AC300170DBF /* UIAlertView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		DCF2A81D1A102AC300170DBF /* CDVPlugin+SFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDVPlugin+SFAdditions.h"; sourceTree = "<group>"; };
+		DCF2A81E1A102AC300170DBF /* SalesforceOAuthPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesforceOAuthPlugin.h; sourceTree = "<group>"; };
+		DCF2A81F1A102AC300170DBF /* SFAccountManagerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAccountManagerPlugin.h; sourceTree = "<group>"; };
+		DCF2A8201A102AC300170DBF /* SFHybridViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHybridViewConfig.h; sourceTree = "<group>"; };
+		DCF2A8211A102AC300170DBF /* SFHybridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHybridViewController.h; sourceTree = "<group>"; };
+		DCF2A8221A102AC300170DBF /* SFLocalhostSubstitutionCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLocalhostSubstitutionCache.h; sourceTree = "<group>"; };
+		DCF2A8231A102AC300170DBF /* SFSDKInfoPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKInfoPlugin.h; sourceTree = "<group>"; };
+		DCF2A8241A102AC300170DBF /* SFSmartStorePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSmartStorePlugin.h; sourceTree = "<group>"; };
+		DCF2A8261A102AC300170DBF /* SFRestAPI+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFRestAPI+Blocks.h"; sourceTree = "<group>"; };
+		DCF2A8271A102AC300170DBF /* SFRestAPI+Files.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFRestAPI+Files.h"; sourceTree = "<group>"; };
+		DCF2A8281A102AC300170DBF /* SFRestAPI+QueryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFRestAPI+QueryBuilder.h"; sourceTree = "<group>"; };
+		DCF2A8291A102AC300170DBF /* SFRestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRestAPI.h; sourceTree = "<group>"; };
+		DCF2A82A1A102AC300170DBF /* SFRestRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRestRequest.h; sourceTree = "<group>"; };
+		DCF2A82C1A102AC300170DBF /* SFNetworkCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNetworkCoordinator.h; sourceTree = "<group>"; };
+		DCF2A82D1A102AC300170DBF /* SFNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNetworkEngine.h; sourceTree = "<group>"; };
+		DCF2A82E1A102AC300170DBF /* SFNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNetworkOperation.h; sourceTree = "<group>"; };
+		DCF2A82F1A102AC300170DBF /* SFNetworkUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNetworkUtils.h; sourceTree = "<group>"; };
+		DCF2A8311A102AC300170DBF /* SFOAuthCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOAuthCoordinator.h; sourceTree = "<group>"; };
+		DCF2A8321A102AC300170DBF /* SFOAuthCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOAuthCredentials.h; sourceTree = "<group>"; };
+		DCF2A8331A102AC300170DBF /* SFOAuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOAuthInfo.h; sourceTree = "<group>"; };
+		DCF2A8351A102AC300170DBF /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		DCF2A8361A102AC300170DBF /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		DCF2A8371A102AC300170DBF /* NSURL+SFStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+SFStringUtils.h"; sourceTree = "<group>"; };
+		DCF2A8381A102AC300170DBF /* SalesforceSDKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesforceSDKConstants.h; sourceTree = "<group>"; };
+		DCF2A8391A102AC300170DBF /* SFAbstractPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAbstractPasscodeViewController.h; sourceTree = "<group>"; };
+		DCF2A83A1A102AC300170DBF /* SFApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFApplication.h; sourceTree = "<group>"; };
+		DCF2A83B1A102AC300170DBF /* SFAuthenticationManager+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFAuthenticationManager+Internal.h"; sourceTree = "<group>"; };
+		DCF2A83C1A102AC300170DBF /* SFAuthenticationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthenticationManager.h; sourceTree = "<group>"; };
+		DCF2A83D1A102AC300170DBF /* SFAuthenticationViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthenticationViewHandler.h; sourceTree = "<group>"; };
+		DCF2A83E1A102AC300170DBF /* SFAuthErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthErrorHandler.h; sourceTree = "<group>"; };
+		DCF2A83F1A102AC300170DBF /* SFAuthErrorHandlerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthErrorHandlerList.h; sourceTree = "<group>"; };
+		DCF2A8401A102AC300170DBF /* SFAuthorizingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthorizingViewController.h; sourceTree = "<group>"; };
+		DCF2A8411A102AC300170DBF /* SFCommunityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCommunityData.h; sourceTree = "<group>"; };
+		DCF2A8421A102AC300170DBF /* SFDefaultUserManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDefaultUserManagementViewController.h; sourceTree = "<group>"; };
+		DCF2A8431A102AC300170DBF /* SFDirectoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDirectoryManager.h; sourceTree = "<group>"; };
+		DCF2A8441A102AC300170DBF /* SFIdentityCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFIdentityCoordinator.h; sourceTree = "<group>"; };
+		DCF2A8451A102AC300170DBF /* SFIdentityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFIdentityData.h; sourceTree = "<group>"; };
+		DCF2A8461A102AC300170DBF /* SFJsonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFJsonUtils.h; sourceTree = "<group>"; };
+		DCF2A8471A102AC300170DBF /* SFPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPreferences.h; sourceTree = "<group>"; };
+		DCF2A8481A102AC300170DBF /* SFPushNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPushNotificationManager.h; sourceTree = "<group>"; };
+		DCF2A8491A102AC300170DBF /* SFQuerySpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFQuerySpec.h; sourceTree = "<group>"; };
+		DCF2A84A1A102AC300170DBF /* SFSDKResourceUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKResourceUtils.h; sourceTree = "<group>"; };
+		DCF2A84B1A102AC300170DBF /* SFSDKTestCredentialsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKTestCredentialsData.h; sourceTree = "<group>"; };
+		DCF2A84C1A102AC300170DBF /* SFSDKTestRequestListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKTestRequestListener.h; sourceTree = "<group>"; };
+		DCF2A84D1A102AC300170DBF /* SFSDKWebUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKWebUtils.h; sourceTree = "<group>"; };
+		DCF2A84E1A102AC300170DBF /* SFSecurityLockout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSecurityLockout.h; sourceTree = "<group>"; };
+		DCF2A84F1A102AC300170DBF /* SFSmartStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSmartStore.h; sourceTree = "<group>"; };
+		DCF2A8501A102AC300170DBF /* SFSmartStoreDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSmartStoreDatabaseManager.h; sourceTree = "<group>"; };
+		DCF2A8511A102AC300170DBF /* SFSmartStoreInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSmartStoreInspectorViewController.h; sourceTree = "<group>"; };
+		DCF2A8521A102AC300170DBF /* SFSoupIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSoupIndex.h; sourceTree = "<group>"; };
+		DCF2A8531A102AC300170DBF /* SFStoreCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFStoreCursor.h; sourceTree = "<group>"; };
+		DCF2A8541A102AC300170DBF /* SFUserAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUserAccount.h; sourceTree = "<group>"; };
+		DCF2A8551A102AC300170DBF /* SFUserAccountConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUserAccountConstants.h; sourceTree = "<group>"; };
+		DCF2A8561A102AC300170DBF /* SFUserAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUserAccountManager.h; sourceTree = "<group>"; };
+		DCF2A8571A102AC300170DBF /* SFUserActivityMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUserActivityMonitor.h; sourceTree = "<group>"; };
+		DCF2A8581A102AC300170DBF /* TestSetupUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSetupUtils.h; sourceTree = "<group>"; };
+		DCF2A85A1A102AC300170DBF /* SFEncryptionKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEncryptionKey.h; sourceTree = "<group>"; };
+		DCF2A85B1A102AC300170DBF /* SFKeyStoreKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKeyStoreKey.h; sourceTree = "<group>"; };
+		DCF2A85C1A102AC300170DBF /* SFKeyStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKeyStoreManager.h; sourceTree = "<group>"; };
+		DCF2A85D1A102AC300170DBF /* SFPasscodeManager+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFPasscodeManager+Internal.h"; sourceTree = "<group>"; };
+		DCF2A85E1A102AC300170DBF /* SFPasscodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPasscodeManager.h; sourceTree = "<group>"; };
+		DCF2A85F1A102AC300170DBF /* SFPasscodeProviderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPasscodeProviderManager.h; sourceTree = "<group>"; };
+		DCF2A8601A102AC300170DBF /* SFSDKCryptoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKCryptoUtils.h; sourceTree = "<group>"; };
+		DCF2A8631A102AC300170DBF /* CDV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDV.h; sourceTree = "<group>"; };
+		DCF2A8641A102AC300170DBF /* CDVAvailability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVAvailability.h; sourceTree = "<group>"; };
+		DCF2A8651A102AC300170DBF /* CDVCommandDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVCommandDelegate.h; sourceTree = "<group>"; };
+		DCF2A8661A102AC300170DBF /* CDVCommandDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVCommandDelegateImpl.h; sourceTree = "<group>"; };
+		DCF2A8671A102AC300170DBF /* CDVCommandQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVCommandQueue.h; sourceTree = "<group>"; };
+		DCF2A8681A102AC300170DBF /* CDVConfigParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVConfigParser.h; sourceTree = "<group>"; };
+		DCF2A8691A102AC300170DBF /* CDVDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVDebug.h; sourceTree = "<group>"; };
+		DCF2A86A1A102AC300170DBF /* CDVInvokedUrlCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVInvokedUrlCommand.h; sourceTree = "<group>"; };
+		DCF2A86B1A102AC300170DBF /* CDVJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVJSON.h; sourceTree = "<group>"; };
+		DCF2A86C1A102AC300170DBF /* CDVLocalStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVLocalStorage.h; sourceTree = "<group>"; };
+		DCF2A86D1A102AC300170DBF /* CDVPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVPlugin.h; sourceTree = "<group>"; };
+		DCF2A86E1A102AC300170DBF /* CDVPluginResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVPluginResult.h; sourceTree = "<group>"; };
+		DCF2A86F1A102AC300170DBF /* CDVScreenOrientationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVScreenOrientationDelegate.h; sourceTree = "<group>"; };
+		DCF2A8701A102AC300170DBF /* CDVShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVShared.h; sourceTree = "<group>"; };
+		DCF2A8711A102AC300170DBF /* CDVTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVTimer.h; sourceTree = "<group>"; };
+		DCF2A8721A102AC300170DBF /* CDVURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVURLProtocol.h; sourceTree = "<group>"; };
+		DCF2A8731A102AC300170DBF /* CDVUserAgentUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVUserAgentUtil.h; sourceTree = "<group>"; };
+		DCF2A8741A102AC300170DBF /* CDVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVViewController.h; sourceTree = "<group>"; };
+		DCF2A8751A102AC300170DBF /* CDVWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVWebViewDelegate.h; sourceTree = "<group>"; };
+		DCF2A8761A102AC300170DBF /* CDVWhitelist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVWhitelist.h; sourceTree = "<group>"; };
+		DCF2A8771A102AC300170DBF /* NSArray+Comparisons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Comparisons.h"; sourceTree = "<group>"; };
+		DCF2A8781A102AC300170DBF /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		DCF2A8791A102AC300170DBF /* NSDictionary+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extensions.h"; sourceTree = "<group>"; };
+		DCF2A87A1A102AC300170DBF /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		DCF2A87B1A102AC300170DBF /* UIDevice+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Extensions.h"; sourceTree = "<group>"; };
+		DCF2A87C1A102AC300170DBF /* libCordova.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCordova.a; sourceTree = "<group>"; };
+		DCF2A87D1A102AC300170DBF /* libMKNetworkKit-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMKNetworkKit-iOS.a"; sourceTree = "<group>"; };
+		DCF2A87E1A102AC300170DBF /* libSalesforceHybridSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceHybridSDK.a; sourceTree = "<group>"; };
+		DCF2A87F1A102AC300170DBF /* libSalesforceNativeSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceNativeSDK.a; sourceTree = "<group>"; };
+		DCF2A8801A102AC300170DBF /* libSalesforceNetworkSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceNetworkSDK.a; sourceTree = "<group>"; };
+		DCF2A8811A102AC300170DBF /* libSalesforceOAuth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceOAuth.a; sourceTree = "<group>"; };
+		DCF2A8821A102AC300170DBF /* libSalesforceSDKCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceSDKCore.a; sourceTree = "<group>"; };
+		DCF2A8831A102AC300170DBF /* libSalesforceSecurity.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceSecurity.a; sourceTree = "<group>"; };
+		DCF2A8871A102AC300170DBF /* MKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
+		DCF2A8881A102AC300170DBF /* MKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
+		DCF2A8891A102AC300170DBF /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
+		DCF2A88A1A102AC300170DBF /* NSDictionary+RequestEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RequestEncoding.h"; sourceTree = "<group>"; };
+		DCF2A88B1A102AC300170DBF /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		DCF2A88C1A102AC300170DBF /* UIAlertView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		DCF2A88E1A102AC300170DBF /* CDVPlugin+SFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDVPlugin+SFAdditions.h"; sourceTree = "<group>"; };
+		DCF2A88F1A102AC300170DBF /* SalesforceOAuthPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesforceOAuthPlugin.h; sourceTree = "<group>"; };
+		DCF2A8901A102AC300170DBF /* SFAccountManagerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAccountManagerPlugin.h; sourceTree = "<group>"; };
+		DCF2A8911A102AC300170DBF /* SFHybridViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHybridViewConfig.h; sourceTree = "<group>"; };
+		DCF2A8921A102AC300170DBF /* SFHybridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHybridViewController.h; sourceTree = "<group>"; };
+		DCF2A8931A102AC300170DBF /* SFLocalhostSubstitutionCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLocalhostSubstitutionCache.h; sourceTree = "<group>"; };
+		DCF2A8941A102AC300170DBF /* SFSDKInfoPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKInfoPlugin.h; sourceTree = "<group>"; };
+		DCF2A8951A102AC300170DBF /* SFSmartStorePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSmartStorePlugin.h; sourceTree = "<group>"; };
+		DCF2A8971A102AC300170DBF /* SFRestAPI+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFRestAPI+Blocks.h"; sourceTree = "<group>"; };
+		DCF2A8981A102AC300170DBF /* SFRestAPI+Files.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFRestAPI+Files.h"; sourceTree = "<group>"; };
+		DCF2A8991A102AC300170DBF /* SFRestAPI+QueryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFRestAPI+QueryBuilder.h"; sourceTree = "<group>"; };
+		DCF2A89A1A102AC300170DBF /* SFRestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRestAPI.h; sourceTree = "<group>"; };
+		DCF2A89B1A102AC300170DBF /* SFRestRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRestRequest.h; sourceTree = "<group>"; };
+		DCF2A89D1A102AC300170DBF /* SFNetworkCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNetworkCoordinator.h; sourceTree = "<group>"; };
+		DCF2A89E1A102AC300170DBF /* SFNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNetworkEngine.h; sourceTree = "<group>"; };
+		DCF2A89F1A102AC300170DBF /* SFNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNetworkOperation.h; sourceTree = "<group>"; };
+		DCF2A8A01A102AC300170DBF /* SFNetworkUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNetworkUtils.h; sourceTree = "<group>"; };
+		DCF2A8A21A102AC300170DBF /* SFOAuthCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOAuthCoordinator.h; sourceTree = "<group>"; };
+		DCF2A8A31A102AC300170DBF /* SFOAuthCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOAuthCredentials.h; sourceTree = "<group>"; };
+		DCF2A8A41A102AC300170DBF /* SFOAuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOAuthInfo.h; sourceTree = "<group>"; };
+		DCF2A8A61A102AC300170DBF /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		DCF2A8A71A102AC300170DBF /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		DCF2A8A81A102AC300170DBF /* NSURL+SFStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+SFStringUtils.h"; sourceTree = "<group>"; };
+		DCF2A8A91A102AC300170DBF /* SalesforceSDKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesforceSDKConstants.h; sourceTree = "<group>"; };
+		DCF2A8AA1A102AC300170DBF /* SFAbstractPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAbstractPasscodeViewController.h; sourceTree = "<group>"; };
+		DCF2A8AB1A102AC300170DBF /* SFApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFApplication.h; sourceTree = "<group>"; };
+		DCF2A8AC1A102AC300170DBF /* SFAuthenticationManager+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFAuthenticationManager+Internal.h"; sourceTree = "<group>"; };
+		DCF2A8AD1A102AC300170DBF /* SFAuthenticationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthenticationManager.h; sourceTree = "<group>"; };
+		DCF2A8AE1A102AC300170DBF /* SFAuthenticationViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthenticationViewHandler.h; sourceTree = "<group>"; };
+		DCF2A8AF1A102AC300170DBF /* SFAuthErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthErrorHandler.h; sourceTree = "<group>"; };
+		DCF2A8B01A102AC300170DBF /* SFAuthErrorHandlerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthErrorHandlerList.h; sourceTree = "<group>"; };
+		DCF2A8B11A102AC300170DBF /* SFAuthorizingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthorizingViewController.h; sourceTree = "<group>"; };
+		DCF2A8B21A102AC300170DBF /* SFCommunityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCommunityData.h; sourceTree = "<group>"; };
+		DCF2A8B31A102AC300170DBF /* SFDefaultUserManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDefaultUserManagementViewController.h; sourceTree = "<group>"; };
+		DCF2A8B41A102AC300170DBF /* SFDirectoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDirectoryManager.h; sourceTree = "<group>"; };
+		DCF2A8B51A102AC300170DBF /* SFIdentityCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFIdentityCoordinator.h; sourceTree = "<group>"; };
+		DCF2A8B61A102AC300170DBF /* SFIdentityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFIdentityData.h; sourceTree = "<group>"; };
+		DCF2A8B71A102AC300170DBF /* SFJsonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFJsonUtils.h; sourceTree = "<group>"; };
+		DCF2A8B81A102AC300170DBF /* SFPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPreferences.h; sourceTree = "<group>"; };
+		DCF2A8B91A102AC300170DBF /* SFPushNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPushNotificationManager.h; sourceTree = "<group>"; };
+		DCF2A8BA1A102AC300170DBF /* SFQuerySpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFQuerySpec.h; sourceTree = "<group>"; };
+		DCF2A8BB1A102AC300170DBF /* SFSDKResourceUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKResourceUtils.h; sourceTree = "<group>"; };
+		DCF2A8BC1A102AC300170DBF /* SFSDKTestCredentialsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKTestCredentialsData.h; sourceTree = "<group>"; };
+		DCF2A8BD1A102AC300170DBF /* SFSDKTestRequestListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKTestRequestListener.h; sourceTree = "<group>"; };
+		DCF2A8BE1A102AC300170DBF /* SFSDKWebUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKWebUtils.h; sourceTree = "<group>"; };
+		DCF2A8BF1A102AC300170DBF /* SFSecurityLockout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSecurityLockout.h; sourceTree = "<group>"; };
+		DCF2A8C01A102AC300170DBF /* SFSmartStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSmartStore.h; sourceTree = "<group>"; };
+		DCF2A8C11A102AC300170DBF /* SFSmartStoreDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSmartStoreDatabaseManager.h; sourceTree = "<group>"; };
+		DCF2A8C21A102AC300170DBF /* SFSmartStoreInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSmartStoreInspectorViewController.h; sourceTree = "<group>"; };
+		DCF2A8C31A102AC300170DBF /* SFSoupIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSoupIndex.h; sourceTree = "<group>"; };
+		DCF2A8C41A102AC300170DBF /* SFStoreCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFStoreCursor.h; sourceTree = "<group>"; };
+		DCF2A8C51A102AC300170DBF /* SFUserAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUserAccount.h; sourceTree = "<group>"; };
+		DCF2A8C61A102AC300170DBF /* SFUserAccountConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUserAccountConstants.h; sourceTree = "<group>"; };
+		DCF2A8C71A102AC300170DBF /* SFUserAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUserAccountManager.h; sourceTree = "<group>"; };
+		DCF2A8C81A102AC300170DBF /* SFUserActivityMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUserActivityMonitor.h; sourceTree = "<group>"; };
+		DCF2A8C91A102AC300170DBF /* TestSetupUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSetupUtils.h; sourceTree = "<group>"; };
+		DCF2A8CB1A102AC300170DBF /* SFEncryptionKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEncryptionKey.h; sourceTree = "<group>"; };
+		DCF2A8CC1A102AC300170DBF /* SFKeyStoreKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKeyStoreKey.h; sourceTree = "<group>"; };
+		DCF2A8CD1A102AC300170DBF /* SFKeyStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKeyStoreManager.h; sourceTree = "<group>"; };
+		DCF2A8CE1A102AC300170DBF /* SFPasscodeManager+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFPasscodeManager+Internal.h"; sourceTree = "<group>"; };
+		DCF2A8CF1A102AC300170DBF /* SFPasscodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPasscodeManager.h; sourceTree = "<group>"; };
+		DCF2A8D01A102AC300170DBF /* SFPasscodeProviderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPasscodeProviderManager.h; sourceTree = "<group>"; };
+		DCF2A8D11A102AC300170DBF /* SFSDKCryptoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKCryptoUtils.h; sourceTree = "<group>"; };
+		DCF2A8D41A102AC300170DBF /* CDV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDV.h; sourceTree = "<group>"; };
+		DCF2A8D51A102AC300170DBF /* CDVAvailability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVAvailability.h; sourceTree = "<group>"; };
+		DCF2A8D61A102AC300170DBF /* CDVCommandDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVCommandDelegate.h; sourceTree = "<group>"; };
+		DCF2A8D71A102AC300170DBF /* CDVCommandDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVCommandDelegateImpl.h; sourceTree = "<group>"; };
+		DCF2A8D81A102AC300170DBF /* CDVCommandQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVCommandQueue.h; sourceTree = "<group>"; };
+		DCF2A8D91A102AC300170DBF /* CDVConfigParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVConfigParser.h; sourceTree = "<group>"; };
+		DCF2A8DA1A102AC300170DBF /* CDVDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVDebug.h; sourceTree = "<group>"; };
+		DCF2A8DB1A102AC300170DBF /* CDVInvokedUrlCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVInvokedUrlCommand.h; sourceTree = "<group>"; };
+		DCF2A8DC1A102AC300170DBF /* CDVJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVJSON.h; sourceTree = "<group>"; };
+		DCF2A8DD1A102AC300170DBF /* CDVLocalStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVLocalStorage.h; sourceTree = "<group>"; };
+		DCF2A8DE1A102AC300170DBF /* CDVPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVPlugin.h; sourceTree = "<group>"; };
+		DCF2A8DF1A102AC300170DBF /* CDVPluginResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVPluginResult.h; sourceTree = "<group>"; };
+		DCF2A8E01A102AC300170DBF /* CDVScreenOrientationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVScreenOrientationDelegate.h; sourceTree = "<group>"; };
+		DCF2A8E11A102AC300170DBF /* CDVShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVShared.h; sourceTree = "<group>"; };
+		DCF2A8E21A102AC300170DBF /* CDVTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVTimer.h; sourceTree = "<group>"; };
+		DCF2A8E31A102AC300170DBF /* CDVURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVURLProtocol.h; sourceTree = "<group>"; };
+		DCF2A8E41A102AC300170DBF /* CDVUserAgentUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVUserAgentUtil.h; sourceTree = "<group>"; };
+		DCF2A8E51A102AC300170DBF /* CDVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVViewController.h; sourceTree = "<group>"; };
+		DCF2A8E61A102AC300170DBF /* CDVWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVWebViewDelegate.h; sourceTree = "<group>"; };
+		DCF2A8E71A102AC300170DBF /* CDVWhitelist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVWhitelist.h; sourceTree = "<group>"; };
+		DCF2A8E81A102AC300170DBF /* NSArray+Comparisons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Comparisons.h"; sourceTree = "<group>"; };
+		DCF2A8E91A102AC300170DBF /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		DCF2A8EA1A102AC300170DBF /* NSDictionary+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extensions.h"; sourceTree = "<group>"; };
+		DCF2A8EB1A102AC300170DBF /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		DCF2A8EC1A102AC300170DBF /* UIDevice+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Extensions.h"; sourceTree = "<group>"; };
+		DCF2A8ED1A102AC300170DBF /* libCordova.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCordova.a; sourceTree = "<group>"; };
+		DCF2A8EE1A102AC300170DBF /* libMKNetworkKit-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMKNetworkKit-iOS.a"; sourceTree = "<group>"; };
+		DCF2A8EF1A102AC300170DBF /* libSalesforceHybridSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceHybridSDK.a; sourceTree = "<group>"; };
+		DCF2A8F01A102AC300170DBF /* libSalesforceNativeSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceNativeSDK.a; sourceTree = "<group>"; };
+		DCF2A8F11A102AC300170DBF /* libSalesforceNetworkSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceNetworkSDK.a; sourceTree = "<group>"; };
+		DCF2A8F21A102AC300170DBF /* libSalesforceOAuth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceOAuth.a; sourceTree = "<group>"; };
+		DCF2A8F31A102AC300170DBF /* libSalesforceSDKCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceSDKCore.a; sourceTree = "<group>"; };
+		DCF2A8F41A102AC300170DBF /* libSalesforceSecurity.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceSecurity.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCD7D55C1A102A940012097F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCF2A90D1A102AC300170DBF /* libSalesforceNetworkSDK.a in Frameworks */,
+				DCF2A9011A102AC300170DBF /* libSalesforceSDKCore.a in Frameworks */,
+				DCF2A9091A102AC300170DBF /* libSalesforceHybridSDK.a in Frameworks */,
+				DCF2A90B1A102AC300170DBF /* libSalesforceNativeSDK.a in Frameworks */,
+				DCF2A9071A102AC300170DBF /* libMKNetworkKit-iOS.a in Frameworks */,
+				DCF2A8FF1A102AC300170DBF /* libSalesforceOAuth.a in Frameworks */,
+				DCF2A8FD1A102AC300170DBF /* libSalesforceNetworkSDK.a in Frameworks */,
+				DCF2A8F51A102AC300170DBF /* libCordova.a in Frameworks */,
+				DCF2A9031A102AC300170DBF /* libSalesforceSecurity.a in Frameworks */,
+				DCF2A8F91A102AC300170DBF /* libSalesforceHybridSDK.a in Frameworks */,
+				DCF2A8FB1A102AC300170DBF /* libSalesforceNativeSDK.a in Frameworks */,
+				DCF2A9111A102AC300170DBF /* libSalesforceSDKCore.a in Frameworks */,
+				DCF2A9131A102AC300170DBF /* libSalesforceSecurity.a in Frameworks */,
+				DCF2A8F71A102AC300170DBF /* libMKNetworkKit-iOS.a in Frameworks */,
+				DCF2A90F1A102AC300170DBF /* libSalesforceOAuth.a in Frameworks */,
+				DCF2A9051A102AC300170DBF /* libCordova.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD7D5751A102A940012097F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCF2A90E1A102AC300170DBF /* libSalesforceNetworkSDK.a in Frameworks */,
+				DCF2A9021A102AC300170DBF /* libSalesforceSDKCore.a in Frameworks */,
+				DCF2A90A1A102AC300170DBF /* libSalesforceHybridSDK.a in Frameworks */,
+				DCF2A90C1A102AC300170DBF /* libSalesforceNativeSDK.a in Frameworks */,
+				DCF2A9081A102AC300170DBF /* libMKNetworkKit-iOS.a in Frameworks */,
+				DCF2A9001A102AC300170DBF /* libSalesforceOAuth.a in Frameworks */,
+				DCF2A8FE1A102AC300170DBF /* libSalesforceNetworkSDK.a in Frameworks */,
+				DCF2A8F61A102AC300170DBF /* libCordova.a in Frameworks */,
+				DCF2A9041A102AC300170DBF /* libSalesforceSecurity.a in Frameworks */,
+				DCF2A8FA1A102AC300170DBF /* libSalesforceHybridSDK.a in Frameworks */,
+				DCF2A8FC1A102AC300170DBF /* libSalesforceNativeSDK.a in Frameworks */,
+				DCF2A9121A102AC300170DBF /* libSalesforceSDKCore.a in Frameworks */,
+				DCF2A9141A102AC300170DBF /* libSalesforceSecurity.a in Frameworks */,
+				DCF2A8F81A102AC300170DBF /* libMKNetworkKit-iOS.a in Frameworks */,
+				DCF2A9101A102AC300170DBF /* libSalesforceOAuth.a in Frameworks */,
+				DCF2A9061A102AC300170DBF /* libCordova.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DCD7D5561A102A940012097F = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8121A102AC300170DBF /* Salesforce-iOS-API */,
+				DCD7D5611A102A940012097F /* AuctionAppiOS */,
+				DCD7D57B1A102A940012097F /* AuctionAppiOSTests */,
+				DCD7D5601A102A940012097F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCD7D5601A102A940012097F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7D55F1A102A940012097F /* AuctionAppiOS.app */,
+				DCD7D5781A102A940012097F /* AuctionAppiOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCD7D5611A102A940012097F /* AuctionAppiOS */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7D5661A102A940012097F /* AppDelegate.h */,
+				DCD7D5671A102A940012097F /* AppDelegate.m */,
+				DCD7D5691A102A940012097F /* ViewController.h */,
+				DCD7D56A1A102A940012097F /* ViewController.m */,
+				DCD7D56C1A102A940012097F /* Main.storyboard */,
+				DCD7D56F1A102A940012097F /* Images.xcassets */,
+				DCD7D5711A102A940012097F /* LaunchScreen.xib */,
+				DCD7D5621A102A940012097F /* Supporting Files */,
+			);
+			path = AuctionAppiOS;
+			sourceTree = "<group>";
+		};
+		DCD7D5621A102A940012097F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7D5631A102A940012097F /* Info.plist */,
+				DCD7D5641A102A940012097F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCD7D57B1A102A940012097F /* AuctionAppiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7D57E1A102A940012097F /* AuctionAppiOSTests.m */,
+				DCD7D57C1A102A940012097F /* Supporting Files */,
+			);
+			path = AuctionAppiOSTests;
+			sourceTree = "<group>";
+		};
+		DCD7D57C1A102A940012097F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7D57D1A102A940012097F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCF2A8121A102AC300170DBF /* Salesforce-iOS-API */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8131A102AC300170DBF /* iphoneos */,
+				DCF2A8841A102AC300170DBF /* iphonesimulator */,
+			);
+			path = "Salesforce-iOS-API";
+			sourceTree = "<group>";
+		};
+		DCF2A8131A102AC300170DBF /* iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8141A102AC300170DBF /* Headers */,
+				DCF2A8611A102AC300170DBF /* include */,
+				DCF2A87C1A102AC300170DBF /* libCordova.a */,
+				DCF2A87D1A102AC300170DBF /* libMKNetworkKit-iOS.a */,
+				DCF2A87E1A102AC300170DBF /* libSalesforceHybridSDK.a */,
+				DCF2A87F1A102AC300170DBF /* libSalesforceNativeSDK.a */,
+				DCF2A8801A102AC300170DBF /* libSalesforceNetworkSDK.a */,
+				DCF2A8811A102AC300170DBF /* libSalesforceOAuth.a */,
+				DCF2A8821A102AC300170DBF /* libSalesforceSDKCore.a */,
+				DCF2A8831A102AC300170DBF /* libSalesforceSecurity.a */,
+			);
+			path = iphoneos;
+			sourceTree = "<group>";
+		};
+		DCF2A8141A102AC300170DBF /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8151A102AC300170DBF /* MKNetworkKit-iOS */,
+				DCF2A81C1A102AC300170DBF /* SalesforceHybridSDK */,
+				DCF2A8251A102AC300170DBF /* SalesforceNativeSDK */,
+				DCF2A82B1A102AC300170DBF /* SalesforceNetworkSDK */,
+				DCF2A8301A102AC300170DBF /* SalesforceOAuth */,
+				DCF2A8341A102AC300170DBF /* SalesforceSDKCore */,
+				DCF2A8591A102AC300170DBF /* SalesforceSecurity */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		DCF2A8151A102AC300170DBF /* MKNetworkKit-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8161A102AC300170DBF /* MKNetworkEngine.h */,
+				DCF2A8171A102AC300170DBF /* MKNetworkKit.h */,
+				DCF2A8181A102AC300170DBF /* MKNetworkOperation.h */,
+				DCF2A8191A102AC300170DBF /* NSDictionary+RequestEncoding.h */,
+				DCF2A81A1A102AC300170DBF /* NSString+MKNetworkKitAdditions.h */,
+				DCF2A81B1A102AC300170DBF /* UIAlertView+MKNetworkKitAdditions.h */,
+			);
+			path = "MKNetworkKit-iOS";
+			sourceTree = "<group>";
+		};
+		DCF2A81C1A102AC300170DBF /* SalesforceHybridSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A81D1A102AC300170DBF /* CDVPlugin+SFAdditions.h */,
+				DCF2A81E1A102AC300170DBF /* SalesforceOAuthPlugin.h */,
+				DCF2A81F1A102AC300170DBF /* SFAccountManagerPlugin.h */,
+				DCF2A8201A102AC300170DBF /* SFHybridViewConfig.h */,
+				DCF2A8211A102AC300170DBF /* SFHybridViewController.h */,
+				DCF2A8221A102AC300170DBF /* SFLocalhostSubstitutionCache.h */,
+				DCF2A8231A102AC300170DBF /* SFSDKInfoPlugin.h */,
+				DCF2A8241A102AC300170DBF /* SFSmartStorePlugin.h */,
+			);
+			path = SalesforceHybridSDK;
+			sourceTree = "<group>";
+		};
+		DCF2A8251A102AC300170DBF /* SalesforceNativeSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8261A102AC300170DBF /* SFRestAPI+Blocks.h */,
+				DCF2A8271A102AC300170DBF /* SFRestAPI+Files.h */,
+				DCF2A8281A102AC300170DBF /* SFRestAPI+QueryBuilder.h */,
+				DCF2A8291A102AC300170DBF /* SFRestAPI.h */,
+				DCF2A82A1A102AC300170DBF /* SFRestRequest.h */,
+			);
+			path = SalesforceNativeSDK;
+			sourceTree = "<group>";
+		};
+		DCF2A82B1A102AC300170DBF /* SalesforceNetworkSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A82C1A102AC300170DBF /* SFNetworkCoordinator.h */,
+				DCF2A82D1A102AC300170DBF /* SFNetworkEngine.h */,
+				DCF2A82E1A102AC300170DBF /* SFNetworkOperation.h */,
+				DCF2A82F1A102AC300170DBF /* SFNetworkUtils.h */,
+			);
+			path = SalesforceNetworkSDK;
+			sourceTree = "<group>";
+		};
+		DCF2A8301A102AC300170DBF /* SalesforceOAuth */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8311A102AC300170DBF /* SFOAuthCoordinator.h */,
+				DCF2A8321A102AC300170DBF /* SFOAuthCredentials.h */,
+				DCF2A8331A102AC300170DBF /* SFOAuthInfo.h */,
+			);
+			path = SalesforceOAuth;
+			sourceTree = "<group>";
+		};
+		DCF2A8341A102AC300170DBF /* SalesforceSDKCore */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8351A102AC300170DBF /* FMDatabase.h */,
+				DCF2A8361A102AC300170DBF /* FMResultSet.h */,
+				DCF2A8371A102AC300170DBF /* NSURL+SFStringUtils.h */,
+				DCF2A8381A102AC300170DBF /* SalesforceSDKConstants.h */,
+				DCF2A8391A102AC300170DBF /* SFAbstractPasscodeViewController.h */,
+				DCF2A83A1A102AC300170DBF /* SFApplication.h */,
+				DCF2A83B1A102AC300170DBF /* SFAuthenticationManager+Internal.h */,
+				DCF2A83C1A102AC300170DBF /* SFAuthenticationManager.h */,
+				DCF2A83D1A102AC300170DBF /* SFAuthenticationViewHandler.h */,
+				DCF2A83E1A102AC300170DBF /* SFAuthErrorHandler.h */,
+				DCF2A83F1A102AC300170DBF /* SFAuthErrorHandlerList.h */,
+				DCF2A8401A102AC300170DBF /* SFAuthorizingViewController.h */,
+				DCF2A8411A102AC300170DBF /* SFCommunityData.h */,
+				DCF2A8421A102AC300170DBF /* SFDefaultUserManagementViewController.h */,
+				DCF2A8431A102AC300170DBF /* SFDirectoryManager.h */,
+				DCF2A8441A102AC300170DBF /* SFIdentityCoordinator.h */,
+				DCF2A8451A102AC300170DBF /* SFIdentityData.h */,
+				DCF2A8461A102AC300170DBF /* SFJsonUtils.h */,
+				DCF2A8471A102AC300170DBF /* SFPreferences.h */,
+				DCF2A8481A102AC300170DBF /* SFPushNotificationManager.h */,
+				DCF2A8491A102AC300170DBF /* SFQuerySpec.h */,
+				DCF2A84A1A102AC300170DBF /* SFSDKResourceUtils.h */,
+				DCF2A84B1A102AC300170DBF /* SFSDKTestCredentialsData.h */,
+				DCF2A84C1A102AC300170DBF /* SFSDKTestRequestListener.h */,
+				DCF2A84D1A102AC300170DBF /* SFSDKWebUtils.h */,
+				DCF2A84E1A102AC300170DBF /* SFSecurityLockout.h */,
+				DCF2A84F1A102AC300170DBF /* SFSmartStore.h */,
+				DCF2A8501A102AC300170DBF /* SFSmartStoreDatabaseManager.h */,
+				DCF2A8511A102AC300170DBF /* SFSmartStoreInspectorViewController.h */,
+				DCF2A8521A102AC300170DBF /* SFSoupIndex.h */,
+				DCF2A8531A102AC300170DBF /* SFStoreCursor.h */,
+				DCF2A8541A102AC300170DBF /* SFUserAccount.h */,
+				DCF2A8551A102AC300170DBF /* SFUserAccountConstants.h */,
+				DCF2A8561A102AC300170DBF /* SFUserAccountManager.h */,
+				DCF2A8571A102AC300170DBF /* SFUserActivityMonitor.h */,
+				DCF2A8581A102AC300170DBF /* TestSetupUtils.h */,
+			);
+			path = SalesforceSDKCore;
+			sourceTree = "<group>";
+		};
+		DCF2A8591A102AC300170DBF /* SalesforceSecurity */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A85A1A102AC300170DBF /* SFEncryptionKey.h */,
+				DCF2A85B1A102AC300170DBF /* SFKeyStoreKey.h */,
+				DCF2A85C1A102AC300170DBF /* SFKeyStoreManager.h */,
+				DCF2A85D1A102AC300170DBF /* SFPasscodeManager+Internal.h */,
+				DCF2A85E1A102AC300170DBF /* SFPasscodeManager.h */,
+				DCF2A85F1A102AC300170DBF /* SFPasscodeProviderManager.h */,
+				DCF2A8601A102AC300170DBF /* SFSDKCryptoUtils.h */,
+			);
+			path = SalesforceSecurity;
+			sourceTree = "<group>";
+		};
+		DCF2A8611A102AC300170DBF /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8621A102AC300170DBF /* Cordova */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DCF2A8621A102AC300170DBF /* Cordova */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8631A102AC300170DBF /* CDV.h */,
+				DCF2A8641A102AC300170DBF /* CDVAvailability.h */,
+				DCF2A8651A102AC300170DBF /* CDVCommandDelegate.h */,
+				DCF2A8661A102AC300170DBF /* CDVCommandDelegateImpl.h */,
+				DCF2A8671A102AC300170DBF /* CDVCommandQueue.h */,
+				DCF2A8681A102AC300170DBF /* CDVConfigParser.h */,
+				DCF2A8691A102AC300170DBF /* CDVDebug.h */,
+				DCF2A86A1A102AC300170DBF /* CDVInvokedUrlCommand.h */,
+				DCF2A86B1A102AC300170DBF /* CDVJSON.h */,
+				DCF2A86C1A102AC300170DBF /* CDVLocalStorage.h */,
+				DCF2A86D1A102AC300170DBF /* CDVPlugin.h */,
+				DCF2A86E1A102AC300170DBF /* CDVPluginResult.h */,
+				DCF2A86F1A102AC300170DBF /* CDVScreenOrientationDelegate.h */,
+				DCF2A8701A102AC300170DBF /* CDVShared.h */,
+				DCF2A8711A102AC300170DBF /* CDVTimer.h */,
+				DCF2A8721A102AC300170DBF /* CDVURLProtocol.h */,
+				DCF2A8731A102AC300170DBF /* CDVUserAgentUtil.h */,
+				DCF2A8741A102AC300170DBF /* CDVViewController.h */,
+				DCF2A8751A102AC300170DBF /* CDVWebViewDelegate.h */,
+				DCF2A8761A102AC300170DBF /* CDVWhitelist.h */,
+				DCF2A8771A102AC300170DBF /* NSArray+Comparisons.h */,
+				DCF2A8781A102AC300170DBF /* NSData+Base64.h */,
+				DCF2A8791A102AC300170DBF /* NSDictionary+Extensions.h */,
+				DCF2A87A1A102AC300170DBF /* NSMutableArray+QueueAdditions.h */,
+				DCF2A87B1A102AC300170DBF /* UIDevice+Extensions.h */,
+			);
+			path = Cordova;
+			sourceTree = "<group>";
+		};
+		DCF2A8841A102AC300170DBF /* iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8851A102AC300170DBF /* Headers */,
+				DCF2A8D21A102AC300170DBF /* include */,
+				DCF2A8ED1A102AC300170DBF /* libCordova.a */,
+				DCF2A8EE1A102AC300170DBF /* libMKNetworkKit-iOS.a */,
+				DCF2A8EF1A102AC300170DBF /* libSalesforceHybridSDK.a */,
+				DCF2A8F01A102AC300170DBF /* libSalesforceNativeSDK.a */,
+				DCF2A8F11A102AC300170DBF /* libSalesforceNetworkSDK.a */,
+				DCF2A8F21A102AC300170DBF /* libSalesforceOAuth.a */,
+				DCF2A8F31A102AC300170DBF /* libSalesforceSDKCore.a */,
+				DCF2A8F41A102AC300170DBF /* libSalesforceSecurity.a */,
+			);
+			path = iphonesimulator;
+			sourceTree = "<group>";
+		};
+		DCF2A8851A102AC300170DBF /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8861A102AC300170DBF /* MKNetworkKit-iOS */,
+				DCF2A88D1A102AC300170DBF /* SalesforceHybridSDK */,
+				DCF2A8961A102AC300170DBF /* SalesforceNativeSDK */,
+				DCF2A89C1A102AC300170DBF /* SalesforceNetworkSDK */,
+				DCF2A8A11A102AC300170DBF /* SalesforceOAuth */,
+				DCF2A8A51A102AC300170DBF /* SalesforceSDKCore */,
+				DCF2A8CA1A102AC300170DBF /* SalesforceSecurity */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		DCF2A8861A102AC300170DBF /* MKNetworkKit-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8871A102AC300170DBF /* MKNetworkEngine.h */,
+				DCF2A8881A102AC300170DBF /* MKNetworkKit.h */,
+				DCF2A8891A102AC300170DBF /* MKNetworkOperation.h */,
+				DCF2A88A1A102AC300170DBF /* NSDictionary+RequestEncoding.h */,
+				DCF2A88B1A102AC300170DBF /* NSString+MKNetworkKitAdditions.h */,
+				DCF2A88C1A102AC300170DBF /* UIAlertView+MKNetworkKitAdditions.h */,
+			);
+			path = "MKNetworkKit-iOS";
+			sourceTree = "<group>";
+		};
+		DCF2A88D1A102AC300170DBF /* SalesforceHybridSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A88E1A102AC300170DBF /* CDVPlugin+SFAdditions.h */,
+				DCF2A88F1A102AC300170DBF /* SalesforceOAuthPlugin.h */,
+				DCF2A8901A102AC300170DBF /* SFAccountManagerPlugin.h */,
+				DCF2A8911A102AC300170DBF /* SFHybridViewConfig.h */,
+				DCF2A8921A102AC300170DBF /* SFHybridViewController.h */,
+				DCF2A8931A102AC300170DBF /* SFLocalhostSubstitutionCache.h */,
+				DCF2A8941A102AC300170DBF /* SFSDKInfoPlugin.h */,
+				DCF2A8951A102AC300170DBF /* SFSmartStorePlugin.h */,
+			);
+			path = SalesforceHybridSDK;
+			sourceTree = "<group>";
+		};
+		DCF2A8961A102AC300170DBF /* SalesforceNativeSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8971A102AC300170DBF /* SFRestAPI+Blocks.h */,
+				DCF2A8981A102AC300170DBF /* SFRestAPI+Files.h */,
+				DCF2A8991A102AC300170DBF /* SFRestAPI+QueryBuilder.h */,
+				DCF2A89A1A102AC300170DBF /* SFRestAPI.h */,
+				DCF2A89B1A102AC300170DBF /* SFRestRequest.h */,
+			);
+			path = SalesforceNativeSDK;
+			sourceTree = "<group>";
+		};
+		DCF2A89C1A102AC300170DBF /* SalesforceNetworkSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A89D1A102AC300170DBF /* SFNetworkCoordinator.h */,
+				DCF2A89E1A102AC300170DBF /* SFNetworkEngine.h */,
+				DCF2A89F1A102AC300170DBF /* SFNetworkOperation.h */,
+				DCF2A8A01A102AC300170DBF /* SFNetworkUtils.h */,
+			);
+			path = SalesforceNetworkSDK;
+			sourceTree = "<group>";
+		};
+		DCF2A8A11A102AC300170DBF /* SalesforceOAuth */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8A21A102AC300170DBF /* SFOAuthCoordinator.h */,
+				DCF2A8A31A102AC300170DBF /* SFOAuthCredentials.h */,
+				DCF2A8A41A102AC300170DBF /* SFOAuthInfo.h */,
+			);
+			path = SalesforceOAuth;
+			sourceTree = "<group>";
+		};
+		DCF2A8A51A102AC300170DBF /* SalesforceSDKCore */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8A61A102AC300170DBF /* FMDatabase.h */,
+				DCF2A8A71A102AC300170DBF /* FMResultSet.h */,
+				DCF2A8A81A102AC300170DBF /* NSURL+SFStringUtils.h */,
+				DCF2A8A91A102AC300170DBF /* SalesforceSDKConstants.h */,
+				DCF2A8AA1A102AC300170DBF /* SFAbstractPasscodeViewController.h */,
+				DCF2A8AB1A102AC300170DBF /* SFApplication.h */,
+				DCF2A8AC1A102AC300170DBF /* SFAuthenticationManager+Internal.h */,
+				DCF2A8AD1A102AC300170DBF /* SFAuthenticationManager.h */,
+				DCF2A8AE1A102AC300170DBF /* SFAuthenticationViewHandler.h */,
+				DCF2A8AF1A102AC300170DBF /* SFAuthErrorHandler.h */,
+				DCF2A8B01A102AC300170DBF /* SFAuthErrorHandlerList.h */,
+				DCF2A8B11A102AC300170DBF /* SFAuthorizingViewController.h */,
+				DCF2A8B21A102AC300170DBF /* SFCommunityData.h */,
+				DCF2A8B31A102AC300170DBF /* SFDefaultUserManagementViewController.h */,
+				DCF2A8B41A102AC300170DBF /* SFDirectoryManager.h */,
+				DCF2A8B51A102AC300170DBF /* SFIdentityCoordinator.h */,
+				DCF2A8B61A102AC300170DBF /* SFIdentityData.h */,
+				DCF2A8B71A102AC300170DBF /* SFJsonUtils.h */,
+				DCF2A8B81A102AC300170DBF /* SFPreferences.h */,
+				DCF2A8B91A102AC300170DBF /* SFPushNotificationManager.h */,
+				DCF2A8BA1A102AC300170DBF /* SFQuerySpec.h */,
+				DCF2A8BB1A102AC300170DBF /* SFSDKResourceUtils.h */,
+				DCF2A8BC1A102AC300170DBF /* SFSDKTestCredentialsData.h */,
+				DCF2A8BD1A102AC300170DBF /* SFSDKTestRequestListener.h */,
+				DCF2A8BE1A102AC300170DBF /* SFSDKWebUtils.h */,
+				DCF2A8BF1A102AC300170DBF /* SFSecurityLockout.h */,
+				DCF2A8C01A102AC300170DBF /* SFSmartStore.h */,
+				DCF2A8C11A102AC300170DBF /* SFSmartStoreDatabaseManager.h */,
+				DCF2A8C21A102AC300170DBF /* SFSmartStoreInspectorViewController.h */,
+				DCF2A8C31A102AC300170DBF /* SFSoupIndex.h */,
+				DCF2A8C41A102AC300170DBF /* SFStoreCursor.h */,
+				DCF2A8C51A102AC300170DBF /* SFUserAccount.h */,
+				DCF2A8C61A102AC300170DBF /* SFUserAccountConstants.h */,
+				DCF2A8C71A102AC300170DBF /* SFUserAccountManager.h */,
+				DCF2A8C81A102AC300170DBF /* SFUserActivityMonitor.h */,
+				DCF2A8C91A102AC300170DBF /* TestSetupUtils.h */,
+			);
+			path = SalesforceSDKCore;
+			sourceTree = "<group>";
+		};
+		DCF2A8CA1A102AC300170DBF /* SalesforceSecurity */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8CB1A102AC300170DBF /* SFEncryptionKey.h */,
+				DCF2A8CC1A102AC300170DBF /* SFKeyStoreKey.h */,
+				DCF2A8CD1A102AC300170DBF /* SFKeyStoreManager.h */,
+				DCF2A8CE1A102AC300170DBF /* SFPasscodeManager+Internal.h */,
+				DCF2A8CF1A102AC300170DBF /* SFPasscodeManager.h */,
+				DCF2A8D01A102AC300170DBF /* SFPasscodeProviderManager.h */,
+				DCF2A8D11A102AC300170DBF /* SFSDKCryptoUtils.h */,
+			);
+			path = SalesforceSecurity;
+			sourceTree = "<group>";
+		};
+		DCF2A8D21A102AC300170DBF /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8D31A102AC300170DBF /* Cordova */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DCF2A8D31A102AC300170DBF /* Cordova */ = {
+			isa = PBXGroup;
+			children = (
+				DCF2A8D41A102AC300170DBF /* CDV.h */,
+				DCF2A8D51A102AC300170DBF /* CDVAvailability.h */,
+				DCF2A8D61A102AC300170DBF /* CDVCommandDelegate.h */,
+				DCF2A8D71A102AC300170DBF /* CDVCommandDelegateImpl.h */,
+				DCF2A8D81A102AC300170DBF /* CDVCommandQueue.h */,
+				DCF2A8D91A102AC300170DBF /* CDVConfigParser.h */,
+				DCF2A8DA1A102AC300170DBF /* CDVDebug.h */,
+				DCF2A8DB1A102AC300170DBF /* CDVInvokedUrlCommand.h */,
+				DCF2A8DC1A102AC300170DBF /* CDVJSON.h */,
+				DCF2A8DD1A102AC300170DBF /* CDVLocalStorage.h */,
+				DCF2A8DE1A102AC300170DBF /* CDVPlugin.h */,
+				DCF2A8DF1A102AC300170DBF /* CDVPluginResult.h */,
+				DCF2A8E01A102AC300170DBF /* CDVScreenOrientationDelegate.h */,
+				DCF2A8E11A102AC300170DBF /* CDVShared.h */,
+				DCF2A8E21A102AC300170DBF /* CDVTimer.h */,
+				DCF2A8E31A102AC300170DBF /* CDVURLProtocol.h */,
+				DCF2A8E41A102AC300170DBF /* CDVUserAgentUtil.h */,
+				DCF2A8E51A102AC300170DBF /* CDVViewController.h */,
+				DCF2A8E61A102AC300170DBF /* CDVWebViewDelegate.h */,
+				DCF2A8E71A102AC300170DBF /* CDVWhitelist.h */,
+				DCF2A8E81A102AC300170DBF /* NSArray+Comparisons.h */,
+				DCF2A8E91A102AC300170DBF /* NSData+Base64.h */,
+				DCF2A8EA1A102AC300170DBF /* NSDictionary+Extensions.h */,
+				DCF2A8EB1A102AC300170DBF /* NSMutableArray+QueueAdditions.h */,
+				DCF2A8EC1A102AC300170DBF /* UIDevice+Extensions.h */,
+			);
+			path = Cordova;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCD7D55E1A102A940012097F /* AuctionAppiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCD7D5821A102A940012097F /* Build configuration list for PBXNativeTarget "AuctionAppiOS" */;
+			buildPhases = (
+				DCD7D55B1A102A940012097F /* Sources */,
+				DCD7D55C1A102A940012097F /* Frameworks */,
+				DCD7D55D1A102A940012097F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AuctionAppiOS;
+			productName = AuctionAppiOS;
+			productReference = DCD7D55F1A102A940012097F /* AuctionAppiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCD7D5771A102A940012097F /* AuctionAppiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCD7D5851A102A940012097F /* Build configuration list for PBXNativeTarget "AuctionAppiOSTests" */;
+			buildPhases = (
+				DCD7D5741A102A940012097F /* Sources */,
+				DCD7D5751A102A940012097F /* Frameworks */,
+				DCD7D5761A102A940012097F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCD7D57A1A102A940012097F /* PBXTargetDependency */,
+			);
+			name = AuctionAppiOSTests;
+			productName = AuctionAppiOSTests;
+			productReference = DCD7D5781A102A940012097F /* AuctionAppiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCD7D5571A102A940012097F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Schoolyard Booleans";
+				TargetAttributes = {
+					DCD7D55E1A102A940012097F = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					DCD7D5771A102A940012097F = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = DCD7D55E1A102A940012097F;
+					};
+				};
+			};
+			buildConfigurationList = DCD7D55A1A102A940012097F /* Build configuration list for PBXProject "AuctionAppiOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCD7D5561A102A940012097F;
+			productRefGroup = DCD7D5601A102A940012097F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCD7D55E1A102A940012097F /* AuctionAppiOS */,
+				DCD7D5771A102A940012097F /* AuctionAppiOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCD7D55D1A102A940012097F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCD7D56E1A102A940012097F /* Main.storyboard in Resources */,
+				DCD7D5731A102A940012097F /* LaunchScreen.xib in Resources */,
+				DCD7D5701A102A940012097F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD7D5761A102A940012097F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCD7D55B1A102A940012097F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCD7D56B1A102A940012097F /* ViewController.m in Sources */,
+				DCD7D5681A102A940012097F /* AppDelegate.m in Sources */,
+				DCD7D5651A102A940012097F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD7D5741A102A940012097F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCD7D57F1A102A940012097F /* AuctionAppiOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCD7D57A1A102A940012097F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCD7D55E1A102A940012097F /* AuctionAppiOS */;
+			targetProxy = DCD7D5791A102A940012097F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DCD7D56C1A102A940012097F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCD7D56D1A102A940012097F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DCD7D5711A102A940012097F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCD7D5721A102A940012097F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCD7D5801A102A940012097F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DCD7D5811A102A940012097F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCD7D5831A102A940012097F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AuctionAppiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Salesforce-iOS-API/iphoneos",
+					"$(PROJECT_DIR)/Salesforce-iOS-API/iphonesimulator",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DCD7D5841A102A940012097F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AuctionAppiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Salesforce-iOS-API/iphoneos",
+					"$(PROJECT_DIR)/Salesforce-iOS-API/iphonesimulator",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DCD7D5861A102A940012097F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AuctionAppiOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Salesforce-iOS-API/iphoneos",
+					"$(PROJECT_DIR)/Salesforce-iOS-API/iphonesimulator",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AuctionAppiOS.app/AuctionAppiOS";
+			};
+			name = Debug;
+		};
+		DCD7D5871A102A940012097F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AuctionAppiOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Salesforce-iOS-API/iphoneos",
+					"$(PROJECT_DIR)/Salesforce-iOS-API/iphonesimulator",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AuctionAppiOS.app/AuctionAppiOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCD7D55A1A102A940012097F /* Build configuration list for PBXProject "AuctionAppiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD7D5801A102A940012097F /* Debug */,
+				DCD7D5811A102A940012097F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCD7D5821A102A940012097F /* Build configuration list for PBXNativeTarget "AuctionAppiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD7D5831A102A940012097F /* Debug */,
+				DCD7D5841A102A940012097F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCD7D5851A102A940012097F /* Build configuration list for PBXNativeTarget "AuctionAppiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD7D5861A102A940012097F /* Debug */,
+				DCD7D5871A102A940012097F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCD7D5571A102A940012097F /* Project object */;
+}
