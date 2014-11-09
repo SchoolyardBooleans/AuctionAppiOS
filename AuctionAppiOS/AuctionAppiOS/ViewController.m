@@ -2,8 +2,8 @@
 //  ViewController.m
 //  AuctionAppiOS
 //
-//  Created by Jon Vazquez on 11/4/14.
-//  Copyright (c) 2014 Jon Vazquez. All rights reserved.
+//  Created by Jon Vazquez on 11/9/14.
+//  Copyright (c) 2014 Schoolyard Booleans. All rights reserved.
 //
 
 #import "ViewController.h"
