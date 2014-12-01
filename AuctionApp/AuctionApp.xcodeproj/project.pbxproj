@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC744F0B1A2C009B0066F329 /* AuctionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F091A2C009B0066F329 /* AuctionInfo.m */; };
+		DC744F0C1A2C009B0066F329 /* AuctionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F091A2C009B0066F329 /* AuctionInfo.m */; };
+		DC744F0D1A2C009B0066F329 /* NonprofitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F0A1A2C009B0066F329 /* NonprofitInfo.m */; };
+		DC744F0E1A2C009B0066F329 /* NonprofitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F0A1A2C009B0066F329 /* NonprofitInfo.m */; };
+		DC744F131A2C00AB0066F329 /* PickNonprofitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F111A2C00AB0066F329 /* PickNonprofitModel.m */; };
+		DC744F141A2C00AB0066F329 /* PickNonprofitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F111A2C00AB0066F329 /* PickNonprofitModel.m */; };
+		DC744F151A2C00AB0066F329 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F121A2C00AB0066F329 /* ServerConnection.m */; };
+		DC744F161A2C00AB0066F329 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F121A2C00AB0066F329 /* ServerConnection.m */; };
 		DCFA94A91A102BB3006CB212 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA94A81A102BB3006CB212 /* main.m */; };
 		DCFA94AC1A102BB3006CB212 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA94AB1A102BB3006CB212 /* AppDelegate.m */; };
 		DCFA94AF1A102BB3006CB212 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA94AE1A102BB3006CB212 /* ViewController.m */; };
@@ -27,6 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC744F071A2C009B0066F329 /* AuctionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionInfo.h; sourceTree = "<group>"; };
+		DC744F081A2C009B0066F329 /* NonprofitInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonprofitInfo.h; sourceTree = "<group>"; };
+		DC744F091A2C009B0066F329 /* AuctionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionInfo.m; sourceTree = "<group>"; };
+		DC744F0A1A2C009B0066F329 /* NonprofitInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonprofitInfo.m; sourceTree = "<group>"; };
+		DC744F0F1A2C00AB0066F329 /* PickNonprofitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickNonprofitModel.h; sourceTree = "<group>"; };
+		DC744F101A2C00AB0066F329 /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
+		DC744F111A2C00AB0066F329 /* PickNonprofitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickNonprofitModel.m; sourceTree = "<group>"; };
+		DC744F121A2C00AB0066F329 /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
 		DCFA94A31A102BB3006CB212 /* AuctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA94A71A102BB3006CB212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCFA94A81A102BB3006CB212 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +76,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC744F051A2C007F0066F329 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC744F0F1A2C00AB0066F329 /* PickNonprofitModel.h */,
+				DC744F111A2C00AB0066F329 /* PickNonprofitModel.m */,
+				DC744F101A2C00AB0066F329 /* ServerConnection.h */,
+				DC744F121A2C00AB0066F329 /* ServerConnection.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DC744F061A2C00850066F329 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				DC744F071A2C009B0066F329 /* AuctionInfo.h */,
+				DC744F091A2C009B0066F329 /* AuctionInfo.m */,
+				DC744F081A2C009B0066F329 /* NonprofitInfo.h */,
+				DC744F0A1A2C009B0066F329 /* NonprofitInfo.m */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
 		DCFA949A1A102BB3006CB212 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,8 @@
 		DCFA94A51A102BB3006CB212 /* AuctionApp */ = {
 			isa = PBXGroup;
 			children = (
+				DC744F061A2C00850066F329 /* Info */,
+				DC744F051A2C007F0066F329 /* Model */,
 				DCFA94AA1A102BB3006CB212 /* AppDelegate.h */,
 				DCFA94AB1A102BB3006CB212 /* AppDelegate.m */,
 				DCFA94AD1A102BB3006CB212 /* ViewController.h */,
@@ -219,9 +259,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC744F131A2C00AB0066F329 /* PickNonprofitModel.m in Sources */,
+				DC744F151A2C00AB0066F329 /* ServerConnection.m in Sources */,
+				DC744F0D1A2C009B0066F329 /* NonprofitInfo.m in Sources */,
 				DCFA94AF1A102BB3006CB212 /* ViewController.m in Sources */,
 				DCFA94AC1A102BB3006CB212 /* AppDelegate.m in Sources */,
 				DCFA94A91A102BB3006CB212 /* main.m in Sources */,
+				DC744F0B1A2C009B0066F329 /* AuctionInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC744F0E1A2C009B0066F329 /* NonprofitInfo.m in Sources */,
+				DC744F161A2C00AB0066F329 /* ServerConnection.m in Sources */,
 				DCFA94C31A102BB3006CB212 /* AuctionAppTests.m in Sources */,
+				DC744F141A2C00AB0066F329 /* PickNonprofitModel.m in Sources */,
+				DC744F0C1A2C009B0066F329 /* AuctionInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +462,7 @@
 				DCFA94C81A102BB3006CB212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCFA94C91A102BB3006CB212 /* Build configuration list for PBXNativeTarget "AuctionAppTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +471,7 @@
 				DCFA94CB1A102BB3006CB212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
