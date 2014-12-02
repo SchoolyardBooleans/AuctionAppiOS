@@ -15,9 +15,9 @@
 		DC744F141A2C00AB0066F329 /* PickNonprofitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F111A2C00AB0066F329 /* PickNonprofitModel.m */; };
 		DC744F151A2C00AB0066F329 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F121A2C00AB0066F329 /* ServerConnection.m */; };
 		DC744F161A2C00AB0066F329 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F121A2C00AB0066F329 /* ServerConnection.m */; };
+		DCD21EA51A2E45380059394E /* PickNonprofitController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD21EA41A2E45380059394E /* PickNonprofitController.m */; };
 		DCFA94A91A102BB3006CB212 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA94A81A102BB3006CB212 /* main.m */; };
 		DCFA94AC1A102BB3006CB212 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA94AB1A102BB3006CB212 /* AppDelegate.m */; };
-		DCFA94AF1A102BB3006CB212 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA94AE1A102BB3006CB212 /* ViewController.m */; };
 		DCFA94B21A102BB3006CB212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA94B01A102BB3006CB212 /* Main.storyboard */; };
 		DCFA94B41A102BB3006CB212 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA94B31A102BB3006CB212 /* Images.xcassets */; };
 		DCFA94B71A102BB3006CB212 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCFA94B51A102BB3006CB212 /* LaunchScreen.xib */; };
@@ -43,13 +43,13 @@
 		DC744F101A2C00AB0066F329 /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
 		DC744F111A2C00AB0066F329 /* PickNonprofitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickNonprofitModel.m; sourceTree = "<group>"; };
 		DC744F121A2C00AB0066F329 /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
+		DCD21EA31A2E45380059394E /* PickNonprofitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickNonprofitController.h; sourceTree = "<group>"; };
+		DCD21EA41A2E45380059394E /* PickNonprofitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickNonprofitController.m; sourceTree = "<group>"; };
 		DCFA94A31A102BB3006CB212 /* AuctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA94A71A102BB3006CB212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCFA94A81A102BB3006CB212 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCFA94AA1A102BB3006CB212 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCFA94AB1A102BB3006CB212 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DCFA94AD1A102BB3006CB212 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DCFA94AE1A102BB3006CB212 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DCFA94B11A102BB3006CB212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCFA94B31A102BB3006CB212 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DCFA94B61A102BB3006CB212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -98,6 +98,15 @@
 			name = Info;
 			sourceTree = "<group>";
 		};
+		DCD21EA61A2E453F0059394E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DCD21EA31A2E45380059394E /* PickNonprofitController.h */,
+				DCD21EA41A2E45380059394E /* PickNonprofitController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		DCFA949A1A102BB3006CB212 = {
 			isa = PBXGroup;
 			children = (
@@ -121,10 +130,9 @@
 			children = (
 				DC744F061A2C00850066F329 /* Info */,
 				DC744F051A2C007F0066F329 /* Model */,
+				DCD21EA61A2E453F0059394E /* ViewControllers */,
 				DCFA94AA1A102BB3006CB212 /* AppDelegate.h */,
 				DCFA94AB1A102BB3006CB212 /* AppDelegate.m */,
-				DCFA94AD1A102BB3006CB212 /* ViewController.h */,
-				DCFA94AE1A102BB3006CB212 /* ViewController.m */,
 				DCFA94B01A102BB3006CB212 /* Main.storyboard */,
 				DCFA94B31A102BB3006CB212 /* Images.xcassets */,
 				DCFA94B51A102BB3006CB212 /* LaunchScreen.xib */,
@@ -262,9 +270,9 @@
 				DC744F131A2C00AB0066F329 /* PickNonprofitModel.m in Sources */,
 				DC744F151A2C00AB0066F329 /* ServerConnection.m in Sources */,
 				DC744F0D1A2C009B0066F329 /* NonprofitInfo.m in Sources */,
-				DCFA94AF1A102BB3006CB212 /* ViewController.m in Sources */,
 				DCFA94AC1A102BB3006CB212 /* AppDelegate.m in Sources */,
 				DCFA94A91A102BB3006CB212 /* main.m in Sources */,
+				DCD21EA51A2E45380059394E /* PickNonprofitController.m in Sources */,
 				DC744F0B1A2C009B0066F329 /* AuctionInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
