@@ -10,7 +10,8 @@
 
 @interface AuctionInfo : NSObject
 
-@property (nonatomic) NSString* id;
+@property (nonatomic) NSString* aucId;
 @property (nonatomic) NSString* name;
+@property (nonatomic) NSString* orgId;
 
 @end

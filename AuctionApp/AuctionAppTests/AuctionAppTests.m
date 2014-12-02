@@ -33,6 +33,16 @@
     XCTAssert([LARedCross.name isEqualToString:@"Los Angeles Red Cross"], @"Pass");
 }
 
+- (void)testGetAuctions {
+    PickNonprofitModel* nonprofitModel = [[PickNonprofitModel alloc] init];
+    NSMutableArray* nonprofits = [nonprofitModel getNonprofits];
+    NonprofitInfo* nonprofit = [nonprofits objectAtIndex:0];
+    NSMutableArray* auctions = [nonprofitModel getAuctions:nonprofit.orgId];
+    AuctionInfo* auction = [auctions objectAtIndex:0];
+    
+    XCTAssert([auction.name isEqualToString:@"Breast Cancer Awareness Rodeo"], @"Pass");
+}
+
 - (void)testExample {
     // This is an example of a functional test case.
     XCTAssert(YES, @"Pass");

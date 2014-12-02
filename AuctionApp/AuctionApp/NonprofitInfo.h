@@ -13,7 +13,7 @@
 
 @interface NonprofitInfo : NSObject
 
-@property (nonatomic) NSString* id;
+@property (nonatomic) NSString* orgId;
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSMutableArray* auctions;
 
