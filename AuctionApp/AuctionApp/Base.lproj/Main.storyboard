@@ -7,11 +7,18 @@
         <!--PickNonprofitController-->
         <scene sceneID="Ejq-fI-Aiv">
             <objects>
-                <tableViewController title="PickNonprofitController" id="64A-G1-ucT" customClass="PickNonprofitController" sceneMemberID="viewController">
+                <tableViewController title="PickNonprofitController" wantsFullScreenLayout="YES" id="64A-G1-ucT" customClass="PickNonprofitController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rGh-KE-39f">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l6V-TI-ahd">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickNonprofitCellID" id="YBl-L6-DVP">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -25,10 +32,14 @@
                             <outlet property="delegate" destination="64A-G1-ucT" id="SYB-fq-5Un"/>
                         </connections>
                     </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Il8-lD-Dgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="275" y="292"/>
+            <point key="canvasLocation" x="199" y="44"/>
         </scene>
     </scenes>
 </document>
