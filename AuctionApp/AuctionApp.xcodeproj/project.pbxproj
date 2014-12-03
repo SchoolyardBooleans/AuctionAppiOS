@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC28144B1A2E935A00F25C78 /* PickAuctionController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC28144A1A2E935A00F25C78 /* PickAuctionController.m */; };
 		DC744F0B1A2C009B0066F329 /* AuctionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F091A2C009B0066F329 /* AuctionInfo.m */; };
 		DC744F0C1A2C009B0066F329 /* AuctionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F091A2C009B0066F329 /* AuctionInfo.m */; };
 		DC744F0D1A2C009B0066F329 /* NonprofitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F0A1A2C009B0066F329 /* NonprofitInfo.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC2814491A2E935A00F25C78 /* PickAuctionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickAuctionController.h; sourceTree = "<group>"; };
+		DC28144A1A2E935A00F25C78 /* PickAuctionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickAuctionController.m; sourceTree = "<group>"; };
 		DC744F071A2C009B0066F329 /* AuctionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionInfo.h; sourceTree = "<group>"; };
 		DC744F081A2C009B0066F329 /* NonprofitInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonprofitInfo.h; sourceTree = "<group>"; };
 		DC744F091A2C009B0066F329 /* AuctionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionInfo.m; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 			children = (
 				DCD21EA31A2E45380059394E /* PickNonprofitController.h */,
 				DCD21EA41A2E45380059394E /* PickNonprofitController.m */,
+				DC2814491A2E935A00F25C78 /* PickAuctionController.h */,
+				DC28144A1A2E935A00F25C78 /* PickAuctionController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC28144B1A2E935A00F25C78 /* PickAuctionController.m in Sources */,
 				DC744F131A2C00AB0066F329 /* PickNonprofitModel.m in Sources */,
 				DC744F151A2C00AB0066F329 /* ServerConnection.m in Sources */,
 				DC744F0D1A2C009B0066F329 /* NonprofitInfo.m in Sources */,
