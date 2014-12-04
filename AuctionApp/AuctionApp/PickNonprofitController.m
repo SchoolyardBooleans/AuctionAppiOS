@@ -7,6 +7,7 @@
 //
 
 #import "PickNonprofitController.h"
+#import "PickAuctionController.h"
 
 @interface PickNonprofitController ()
 
@@ -47,14 +48,23 @@
     return cell;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSString* fromPickNonprofitsSegue = @"UserPickedNonprofitSegue";
+    
+    if ([[segue identifier] isEqualToString:fromPickNonprofitsSegue]) {
+        PickAuctionController* auctionController = [segue destinationViewController];
+        
+        NSIndexPath* selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        NonprofitInfo* selectedAuction = [self.nonprofits objectAtIndex:[selectedIndexPath row]];
+        
+        auctionController.orgId = [self.nonprofits objectAtIndex:[selectedIndexPath row]];
+        auctionController.auctions = [self.model getAuctions:selectedAuction.orgId];
+        auctionController.model = self.model;
+    }
 }
-*/
 
 @end
