@@ -7,19 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NonprofitInfo.h"
 #import "AuctionInfo.h"
 #import "ServerConnection.h"
 
-@interface PickNonprofitModel : NSObject
-
-/**
- Returns a NonprofitInfo NSMutableArray, each entry containing an id and a name
- */
-- (NSMutableArray*) getNonprofits;
+@interface GetAuctionsModel : NSObject
 
 /**
  Returns an AuctionInfo NSMutableArray, each containing an id and name
  */
-- (NSMutableArray*) getAuctions:(NSString*)nonprofitId;
+- (NSMutableArray*) getAuctions;
 @end
