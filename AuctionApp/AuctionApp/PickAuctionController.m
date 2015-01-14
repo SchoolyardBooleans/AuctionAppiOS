@@ -1,24 +1,25 @@
 //
-//  PickAuctionController.m
+//  PickNonprofitController.m
 //  AuctionApp
 //
 //  Created by Jon Vazquez on 12/2/14.
 //  Copyright (c) 2014 Schoolyard Booleans. All rights reserved.
 //
 
+#import "PickNonprofitController.h"
 #import "PickAuctionController.h"
-#import "PickNonprofitModel.h"
-#import "AuctionInfo.h"
 
-@interface PickAuctionController ()
+@interface PickNonprofitController ()
 
 @end
 
-@implementation PickAuctionController
+@implementation PickNonprofitController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.model = [[PickNonprofitModel alloc] init];
+    self.nonprofits = [self.model getNonprofits];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,28 +34,37 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([self.auctions count] > 0) {
-        return [self.auctions count];
-    }
-    else {
-        return 1;
-    }
+    return [self.nonprofits count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *nonprofitCellID = @"PickNonprofitCellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:nonprofitCellID forIndexPath:indexPath];
+    
+    NonprofitInfo* org = [self.nonprofits objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = org.name;
+    
+    return cell;
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString* pickAuctionCellID = @"PickAuctionCellID";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:pickAuctionCellID forIndexPath:indexPath];
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSString* fromPickNonprofitsSegue = @"UserPickedNonprofitSegue";
     
-    if ([self.auctions count] > 0) {
-        AuctionInfo* auction = [self.auctions objectAtIndex:[indexPath row]];
-        cell.textLabel.text = auction.name;
+    if ([[segue identifier] isEqualToString:fromPickNonprofitsSegue]) {
+        PickAuctionController* auctionController = [segue destinationViewController];
+        
+        NSIndexPath* selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        NonprofitInfo* selectedAuction = [self.nonprofits objectAtIndex:[selectedIndexPath row]];
+        
+        auctionController.orgId = [self.nonprofits objectAtIndex:[selectedIndexPath row]];
+        auctionController.auctions = [self.model getAuctions:selectedAuction.orgId];
+        auctionController.model = self.model;
     }
-    else {
-        cell.textLabel.text = @"Unable to access nonprofit auction";
-    }
-    
-    return cell;
 }
 
 @end

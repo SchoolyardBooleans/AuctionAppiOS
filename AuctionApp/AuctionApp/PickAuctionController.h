@@ -1,5 +1,5 @@
 //
-//  PickAuctionController.h
+//  PickNonprofitController.h
 //  AuctionApp
 //
 //  Created by Jon Vazquez on 12/2/14.
@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PickNonprofitModel.h"
 
-@interface PickAuctionController : UITableViewController
+@interface PickNonprofitController : UITableViewController
 
-@property (nonatomic) NSString* orgId;
-@property (nonatomic) NSArray* auctions;
 @property (nonatomic) PickNonprofitModel* model;
+@property (nonatomic) NSArray* nonprofits;
 
 @end
