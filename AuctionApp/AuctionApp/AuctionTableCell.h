@@ -6,8 +6,12 @@
 //  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
 //
 
-#ifndef AuctionApp_AuctionTableCell_h
-#define AuctionApp_AuctionTableCell_h
+#import <UIKit/UIKit.h>
 
+@interface AuctionTableCell : UITableViewCell
 
-#endif
+@property (nonatomic, weak) IBOutlet UILabel *orgName;
+@property (nonatomic, weak) IBOutlet UILabel *auctionName;
+
+@end
+
