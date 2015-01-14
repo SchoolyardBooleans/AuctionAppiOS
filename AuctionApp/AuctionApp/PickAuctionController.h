@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PickNonprofitModel.h"
+#import "GetAuctionsModel.h"
 
-@interface PickNonprofitController : UITableViewController
+@interface PickAuctionController : UITableViewController
 
-@property (nonatomic) PickNonprofitModel* model;
-@property (nonatomic) NSArray* nonprofits;
+@property (nonatomic) GetAuctionsModel *model;
+@property (nonatomic) NSArray *auctions;
 
 @end
