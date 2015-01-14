@@ -7,16 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC28144B1A2E935A00F25C78 /* PickAuctionController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC28144A1A2E935A00F25C78 /* PickAuctionController.m */; };
+		1198E1B21A6600A200B7E0F2 /* AuctionTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1198E1B11A6600A200B7E0F2 /* AuctionTableCell.m */; };
 		DC744F0B1A2C009B0066F329 /* AuctionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F091A2C009B0066F329 /* AuctionInfo.m */; };
 		DC744F0C1A2C009B0066F329 /* AuctionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F091A2C009B0066F329 /* AuctionInfo.m */; };
-		DC744F0D1A2C009B0066F329 /* NonprofitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F0A1A2C009B0066F329 /* NonprofitInfo.m */; };
-		DC744F0E1A2C009B0066F329 /* NonprofitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F0A1A2C009B0066F329 /* NonprofitInfo.m */; };
-		DC744F131A2C00AB0066F329 /* PickNonprofitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F111A2C00AB0066F329 /* PickNonprofitModel.m */; };
-		DC744F141A2C00AB0066F329 /* PickNonprofitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F111A2C00AB0066F329 /* PickNonprofitModel.m */; };
+		DC744F131A2C00AB0066F329 /* GetAuctionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F111A2C00AB0066F329 /* GetAuctionsModel.m */; };
+		DC744F141A2C00AB0066F329 /* GetAuctionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F111A2C00AB0066F329 /* GetAuctionsModel.m */; };
 		DC744F151A2C00AB0066F329 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F121A2C00AB0066F329 /* ServerConnection.m */; };
 		DC744F161A2C00AB0066F329 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F121A2C00AB0066F329 /* ServerConnection.m */; };
-		DCD21EA51A2E45380059394E /* PickNonprofitController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD21EA41A2E45380059394E /* PickNonprofitController.m */; };
+		DCD21EA51A2E45380059394E /* PickAuctionController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD21EA41A2E45380059394E /* PickAuctionController.m */; };
 		DCFA94A91A102BB3006CB212 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA94A81A102BB3006CB212 /* main.m */; };
 		DCFA94AC1A102BB3006CB212 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA94AB1A102BB3006CB212 /* AppDelegate.m */; };
 		DCFA94B21A102BB3006CB212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA94B01A102BB3006CB212 /* Main.storyboard */; };
@@ -36,18 +34,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DC2814491A2E935A00F25C78 /* PickAuctionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickAuctionController.h; sourceTree = "<group>"; };
-		DC28144A1A2E935A00F25C78 /* PickAuctionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickAuctionController.m; sourceTree = "<group>"; };
+		1198E1B01A65D62C00B7E0F2 /* AuctionTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuctionTableCell.h; sourceTree = "<group>"; };
+		1198E1B11A6600A200B7E0F2 /* AuctionTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionTableCell.m; sourceTree = "<group>"; };
 		DC744F071A2C009B0066F329 /* AuctionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionInfo.h; sourceTree = "<group>"; };
-		DC744F081A2C009B0066F329 /* NonprofitInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonprofitInfo.h; sourceTree = "<group>"; };
 		DC744F091A2C009B0066F329 /* AuctionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionInfo.m; sourceTree = "<group>"; };
-		DC744F0A1A2C009B0066F329 /* NonprofitInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonprofitInfo.m; sourceTree = "<group>"; };
-		DC744F0F1A2C00AB0066F329 /* PickNonprofitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickNonprofitModel.h; sourceTree = "<group>"; };
+		DC744F0F1A2C00AB0066F329 /* GetAuctionsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAuctionsModel.h; sourceTree = "<group>"; };
 		DC744F101A2C00AB0066F329 /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
-		DC744F111A2C00AB0066F329 /* PickNonprofitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickNonprofitModel.m; sourceTree = "<group>"; };
+		DC744F111A2C00AB0066F329 /* GetAuctionsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAuctionsModel.m; sourceTree = "<group>"; };
 		DC744F121A2C00AB0066F329 /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
-		DCD21EA31A2E45380059394E /* PickNonprofitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickNonprofitController.h; sourceTree = "<group>"; };
-		DCD21EA41A2E45380059394E /* PickNonprofitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickNonprofitController.m; sourceTree = "<group>"; };
+		DCD21EA31A2E45380059394E /* PickAuctionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickAuctionController.h; sourceTree = "<group>"; };
+		DCD21EA41A2E45380059394E /* PickAuctionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickAuctionController.m; sourceTree = "<group>"; };
 		DCFA94A31A102BB3006CB212 /* AuctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA94A71A102BB3006CB212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCFA94A81A102BB3006CB212 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,8 +78,8 @@
 		DC744F051A2C007F0066F329 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DC744F0F1A2C00AB0066F329 /* PickNonprofitModel.h */,
-				DC744F111A2C00AB0066F329 /* PickNonprofitModel.m */,
+				DC744F0F1A2C00AB0066F329 /* GetAuctionsModel.h */,
+				DC744F111A2C00AB0066F329 /* GetAuctionsModel.m */,
 				DC744F101A2C00AB0066F329 /* ServerConnection.h */,
 				DC744F121A2C00AB0066F329 /* ServerConnection.m */,
 			);
@@ -95,8 +91,6 @@
 			children = (
 				DC744F071A2C009B0066F329 /* AuctionInfo.h */,
 				DC744F091A2C009B0066F329 /* AuctionInfo.m */,
-				DC744F081A2C009B0066F329 /* NonprofitInfo.h */,
-				DC744F0A1A2C009B0066F329 /* NonprofitInfo.m */,
 			);
 			name = Info;
 			sourceTree = "<group>";
@@ -104,10 +98,8 @@
 		DCD21EA61A2E453F0059394E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DCD21EA31A2E45380059394E /* PickNonprofitController.h */,
-				DCD21EA41A2E45380059394E /* PickNonprofitController.m */,
-				DC2814491A2E935A00F25C78 /* PickAuctionController.h */,
-				DC28144A1A2E935A00F25C78 /* PickAuctionController.m */,
+				DCD21EA31A2E45380059394E /* PickAuctionController.h */,
+				DCD21EA41A2E45380059394E /* PickAuctionController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -139,6 +131,8 @@
 				DCFA94AA1A102BB3006CB212 /* AppDelegate.h */,
 				DCFA94AB1A102BB3006CB212 /* AppDelegate.m */,
 				DCFA94B01A102BB3006CB212 /* Main.storyboard */,
+				1198E1B01A65D62C00B7E0F2 /* AuctionTableCell.h */,
+				1198E1B11A6600A200B7E0F2 /* AuctionTableCell.m */,
 				DCFA94B31A102BB3006CB212 /* Images.xcassets */,
 				DCFA94B51A102BB3006CB212 /* LaunchScreen.xib */,
 				DCFA94A61A102BB3006CB212 /* Supporting Files */,
@@ -272,13 +266,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC28144B1A2E935A00F25C78 /* PickAuctionController.m in Sources */,
-				DC744F131A2C00AB0066F329 /* PickNonprofitModel.m in Sources */,
+				DC744F131A2C00AB0066F329 /* GetAuctionsModel.m in Sources */,
 				DC744F151A2C00AB0066F329 /* ServerConnection.m in Sources */,
-				DC744F0D1A2C009B0066F329 /* NonprofitInfo.m in Sources */,
 				DCFA94AC1A102BB3006CB212 /* AppDelegate.m in Sources */,
+				1198E1B21A6600A200B7E0F2 /* AuctionTableCell.m in Sources */,
 				DCFA94A91A102BB3006CB212 /* main.m in Sources */,
-				DCD21EA51A2E45380059394E /* PickNonprofitController.m in Sources */,
+				DCD21EA51A2E45380059394E /* PickAuctionController.m in Sources */,
 				DC744F0B1A2C009B0066F329 /* AuctionInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,10 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC744F0E1A2C009B0066F329 /* NonprofitInfo.m in Sources */,
 				DC744F161A2C00AB0066F329 /* ServerConnection.m in Sources */,
 				DCFA94C31A102BB3006CB212 /* AuctionAppTests.m in Sources */,
-				DC744F141A2C00AB0066F329 /* PickNonprofitModel.m in Sources */,
+				DC744F141A2C00AB0066F329 /* GetAuctionsModel.m in Sources */,
 				DC744F0C1A2C009B0066F329 /* AuctionInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

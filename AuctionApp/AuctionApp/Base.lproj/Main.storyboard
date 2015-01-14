@@ -1,32 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="64A-G1-ucT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0zU-rB-leJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="nts-rM-gEn">
+            <objects>
+                <navigationController id="0zU-rB-leJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pp0-Td-s1N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="64A-G1-ucT" kind="relationship" relationship="rootViewController" id="8ym-Xa-9yl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ssK-Dv-N1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-630" y="44"/>
+        </scene>
         <!--PickNonprofitController-->
         <scene sceneID="Ejq-fI-Aiv">
             <objects>
-                <tableViewController title="PickNonprofitController" wantsFullScreenLayout="YES" id="64A-G1-ucT" customClass="PickNonprofitController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rGh-KE-39f">
+                <tableViewController title="PickNonprofitController" wantsFullScreenLayout="YES" id="64A-G1-ucT" customClass="PickAuctionController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" id="rGh-KE-39f">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l6V-TI-ahd">
+                        <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="DFb-2g-Ins">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="64A-G1-ucT" id="1Ua-9K-Z1R"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickNonprofitCellID" id="YBl-L6-DVP">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PickNonprofitCellID" textLabel="dem-Lq-Inc" detailTextLabel="tWD-kL-n7O" rowHeight="68" style="IBUITableViewCellStyleSubtitle" id="YBl-L6-DVP" customClass="AuctionTableCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YBl-L6-DVP" id="BwA-rp-tDD">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Nonprofit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dem-Lq-Inc">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Auction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tWD-kL-n7O">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="KJk-9J-WVf" kind="show" identifier="UserPickedNonprofitSegue" id="OXZ-Ql-jKK"/>
+                                    <outlet property="auctionName" destination="tWD-kL-n7O" id="wjB-9x-mGT"/>
+                                    <outlet property="orgName" destination="dem-Lq-Inc" id="YmH-59-KA2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -35,47 +68,85 @@
                             <outlet property="delegate" destination="64A-G1-ucT" id="SYB-fq-5Un"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Nonprofit Organizations" id="ANt-OZ-ORs"/>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="CAq-5k-pwu" id="X2e-C5-fY2"/>
+                        <segue destination="10I-iZ-obT" kind="show" id="pN1-cf-CbL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Il8-lD-Dgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="CAq-5k-pwu">
+                    <connections>
+                        <outlet property="delegate" destination="64A-G1-ucT" id="s7d-CE-dWo"/>
+                        <outlet property="searchBar" destination="DFb-2g-Ins" id="sQE-pT-llq"/>
+                        <outlet property="searchContentsController" destination="64A-G1-ucT" id="2k6-fC-nTM"/>
+                        <outlet property="searchResultsDataSource" destination="64A-G1-ucT" id="0vu-Oq-q3q"/>
+                        <outlet property="searchResultsDelegate" destination="64A-G1-ucT" id="a1Q-Xl-cAG"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="199" y="44"/>
         </scene>
-        <!--PickAuctionController-->
-        <scene sceneID="wak-yo-v26">
+        <!--Item 2-->
+        <scene sceneID="1X5-wr-1Ow">
             <objects>
-                <tableViewController id="KJk-9J-WVf" userLabel="PickAuctionController" customClass="PickAuctionController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mnc-G8-jm4">
+                <viewController id="B0R-Xc-gzh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sUe-10-Lcr"/>
+                        <viewControllerLayoutGuide type="bottom" id="SHJ-5g-Nkc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Ul-1r-nbn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="06a-Zu-plq">
-                            <rect key="frame" x="0.0" y="-21" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickAuctionCellID" id="z8Z-s1-zG9">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z8Z-s1-zG9" id="ow6-bz-5tU">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="KJk-9J-WVf" id="5CS-hr-EZ4"/>
-                            <outlet property="delegate" destination="KJk-9J-WVf" id="UHu-Tf-qsZ"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xf3-Lq-23H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="syB-t3-Trj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ubi-Rq-xH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="935" y="44"/>
+            <point key="canvasLocation" x="2554" y="380"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="IMQ-dw-CtK">
+            <objects>
+                <viewController id="Cwa-bP-RjU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kZ0-k8-MhL"/>
+                        <viewControllerLayoutGuide type="bottom" id="DY0-Zb-bw4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qZa-Bs-Fc3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="UgG-Lz-GQv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wCh-Ld-kOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2554" y="-282"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="saR-V9-y51">
+            <objects>
+                <tabBarController id="10I-iZ-obT" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="7mO-Wg-utX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Cwa-bP-RjU" kind="relationship" relationship="viewControllers" id="99i-tD-FY2"/>
+                        <segue destination="B0R-Xc-gzh" kind="relationship" relationship="viewControllers" id="XZa-hm-SS2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btR-4J-ZY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734" y="50"/>
         </scene>
     </scenes>
 </document>
