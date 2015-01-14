@@ -13,5 +13,6 @@
 @property (nonatomic) NSString* aucId;
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSString* orgId;
+@property (nonatomic) NSString* orgName;
 
 @end
