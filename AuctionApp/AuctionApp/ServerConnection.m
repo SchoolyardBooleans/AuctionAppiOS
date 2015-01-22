@@ -14,9 +14,9 @@
 {
     // URL vars
     NSURL * url = [[NSURL alloc] initWithString:urlStr];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
-                                                cachePolicy:NSURLRequestReturnCacheDataElseLoad
-                                            timeoutInterval:30];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url
+                                                              cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30];
+    [urlRequest setHTTPMethod:@"GET"];
     
     // JSON vars
     NSData *urlData;
