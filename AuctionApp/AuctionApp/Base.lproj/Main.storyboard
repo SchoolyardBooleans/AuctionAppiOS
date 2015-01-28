@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0zU-rB-leJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FrX-B8-iyd">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Login-->
+        <scene sceneID="Rjn-sQ-Qwg">
+            <objects>
+                <viewController title="Login" id="9Ya-eK-WIp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U9J-q5-2Ne"/>
+                        <viewControllerLayoutGuide type="bottom" id="lqy-DK-fO0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SpV-iT-XFb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Account" image="user_male3-25" id="f7Y-K2-dlJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="USV-0J-k2T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-760" y="1064"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="SyO-bm-g3o">
+            <objects>
+                <tabBarController id="FrX-B8-iyd" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="CsX-2N-42h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0zU-rB-leJ" kind="relationship" relationship="viewControllers" id="iez-CV-TBD"/>
+                        <segue destination="9Ya-eK-WIp" kind="relationship" relationship="viewControllers" id="ZkE-Et-qrI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lE3-6s-64L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1532" y="-8"/>
+        </scene>
+        <!--Auctions-->
         <scene sceneID="nts-rM-gEn">
             <objects>
-                <navigationController id="0zU-rB-leJ" sceneMemberID="viewController">
+                <navigationController title="Auctions" id="0zU-rB-leJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Auctions" image="shopping_cart_empty-25" id="tdU-pb-NBM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pp0-Td-s1N">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -18,7 +58,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssK-Dv-N1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-630" y="44"/>
+            <point key="canvasLocation" x="-628" y="-8"/>
         </scene>
         <!--PickNonprofitController-->
         <scene sceneID="Ejq-fI-Aiv">
@@ -43,13 +83,13 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YBl-L6-DVP" id="BwA-rp-tDD">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Nonprofit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dem-Lq-Inc">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Auction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dem-Lq-Inc">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Auction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tWD-kL-n7O">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Nonprofit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tWD-kL-n7O">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -58,8 +98,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="auctionName" destination="tWD-kL-n7O" id="wjB-9x-mGT"/>
-                                    <outlet property="orgName" destination="dem-Lq-Inc" id="YmH-59-KA2"/>
+                                    <outlet property="auctionName" destination="dem-Lq-Inc" id="IYi-eo-POx"/>
+                                    <outlet property="orgName" destination="tWD-kL-n7O" id="G6P-GM-Kbe"/>
+                                    <segue destination="5wh-IL-8jY" kind="show" identifier="UserPickedAuctionSegue" id="sDk-Kg-Tk9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -75,7 +116,6 @@
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="CAq-5k-pwu" id="X2e-C5-fY2"/>
-                        <segue destination="10I-iZ-obT" kind="show" id="pN1-cf-CbL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Il8-lD-Dgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,64 +129,63 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="199" y="44"/>
+            <point key="canvasLocation" x="223" y="-8"/>
         </scene>
-        <!--Item 2-->
-        <scene sceneID="1X5-wr-1Ow">
+        <!--Auction Main Controller-->
+        <scene sceneID="bdq-I3-5bq">
             <objects>
-                <viewController id="B0R-Xc-gzh" sceneMemberID="viewController">
+                <viewController id="5wh-IL-8jY" customClass="AuctionMainController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sUe-10-Lcr"/>
-                        <viewControllerLayoutGuide type="bottom" id="SHJ-5g-Nkc"/>
+                        <viewControllerLayoutGuide type="top" id="d3Q-wZ-Wwi"/>
+                        <viewControllerLayoutGuide type="bottom" id="m3x-Q6-8zh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6Ul-1r-nbn">
+                    <view key="view" contentMode="scaleToFill" id="b1e-qa-5qW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="xxx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-CD-8lL">
+                                <rect key="frame" x="141" y="121" width="180" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Auction starts in: 4 days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFW-kJ-fjk">
+                                <rect key="frame" x="185" y="240" width="185" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="american_heart" translatesAutoresizingMaskIntoConstraints="NO" id="opZ-y1-Zwk">
+                                <rect key="frame" x="16" y="69" width="65" height="57"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Auction Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFL-dk-DJT">
+                                <rect key="frame" x="141" y="69" width="180" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gFL-dk-DJT" firstAttribute="leading" secondItem="b1e-qa-5qW" secondAttribute="leading" constant="141" id="3mY-7g-cbO"/>
+                            <constraint firstItem="gFL-dk-DJT" firstAttribute="top" secondItem="b1e-qa-5qW" secondAttribute="top" constant="69" id="5GW-9T-P0c"/>
+                            <constraint firstItem="p0O-CD-8lL" firstAttribute="top" secondItem="b1e-qa-5qW" secondAttribute="top" constant="121" id="CVe-nZ-JcO"/>
+                            <constraint firstAttribute="centerX" secondItem="jFW-kJ-fjk" secondAttribute="centerX" id="PkW-Tm-jEA"/>
+                            <constraint firstItem="p0O-CD-8lL" firstAttribute="leading" secondItem="b1e-qa-5qW" secondAttribute="leading" constant="141" id="t7a-rt-ra8"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="syB-t3-Trj"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ubi-Rq-xH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2554" y="380"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="IMQ-dw-CtK">
-            <objects>
-                <viewController id="Cwa-bP-RjU" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kZ0-k8-MhL"/>
-                        <viewControllerLayoutGuide type="bottom" id="DY0-Zb-bw4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qZa-Bs-Fc3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="UgG-Lz-GQv"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wCh-Ld-kOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2554" y="-282"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="saR-V9-y51">
-            <objects>
-                <tabBarController id="10I-iZ-obT" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="7mO-Wg-utX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
                     <connections>
-                        <segue destination="Cwa-bP-RjU" kind="relationship" relationship="viewControllers" id="99i-tD-FY2"/>
-                        <segue destination="B0R-Xc-gzh" kind="relationship" relationship="viewControllers" id="XZa-hm-SS2"/>
+                        <outlet property="auctionLabel" destination="p0O-CD-8lL" id="ylp-Ok-zDv"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="btR-4J-ZY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIp-il-cxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="50"/>
+            <point key="canvasLocation" x="1020" y="-8"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="american_heart" width="160" height="160"/>
+        <image name="shopping_cart_empty-25" width="24" height="24"/>
+        <image name="user_male3-25" width="24" height="24"/>
+    </resources>
 </document>

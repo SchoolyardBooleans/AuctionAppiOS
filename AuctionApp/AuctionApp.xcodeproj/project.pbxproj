@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116DB18A1A75C870004E8551 /* AuctionMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116DB1891A75C870004E8551 /* AuctionMainController.m */; };
 		1198E1B21A6600A200B7E0F2 /* AuctionTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1198E1B11A6600A200B7E0F2 /* AuctionTableCell.m */; };
+		11D8B27C1A78B9EF00165DA9 /* FeaturedItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D8B27B1A78B9EF00165DA9 /* FeaturedItems.m */; };
 		DC744F0B1A2C009B0066F329 /* AuctionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F091A2C009B0066F329 /* AuctionInfo.m */; };
 		DC744F0C1A2C009B0066F329 /* AuctionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F091A2C009B0066F329 /* AuctionInfo.m */; };
 		DC744F131A2C00AB0066F329 /* GetAuctionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC744F111A2C00AB0066F329 /* GetAuctionsModel.m */; };
@@ -34,8 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		116DB1881A75C870004E8551 /* AuctionMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionMainController.h; sourceTree = "<group>"; };
+		116DB1891A75C870004E8551 /* AuctionMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionMainController.m; sourceTree = "<group>"; };
 		1198E1B01A65D62C00B7E0F2 /* AuctionTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuctionTableCell.h; sourceTree = "<group>"; };
 		1198E1B11A6600A200B7E0F2 /* AuctionTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionTableCell.m; sourceTree = "<group>"; };
+		11D8B27A1A78B9EF00165DA9 /* FeaturedItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedItems.h; sourceTree = "<group>"; };
+		11D8B27B1A78B9EF00165DA9 /* FeaturedItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedItems.m; sourceTree = "<group>"; };
 		DC744F071A2C009B0066F329 /* AuctionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionInfo.h; sourceTree = "<group>"; };
 		DC744F091A2C009B0066F329 /* AuctionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionInfo.m; sourceTree = "<group>"; };
 		DC744F0F1A2C00AB0066F329 /* GetAuctionsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAuctionsModel.h; sourceTree = "<group>"; };
@@ -100,6 +106,10 @@
 			children = (
 				DCD21EA31A2E45380059394E /* PickAuctionController.h */,
 				DCD21EA41A2E45380059394E /* PickAuctionController.m */,
+				116DB1881A75C870004E8551 /* AuctionMainController.h */,
+				116DB1891A75C870004E8551 /* AuctionMainController.m */,
+				11D8B27A1A78B9EF00165DA9 /* FeaturedItems.h */,
+				11D8B27B1A78B9EF00165DA9 /* FeaturedItems.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -272,6 +282,8 @@
 				1198E1B21A6600A200B7E0F2 /* AuctionTableCell.m in Sources */,
 				DCFA94A91A102BB3006CB212 /* main.m in Sources */,
 				DCD21EA51A2E45380059394E /* PickAuctionController.m in Sources */,
+				11D8B27C1A78B9EF00165DA9 /* FeaturedItems.m in Sources */,
+				116DB18A1A75C870004E8551 /* AuctionMainController.m in Sources */,
 				DC744F0B1A2C009B0066F329 /* AuctionInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

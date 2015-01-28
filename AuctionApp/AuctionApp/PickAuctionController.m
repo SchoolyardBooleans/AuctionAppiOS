@@ -8,6 +8,7 @@
 
 #import "PickAuctionController.h"
 #import "AuctionTableCell.h"
+#import "AuctionMainController.h"
 
 @interface PickAuctionController ()
 
@@ -154,15 +155,12 @@
 
 #pragma mark - Navigation
 
-// Daniel this is where you can setup the seque to the next controller, I've filled in some example code and
-// left the useful stuff
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSString* fromPickNonprofitsSegue = @"UserPickedAuctionSegue";
     
     if ([[segue identifier] isEqualToString:fromPickNonprofitsSegue]) {
-        // The controller you are going to go to
-        // ExampleController *exampleController = [seque destinationViewController];
+        AuctionMainController *controller = [segue destinationViewController];
         NSIndexPath *indexPath = nil;
         AuctionInfo *selectedAuction = nil;
 
@@ -174,9 +172,10 @@
             selectedAuction = [self.auctions objectAtIndex:indexPath.row];
         }
         
-        // SelectedAuction is the info of the cell, which you can pass to the controller you are going to
-        // exampleController.auction = selectedAuction
-        // exampleController.model = self.model (If you need it)
+        // Pass model and auctionId off to controller
+        [controller setAuctionId:selectedAuction.aucId];
+        [controller setModel: self.model];
+        
     }
 }
 
