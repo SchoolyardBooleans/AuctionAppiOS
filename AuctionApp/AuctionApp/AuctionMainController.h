@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GetAuctionsModel.h"
+#import "AuctionsModel.h"
+#import "AuctionInfo.h"
 
 @interface AuctionMainController : UIViewController
+@property (weak, nonatomic) IBOutlet UICollectionView *featuredCollection;
 
-@property (nonatomic) GetAuctionsModel *model;
-@property (nonatomic, weak) IBOutlet UILabel *auctionLabel;
+@property (nonatomic) AuctionsModel *model;
+@property (nonatomic, weak) IBOutlet UILabel *nonprofitName;
+@property (weak, nonatomic) IBOutlet UILabel *auctionName;
+@property (weak, nonatomic) IBOutlet UILabel *auctionStatusMessage;
 
-- (void)setAuctionId:(NSString *) aucId;
+- (void)setAuctionInfo:(AuctionInfo *) auction;
 
 @end
