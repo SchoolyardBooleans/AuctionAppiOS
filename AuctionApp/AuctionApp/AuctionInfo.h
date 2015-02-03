@@ -14,5 +14,9 @@
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSString* orgId;
 @property (nonatomic) NSString* orgName;
+@property (nonatomic) NSString* startDate;
+@property (nonatomic) NSString* endDate;
+@property (nonatomic) NSString* location;
+@property (nonatomic) NSInteger status;
 
 @end
