@@ -8,12 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import "AuctionInfo.h"
+#import "AuctionItemBasic.h"
 #import "ServerConnection.h"
 
-@interface GetAuctionsModel : NSObject
+@interface AuctionsModel : NSObject
+
+// 0 - before
+// 1 - in progress
+// 2 - finished
+
+extern int const BEFORE;
+extern int const IN_PROGRESS;
+extern int const COMPLETE;
 
 /**
  Returns an AuctionInfo NSMutableArray, each containing an id and name
  */
 - (NSMutableArray*) getAuctions;
+- (NSMutableArray*) getAuctionItems:(NSString *) auctionID;
+- (NSString *) statusMessageForAuction:(AuctionInfo *)auction;
+
 @end
