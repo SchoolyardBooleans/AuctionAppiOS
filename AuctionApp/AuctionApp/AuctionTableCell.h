@@ -12,6 +12,6 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *orgName;
 @property (nonatomic, weak) IBOutlet UILabel *auctionName;
-
+@property (weak, nonatomic) IBOutlet UILabel *auctionStatus;
 @end
 

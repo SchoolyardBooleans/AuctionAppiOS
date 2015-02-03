@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.model = [[GetAuctionsModel alloc] init];
+    self.model = [[AuctionsModel alloc] init];
    [self getLatestNonprofits];
    
    
@@ -100,6 +100,10 @@
     
     cell.auctionName.text = auction.name;
     cell.orgName.text = auction.orgName;
+    if (auction.status == IN_PROGRESS) {
+        cell.auctionStatus.text = @"In Progress";
+        //cell.backgroundColor = [UIColor ];
+    }
    
     return cell;
 }
@@ -173,7 +177,7 @@
         }
         
         // Pass model and auctionId off to controller
-        [controller setAuctionId:selectedAuction.aucId];
+        [controller setAuctionInfo:selectedAuction];
         [controller setModel: self.model];
         
     }

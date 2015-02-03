@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "GetAuctionsModel.h"
+#import "AuctionsModel.h"
 
 @interface AuctionAppTests : XCTestCase
 
@@ -26,7 +26,7 @@
 }
 
 - (void)testGetNonprofits {
-    GetAuctionsModel* nonprofitModel = [[GetAuctionsModel alloc] init];
+    AuctionsModel* nonprofitModel = [[AuctionsModel alloc] init];
     NSMutableArray* nonprofits = [nonprofitModel getNonprofits];
     NonprofitInfo* LARedCross = [nonprofits objectAtIndex:0];
     
@@ -34,7 +34,7 @@
 }
 
 - (void)testGetAuctions {
-    GetAuctionsModel* nonprofitModel = [[GetAuctionsModel alloc] init];
+    AuctionsModel* nonprofitModel = [[AuctionsModel alloc] init];
     NSMutableArray* nonprofits = [nonprofitModel getNonprofits];
     NonprofitInfo* nonprofit = [nonprofits objectAtIndex:0];
     NSMutableArray* auctions = [nonprofitModel getAuctions:nonprofit.orgId];

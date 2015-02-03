@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login-->
@@ -78,28 +79,35 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PickNonprofitCellID" textLabel="dem-Lq-Inc" detailTextLabel="tWD-kL-n7O" rowHeight="68" style="IBUITableViewCellStyleSubtitle" id="YBl-L6-DVP" customClass="AuctionTableCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PickNonprofitCellID" rowHeight="68" id="YBl-L6-DVP" customClass="AuctionTableCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YBl-L6-DVP" id="BwA-rp-tDD">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Auction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dem-Lq-Inc">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Auction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRJ-Qa-1fO">
+                                            <rect key="frame" x="13" y="23" width="247" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Nonprofit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tWD-kL-n7O">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nonprofit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acs-iA-4ai">
+                                            <rect key="frame" x="23" y="43" width="259" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fT-l3-oeM">
+                                            <rect key="frame" x="256" y="23" width="79" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="auctionName" destination="dem-Lq-Inc" id="IYi-eo-POx"/>
-                                    <outlet property="orgName" destination="tWD-kL-n7O" id="G6P-GM-Kbe"/>
+                                    <outlet property="auctionName" destination="MRJ-Qa-1fO" id="ygE-Fz-rfy"/>
+                                    <outlet property="auctionStatus" destination="7fT-l3-oeM" id="BqJ-Tx-cyh"/>
+                                    <outlet property="orgName" destination="Acs-iA-4ai" id="3Ev-T3-Jpj"/>
                                     <segue destination="5wh-IL-8jY" kind="show" identifier="UserPickedAuctionSegue" id="sDk-Kg-Tk9"/>
                                 </connections>
                             </tableViewCell>
@@ -131,10 +139,10 @@
             </objects>
             <point key="canvasLocation" x="223" y="-8"/>
         </scene>
-        <!--Auction Main Controller-->
+        <!--Home-->
         <scene sceneID="bdq-I3-5bq">
             <objects>
-                <viewController id="5wh-IL-8jY" customClass="AuctionMainController" sceneMemberID="viewController">
+                <viewController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="5wh-IL-8jY" customClass="AuctionMainController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d3Q-wZ-Wwi"/>
                         <viewControllerLayoutGuide type="bottom" id="m3x-Q6-8zh"/>
@@ -143,48 +151,136 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="xxx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-CD-8lL">
-                                <rect key="frame" x="141" y="121" width="180" height="21"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WfC-J4-S19">
+                                <rect key="frame" x="0.0" y="319" width="600" height="166"/>
+                                <color key="backgroundColor" red="0.78531407828282829" green="0.78519050328362994" blue="0.74601397416289206" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="6or-al-gBU">
+                                    <size key="itemSize" width="166" height="166"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeaturedCell" id="Ahi-Rh-gm3">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="166" height="166"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="20" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yHb-OB-rVP">
+                                                    <rect key="frame" x="18" y="8" width="130" height="130"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nk-zh-zmB">
+                                                    <rect key="frame" x="46" y="145" width="75" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5wh-IL-8jY" id="Ys2-rO-hXD"/>
+                                    <outlet property="delegate" destination="5wh-IL-8jY" id="td2-tL-DOC"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Auction Name" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFL-dk-DJT">
+                                <rect key="frame" x="187" y="77" width="180" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WxP-Db-Noh">
+                                <rect key="frame" x="229" y="501" width="96" height="30"/>
+                                <state key="normal" title="View All Items">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="h7J-79-dn9" kind="show" id="fq1-iu-prc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="non-profit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-CD-8lL">
+                                <rect key="frame" x="187" y="112" width="180" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Auction starts in: 4 days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFW-kJ-fjk">
-                                <rect key="frame" x="185" y="240" width="185" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shy-Sv-JQb">
+                                <rect key="frame" x="252" y="141" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="american_heart" translatesAutoresizingMaskIntoConstraints="NO" id="opZ-y1-Zwk">
-                                <rect key="frame" x="16" y="69" width="65" height="57"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Auction Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFL-dk-DJT">
-                                <rect key="frame" x="141" y="69" width="180" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Featured Items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvi-cL-uYA">
+                                <rect key="frame" x="16" y="284" width="115" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gFL-dk-DJT" firstAttribute="leading" secondItem="b1e-qa-5qW" secondAttribute="leading" constant="141" id="3mY-7g-cbO"/>
-                            <constraint firstItem="gFL-dk-DJT" firstAttribute="top" secondItem="b1e-qa-5qW" secondAttribute="top" constant="69" id="5GW-9T-P0c"/>
-                            <constraint firstItem="p0O-CD-8lL" firstAttribute="top" secondItem="b1e-qa-5qW" secondAttribute="top" constant="121" id="CVe-nZ-JcO"/>
-                            <constraint firstAttribute="centerX" secondItem="jFW-kJ-fjk" secondAttribute="centerX" id="PkW-Tm-jEA"/>
-                            <constraint firstItem="p0O-CD-8lL" firstAttribute="leading" secondItem="b1e-qa-5qW" secondAttribute="leading" constant="141" id="t7a-rt-ra8"/>
+                            <constraint firstAttribute="centerX" secondItem="gFL-dk-DJT" secondAttribute="centerX" id="7GT-7g-Iwj"/>
+                            <constraint firstAttribute="trailing" secondItem="WfC-J4-S19" secondAttribute="trailing" id="EaF-P2-fMm"/>
+                            <constraint firstItem="p0O-CD-8lL" firstAttribute="top" secondItem="gFL-dk-DJT" secondAttribute="bottom" constant="10" id="OsC-Yw-nA6"/>
+                            <constraint firstItem="WfC-J4-S19" firstAttribute="leading" secondItem="b1e-qa-5qW" secondAttribute="leading" id="asS-W7-HHk"/>
+                            <constraint firstItem="WfC-J4-S19" firstAttribute="top" secondItem="Qvi-cL-uYA" secondAttribute="bottom" constant="15" id="f5l-rO-fqS"/>
+                            <constraint firstItem="Shy-Sv-JQb" firstAttribute="top" secondItem="p0O-CD-8lL" secondAttribute="bottom" constant="15" id="h27-SS-CAR"/>
+                            <constraint firstAttribute="centerX" secondItem="p0O-CD-8lL" secondAttribute="centerX" id="mlw-E4-PHh"/>
+                            <constraint firstItem="Qvi-cL-uYA" firstAttribute="leading" secondItem="b1e-qa-5qW" secondAttribute="leadingMargin" id="qDg-UV-fdO"/>
+                            <constraint firstAttribute="centerX" secondItem="Shy-Sv-JQb" secondAttribute="centerX" id="uqQ-Ps-Z7g"/>
+                            <constraint firstItem="gFL-dk-DJT" firstAttribute="top" secondItem="d3Q-wZ-Wwi" secondAttribute="bottom" constant="33" id="vA3-fj-bDj"/>
+                            <constraint firstItem="m3x-Q6-8zh" firstAttribute="top" secondItem="WxP-Db-Noh" secondAttribute="bottom" constant="20" id="xRe-hN-muC"/>
+                            <constraint firstAttribute="centerX" secondItem="WxP-Db-Noh" secondAttribute="centerX" id="xYn-XH-FAh"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="auctionLabel" destination="p0O-CD-8lL" id="ylp-Ok-zDv"/>
+                        <outlet property="auctionName" destination="gFL-dk-DJT" id="V7O-Jf-3Zn"/>
+                        <outlet property="auctionStatusMessage" destination="Shy-Sv-JQb" id="czF-bZ-fpz"/>
+                        <outlet property="featuredCollection" destination="WfC-J4-S19" id="TZO-vL-hS2"/>
+                        <outlet property="nonprofitName" destination="p0O-CD-8lL" id="H4K-Jg-hBT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIp-il-cxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1020" y="-8"/>
         </scene>
+        <!--Auction Items-->
+        <scene sceneID="lgm-Dh-4i5">
+            <objects>
+                <tableViewController title="Auction Items" id="h7J-79-dn9" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Lv3-a1-oWa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="PSx-VF-bK7">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="n15-xO-Itf">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n15-xO-Itf" id="WCu-9t-ESR">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="h7J-79-dn9" id="NLf-Nr-ZAX"/>
+                            <outlet property="delegate" destination="h7J-79-dn9" id="FQg-sx-o6L"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghE-aG-kdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1870" y="-8"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="american_heart" width="160" height="160"/>
         <image name="shopping_cart_empty-25" width="24" height="24"/>
         <image name="user_male3-25" width="24" height="24"/>
     </resources>
