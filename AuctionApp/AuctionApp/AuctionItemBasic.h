@@ -14,7 +14,7 @@
 @property (nonatomic) NSString* itemID;
 @property (nonatomic) NSNumber* currentBid;
 @property (nonatomic) BOOL featured;
-@property (nonatomic) NSURL* imageURL;
+@property (nonatomic) NSString* imageURL;
 
 
 @end
