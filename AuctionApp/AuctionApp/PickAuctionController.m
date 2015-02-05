@@ -33,6 +33,12 @@
    [self.refreshControl addTarget:self
                            action:@selector(getLatestNonprofits)
                  forControlEvents:UIControlEventValueChanged];
+    
+    // Remove extra rows
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    // Fixes small cell size when searching
+    self.searchDisplayController.searchResultsTableView.rowHeight = self.tableView.rowHeight;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,8 +109,12 @@
     if (auction.status == IN_PROGRESS) {
         cell.auctionStatus.text = @"In Progress";
         //cell.backgroundColor = [UIColor ];
+    } else {
+        cell.auctionStatus.text = @"";
     }
-   
+    
+    cell.accessoryView.backgroundColor = [UIColor blackColor];
+
     return cell;
 }
 
