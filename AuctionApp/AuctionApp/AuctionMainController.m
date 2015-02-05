@@ -7,6 +7,8 @@
 //
 
 #import "AuctionMainController.h"
+#import "PickItemController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface AuctionMainController ()
 
@@ -15,7 +17,7 @@
 @implementation AuctionMainController{
     AuctionInfo *auctionInfo;
     NSArray *auctionItems;
-    NSMutableArray *array;
+    NSArray *featuredItems;
 }
 
 - (void)viewDidLoad {
@@ -27,14 +29,7 @@
     
     
     auctionItems = [self.model getAuctionItems:auctionInfo.aucId];
-    
-    array = [[NSMutableArray alloc] init];
-    [array addObject:@"apple"];
-    [array addObject:@"banana"];
-    [array addObject:@"kiwi"];
-    [array addObject:@"orange"];
-    [array addObject:@"donkey"];
-    
+    featuredItems = [self getFeaturedItems:auctionItems];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,23 +49,55 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [array count];
+    return [featuredItems count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FeaturedCell" forIndexPath:indexPath];
-    
     UILabel *label = (UILabel *) [cell viewWithTag: 100];
-    label.text = [array objectAtIndex:indexPath.row];
-    
     UIImageView *image = (UIImageView *) [cell viewWithTag: 20];
-    [image setImage: [UIImage imageNamed:[array objectAtIndex:indexPath.row]]];
+    AuctionItemBasic *item = [featuredItems objectAtIndex:indexPath.row];
+    
+    label.text = item.name;
+    
+    [image setImageWithURL:[NSURL URLWithString: item.imageURL]
+                   placeholderImage:[UIImage imageNamed:@"apple"]];
+    //[image setImage: [UIImage imageNamed:[array objectAtIndex:indexPath.row]]];
     
     [cell.layer setBorderWidth:2.0f];
-    [cell.layer setBorderColor:[UIColor whiteColor].CGColor];
+    [cell.layer setBorderColor:UIColorFromRGB(0xEBBF93).CGColor];
     
     return cell;
 }
+
+#pragma mark - Navigation
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSString* fromPickNonprofitsSegue = @"ViewItems";
+    
+    if ([[segue identifier] isEqualToString:fromPickNonprofitsSegue]) {
+        PickItemController *controller = [segue destinationViewController];
+        
+        // Pass model and auctionId off to controller
+        [controller setAuctionItems:auctionItems];
+        [controller setModel:self.model];
+        [controller setAuctionId:auctionInfo.aucId];
+    }
+}
+
+#pragma mark - Utility
+
+- (NSArray *)getFeaturedItems:(NSArray *) items {
+    
+    NSPredicate *featuredPredicate = [NSPredicate predicateWithBlock:^BOOL(AuctionItemBasic *item, NSDictionary *bindings) {
+        return item.featured == YES;
+    }];
+    
+    return [items filteredArrayUsingPredicate:featuredPredicate];
+}
+
+
 
 
 
