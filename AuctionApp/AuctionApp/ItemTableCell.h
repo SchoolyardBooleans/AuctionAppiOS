@@ -1,13 +1,18 @@
 //
-//  ItemTableCell.h
+//  AuctionTableCell.h
 //  AuctionApp
 //
-//  Created by James Fazio on 2/4/15.
+//  Created by James Fazio on 1/13/15.
 //  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
 //
 
-#ifndef AuctionApp_ItemTableCell_h
-#define AuctionApp_ItemTableCell_h
+#import <UIKit/UIKit.h>
 
+@interface ItemTableCell : UITableViewCell
 
-#endif
+@property (nonatomic, weak) IBOutlet UILabel *itemName;
+@property (nonatomic, weak) IBOutlet UILabel *itemCurrentBid;
+@property (weak, nonatomic) IBOutlet UIImageView *itemImage;
+
+@end
+
