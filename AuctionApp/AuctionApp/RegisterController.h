@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RegisterModel.h"
 
 @interface RegisterController : UIViewController
-
+@property (nonatomic) RegisterModel *model;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+@property (weak, nonatomic) IBOutlet UITextField *firstNameField;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextField *codeField;
+@property (weak, nonatomic) IBOutlet UIView *confirmView;
+- (IBAction)confirmAction:(UIButton *)sender;
+- (IBAction)registerAction:(UIButton *)sender;
 @end
+

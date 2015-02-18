@@ -11,13 +11,36 @@
 
 @implementation RegisterModel
 
--(BOOL)registerAccount:(NSString *)firstName :(NSString *)lastName :(NSString *)email {
-    NSString *orgsUrl = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/register";
+-(void)registerAccount:(NSString *)firstName :(NSString *)lastName :(NSString *)email :(void (^)(BOOL, NSString *)) callback {
+    NSString *registerUrl = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/register";
+    NSDictionary *body = [[NSMutableDictionary alloc] init];
     
-    // Make synchronous request
-    //id urlData = [ServerConnection getJSONData:orgsUrl];
+    [body setValue:firstName forKey:@"first"];
+    [body setValue:lastName forKey:@"last"];
+    [body setValue:email forKey:@"email"];
     
-    return YES;
+    [ServerConnection httpPOST:registerUrl :body :^(id JSON, NSString *error) {
+        if (error != nil) {
+            callback(NO, error);
+        } else {
+            callback(YES, nil);
+        }
+    }];
+}
+
+-(void)confirmAccount:(NSString *)code :(void (^)(BOOL, NSString *))callback {
+    NSString *registerUrl = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/bidders";
+    NSDictionary *body = [[NSMutableDictionary alloc] init];
+    
+    [body setValue:code forKey:@"code"];
+    
+    [ServerConnection httpPOST:registerUrl :body :^(id JSON, NSString *error) {
+        if (error != nil) {
+            callback(NO, error);
+        } else {
+            callback(YES, nil);
+        }
+    }];
 }
 
 -(BOOL)validate:(NSString *)firstName :(NSString *)lastName :(NSString *)email {
