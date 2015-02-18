@@ -1,11 +1,3 @@
-//
-//  ServerConnection.h
-//  Test
-//
-//  Created by Jon Vazquez on 11/30/14.
-//  Copyright (c) 2014 Schoolyard Booleans. All rights reserved.
-//
-
 #ifndef Test_ServerConnection_h
 #define Test_ServerConnection_h
 
@@ -13,7 +5,10 @@
 
 @interface ServerConnection : NSObject
 
-+ (id)getJSONData:(NSString*)urlStr;
+//+ (id)getJSONData:(NSString*)urlStr;
++ (void) httpGET:(NSString *) urlStr :(void (^)(id, NSString *)) callback;
++ (void) httpPOST:(NSString *) urlStr :(NSDictionary *) mapBody :(void (^)(id, NSString *)) callback;
+
 
 @end
 

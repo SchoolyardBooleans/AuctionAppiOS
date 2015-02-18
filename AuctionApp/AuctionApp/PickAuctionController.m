@@ -17,14 +17,16 @@
 @implementation PickAuctionController
 {
     NSArray *searchResults;
+    UILabel *messageLabel;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.model = [[AuctionsModel alloc] init];
-   [self getLatestNonprofits];
+    [self getLatestNonprofits];
    
+    messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
    
    // Initialize the refresh control.
    self.refreshControl = [[UIRefreshControl alloc] init];
@@ -48,32 +50,16 @@
 
 #pragma mark - Table view data source
 
+// Return the number of sections.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-   // Return the number of sections.
+    // If non-profits are available show the table
+    if (self.auctions) {
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return 1;
+      
+    }
    
-   // If non-profits are available show the table
-   if (self.auctions) {
-      
-      self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-      return 1;
-      
-   } else {
-      // Display a message when the table is empty
-      UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-      
-      messageLabel.text = @"No data is currently available. Please pull down to refresh.";
-      messageLabel.textColor = [UIColor blackColor];
-      messageLabel.numberOfLines = 0;
-      messageLabel.textAlignment = NSTextAlignmentCenter;
-      messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
-      [messageLabel sizeToFit];
-      
-      self.tableView.backgroundView = messageLabel;
-      self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-      
-   }
-   
-   return 0;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -121,9 +107,33 @@
 #pragma mark - Reload Data
 
 - (void) getLatestNonprofits {
-    self.auctions = [self.model getAuctions];
-    // might already be on the main thread
-    [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    [self.model getAuctions:^(NSMutableArray *auctions, NSString *error) {
+        if (error == nil) {
+            self.auctions = auctions;
+            
+            if ([auctions count] == 0) {
+                // Display a message when the table is empty
+                messageLabel.text = @"No data is currently available. Please pull down to refresh.";
+                messageLabel.textColor = [UIColor blackColor];
+                messageLabel.numberOfLines = 0;
+                messageLabel.textAlignment = NSTextAlignmentCenter;
+                messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+                [messageLabel sizeToFit];
+                
+                self.tableView.backgroundView = messageLabel;
+                self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+            } else {
+                messageLabel.hidden = YES;
+            }
+            
+            [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+        } else {
+            NSLog(@"Error: %@", error);
+        }
+    }];
+//    self.auctions = [self.model getAuctions];
+//    // might already be on the main thread
+//    [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
 - (void)reloadData

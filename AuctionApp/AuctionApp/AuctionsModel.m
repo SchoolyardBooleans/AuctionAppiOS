@@ -6,109 +6,105 @@ int const COMPLETE = 2;
 
 @implementation AuctionsModel
 
-- (NSMutableArray *) getAuctions {
+- (void) getAuctions:(void (^)(NSMutableArray *, NSString *)) callback {
     
     NSMutableArray *auctions = [[NSMutableArray alloc] init];
-    NSError *error;
-    NSString *orgsUrl = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/nonprofits";
+   // NSError *error;
+    NSString *nonprofitURL = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/nonprofits";
     
     // Make synchronous request
-    id urlData = [ServerConnection getJSONData:orgsUrl];
-    
-    // Construct collection from response
-    id nonprofitListJSON = [NSJSONSerialization JSONObjectWithData:urlData
-                                                           options:0
-                                                             error:&error];
-    
-    // Add to and return NonprofitInfo array
-    if (nonprofitListJSON) {
-        if ([nonprofitListJSON isKindOfClass:[NSArray class]]) {
-            for (id nonprofitJSON in nonprofitListJSON) {
-                
-                NSString *orgId = [nonprofitJSON valueForKey:@"Id"];
-                NSString *orgName = [nonprofitJSON valueForKey:@"Name"];
-                id auctionListJSON = [nonprofitJSON valueForKey:@"auctions"];
-                
-                if ([auctionListJSON isKindOfClass:[NSArray class]]) {
-                    NSArray *auctionListArray = (NSArray *) auctionListJSON;
-                    
-                    for (id auctionJSON in auctionListArray) {
-                        AuctionInfo *add = [[AuctionInfo alloc] init];
-                        // Don't show auctions that have completed
-                        if (![[auctionJSON valueForKey:@"Status"] isEqualToNumber:[NSNumber numberWithInt:COMPLETE]]) {
-                            add.aucId = [auctionJSON valueForKey:@"Id"];
-                            add.name = [auctionJSON valueForKey:@"Name"];
-                            add.startDate = [auctionJSON valueForKey:@"Start_Time"];
-                            add.status = [[auctionJSON valueForKey:@"Status"] integerValue];
-                            add.endDate = [auctionJSON valueForKey:@"End_Time"];
-                            add.location = [auctionJSON valueForKey:@"location"];
-                            add.orgId = orgId;
-                            add.orgName = orgName;
-                            [auctions addObject:add];
+    [ServerConnection httpGET:nonprofitURL :^(id nonprofitListJSON, NSString* error) {
+        if (error == nil) {
+            // Add to and return NonprofitInfo array
+            if (nonprofitListJSON) {
+                if ([nonprofitListJSON isKindOfClass:[NSArray class]]) {
+                    for (id nonprofitJSON in nonprofitListJSON) {
+                        
+                        NSString *orgId = [nonprofitJSON valueForKey:@"Id"];
+                        NSString *orgName = [nonprofitJSON valueForKey:@"Name"];
+                        id auctionListJSON = [nonprofitJSON valueForKey:@"auctions"];
+                        
+                        if ([auctionListJSON isKindOfClass:[NSArray class]]) {
+                            NSArray *auctionListArray = (NSArray *) auctionListJSON;
+                            
+                            for (id auctionJSON in auctionListArray) {
+                                AuctionInfo *add = [[AuctionInfo alloc] init];
+                                // Don't show auctions that have completed
+                                if (![[auctionJSON valueForKey:@"Status"] isEqualToNumber:[NSNumber numberWithInt:COMPLETE]]) {
+                                    add.aucId = [auctionJSON valueForKey:@"Id"];
+                                    add.name = [auctionJSON valueForKey:@"Name"];
+                                    add.startDate = [auctionJSON valueForKey:@"Start_Time"];
+                                    add.status = [[auctionJSON valueForKey:@"Status"] integerValue];
+                                    add.endDate = [auctionJSON valueForKey:@"End_Time"];
+                                    add.location = [auctionJSON valueForKey:@"location"];
+                                    add.orgId = orgId;
+                                    add.orgName = orgName;
+                                    [auctions addObject:add];
+                                }
+                            }
                         }
                     }
                 }
             }
+            
+            callback(auctions, nil);
         }
-    }
-    else {
-        NSLog(@"Error serializing JSON: %@", error);
-    }
-    
-    return auctions;
+        else {
+            callback(auctions, error);
+            NSLog(@"Error making nonprofits request %@", error);
+        }
+    }];
+
 }
 
-- (NSMutableArray *)getAuctionItems:(NSString *)auctionID {
+-(void) getAuctionItems:(NSString *)auctionID :(void (^)(NSMutableArray *, NSString *))callback {
     NSMutableArray *auctionItems = [[NSMutableArray alloc] init];
-    NSError *error;
-    NSMutableString *auctionUrl = [NSMutableString stringWithString:@"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/auctions/"];
+    NSMutableString *auctionURL = [NSMutableString stringWithString:@"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/auctions/"];
     
-    [auctionUrl appendString:auctionID];
+    [auctionURL appendString:auctionID];
     
     // Make synchronous request
-    id urlData = [ServerConnection getJSONData:auctionUrl];
-    
-    // Construct collection from response
-    id auctionJSON = [NSJSONSerialization JSONObjectWithData:urlData
-                                                           options:0
-                                                             error:&error];
-    
-    // Add to and return NonprofitInfo array
-    if (auctionJSON) {
-        if ([auctionJSON isKindOfClass:[NSDictionary class]]) {
-            NSDictionary *auctionDictionary = (NSDictionary *) auctionJSON;
-            
-            id itemsJSON = [auctionDictionary valueForKey:@"Auction_Items__r"];
-            if (itemsJSON) {
-                if ([itemsJSON isKindOfClass:[NSDictionary class]]) {
-                    NSDictionary *itemsDictionary = (NSDictionary *) itemsJSON;
-                    
-                    id recordsJSON = [itemsDictionary valueForKey:@"records"];
-                    if ([recordsJSON isKindOfClass:[NSArray class]]) {
-                        NSArray *recordsList = (NSArray *) recordsJSON;
+    [ServerConnection httpGET:auctionURL :^(id auctionJSON, NSString* error) {
+        // Add to and return NonprofitInfo array
+        if (error == nil) {
+            if (auctionJSON) {
+                if ([auctionJSON isKindOfClass:[NSDictionary class]]) {
+                    NSDictionary *auctionDictionary = (NSDictionary *) auctionJSON;
+                
+                    id itemsJSON = [auctionDictionary valueForKey:@"Auction_Items__r"];
+                    if (itemsJSON) {
+                        if ([itemsJSON isKindOfClass:[NSDictionary class]]) {
+                            NSDictionary *itemsDictionary = (NSDictionary *) itemsJSON;
                         
-                        for (id record in recordsList) {
-                            AuctionItemBasic *add = [[AuctionItemBasic alloc] init];
+                            id recordsJSON = [itemsDictionary valueForKey:@"records"];
+                            if ([recordsJSON isKindOfClass:[NSArray class]]) {
+                                NSArray *recordsList = (NSArray *) recordsJSON;
+                                
+                                for (id record in recordsList) {
+                                    AuctionItemBasic *add = [[AuctionItemBasic alloc] init];
+                                
+                                    add.name = [record valueForKey:@"Name"];
+                                    add.itemID = [record valueForKey:@"Id"];
+                                    add.currentBid = [record valueForKey:@"Current_Bid__c"];
+                                    add.featured = [[record valueForKey:@"Featured__c"] boolValue];
+                                    add.imageURL = [record valueForKey:@"Image_URL__c"];
+                                    [auctionItems addObject:add];
+                                }
                             
-                            add.name = [record valueForKey:@"Name"];
-                            add.itemID = [record valueForKey:@"Id"];
-                            add.currentBid = [record valueForKey:@"Current_Bid__c"];
-                            add.featured = [[record valueForKey:@"Featured__c"] boolValue];
-                            add.imageURL = [record valueForKey:@"Image_URL__c"];
-                            [auctionItems addObject:add];
+                            }
                         }
-                        
                     }
                 }
             }
+            
+            callback(auctionItems, nil);
         }
-    }
-    else {
-        NSLog(@"Error serializing JSON: %@", error);
-    }
-    
-    return auctionItems;
+        else {
+            callback(auctionItems, error);
+        }
+    }];
 }
+
 
 // Get the status message for an auction. Returns the end datetime
 // if the auction is in progress or the start time if the auction

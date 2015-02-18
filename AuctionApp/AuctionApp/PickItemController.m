@@ -102,7 +102,7 @@
     cell.itemCurrentBid.text = currentBid;
     cell.itemCurrentBid.text = [cell.itemCurrentBid.text stringByAppendingString:[item.currentBid stringValue]];
     [cell.itemImage setImageWithURL:[NSURL URLWithString: item.imageURL]
-                   placeholderImage:[UIImage imageNamed:@"apple"]];
+                   placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     return cell;
 }
@@ -110,9 +110,19 @@
 #pragma mark - Reload Data
 
 - (void) getLatestItems {
-    self.auctionItems = [self.model getAuctionItems:self.auctionId];
-    // might already be on the main thread
-    [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    
+    [self.model getAuctionItems:self.auctionId :^(NSMutableArray *items, NSString *error) {
+        if (error == nil) {
+            self.auctionItems = items;
+            [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+        } else {
+            NSLog(@"Error: %@", error);
+        }
+    }];
+    
+//    self.auctionItems = [self.model getAuctionItems:self.auctionId];
+//    // might already be on the main thread
+//    [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
 - (void)reloadData

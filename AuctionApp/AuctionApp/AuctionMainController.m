@@ -27,9 +27,18 @@
     [self.auctionName setText: auctionInfo.name];
     [self.auctionStatusMessage setText: [self.model statusMessageForAuction:auctionInfo]];
     
-    
-    auctionItems = [self.model getAuctionItems:auctionInfo.aucId];
-    featuredItems = [self getFeaturedItems:auctionItems];
+    [self.model getAuctionItems:auctionInfo.aucId :^(NSMutableArray *items, NSString *error) {
+        if (error == nil) {
+            auctionItems = items;
+            featuredItems = [self getFeaturedItems:auctionItems];
+            // Reload on main thread when info is ready
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.featuredCollection reloadData];
+            });
+        } else {
+            NSLog(@"Error: %@", error);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,7 +70,7 @@
     label.text = item.name;
     
     [image setImageWithURL:[NSURL URLWithString: item.imageURL]
-                   placeholderImage:[UIImage imageNamed:@"apple"]];
+                   placeholderImage:[UIImage imageNamed:@"placeholder"]];
     //[image setImage: [UIImage imageNamed:[array objectAtIndex:indexPath.row]]];
     
     [cell.layer setBorderWidth:2.0f];

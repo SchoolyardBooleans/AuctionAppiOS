@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Login : NSObject
+@interface RegisterModel : NSObject
+
+-(BOOL) validate:(NSString *)firstName :(NSString *)lastName :(NSString *) email;
+-(BOOL) registerAccount:(NSString *) firstName :(NSString *)lastName :(NSString*) email;
 
 @end

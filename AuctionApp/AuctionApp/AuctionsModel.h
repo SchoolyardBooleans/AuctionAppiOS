@@ -24,8 +24,8 @@ extern int const COMPLETE;
 /**
  Returns an AuctionInfo NSMutableArray, each containing an id and name
  */
-- (NSMutableArray*) getAuctions;
-- (NSMutableArray*) getAuctionItems:(NSString *) auctionID;
+- (void) getAuctions :(void (^)(NSMutableArray*, NSString *)) callback;
+- (void) getAuctionItems:(NSString *) auctionID :(void (^)(NSMutableArray*, NSString *)) callback;
 - (NSString *) statusMessageForAuction:(AuctionInfo *)auction;
 
 @end
