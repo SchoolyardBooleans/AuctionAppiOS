@@ -179,6 +179,7 @@
                             <constraint firstAttribute="centerX" secondItem="rEJ-YX-IwY" secondAttribute="centerX" id="M8Z-bn-XsF"/>
                             <constraint firstAttribute="centerX" secondItem="ZdS-WV-ikk" secondAttribute="centerX" id="NZP-bU-xbe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="24D-o0-xWp" secondAttribute="trailing" constant="50" id="cEB-KC-3g9"/>
+                            <constraint firstItem="24D-o0-xWp" firstAttribute="top" secondItem="rEJ-YX-IwY" secondAttribute="bottom" constant="18" id="yrX-4K-2Qg"/>
                         </constraints>
                     </view>
                     <connections>
