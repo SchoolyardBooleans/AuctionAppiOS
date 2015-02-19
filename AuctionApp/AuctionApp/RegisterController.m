@@ -39,13 +39,17 @@
 - (IBAction)confirmAction:(UIButton *)sender {
     NSString *code = self.codeField.text;
     
-    [self.model confirmAccount:code :^(BOOL success, NSString *error) {
+    [self.model confirmAccount:code :^(NSDictionary *dict, NSString *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error != nil) {
                 self.errorLabel.text = error;
                 self.errorLabel.hidden = false;
             } else {
                 [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"code"];
+                [[NSUserDefaults standardUserDefaults] setValue:[dict valueForKey:@"Id"] forKey:@"userId"];
+                [[NSUserDefaults standardUserDefaults] setValue:[dict valueForKey:@"first"] forKey:@"firstName"];
+                [[NSUserDefaults standardUserDefaults] setValue:[dict valueForKey:@"flast"] forKey:@"lastName"];
+                NSLog(@"Success logging in");
             }
         });
         

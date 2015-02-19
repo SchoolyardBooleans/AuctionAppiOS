@@ -28,17 +28,24 @@
     }];
 }
 
--(void)confirmAccount:(NSString *)code :(void (^)(BOOL, NSString *))callback {
-    NSString *registerUrl = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/bidders";
+-(void)confirmAccount:(NSString *)code :(void (^)(NSDictionary * , NSString *))callback {
+    NSString *registerUrl = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/bidder";
     NSDictionary *body = [[NSMutableDictionary alloc] init];
     
     [body setValue:code forKey:@"code"];
     
-    [ServerConnection httpPOST:registerUrl :body :^(id JSON, NSString *error) {
+    [ServerConnection httpPOST:registerUrl :body :^(id jsonDict, NSString *error) {
+        NSDictionary *dict = [[NSMutableDictionary alloc] init];
         if (error != nil) {
-            callback(NO, error);
+            callback(dict, error);
         } else {
-            callback(YES, nil);
+            if (jsonDict) {
+                if ([jsonDict isKindOfClass:[NSDictionary class]]) {
+                    dict = (NSDictionary *) jsonDict;
+                }
+            }
+            
+            callback(dict, nil);
         }
     }];
 }

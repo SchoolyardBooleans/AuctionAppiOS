@@ -12,6 +12,6 @@
 
 -(BOOL) validate:(NSString *)firstName :(NSString *)lastName :(NSString *) email;
 -(void) registerAccount:(NSString *) firstName :(NSString *)lastName :(NSString*) email :(void (^)(BOOL, NSString *)) callback;
--(void) confirmAccount:(NSString *) code :(void (^)(BOOL, NSString *)) callback;
+-(void) confirmAccount:(NSString *) code :(void (^)(NSDictionary *, NSString *)) callback;
 
 @end
