@@ -8,6 +8,7 @@
 
 #import "PickItemController.h"
 #import "ItemTableCell.h"
+#import "ItemController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation PickItemController
@@ -163,6 +164,32 @@
                                                      selectedScopeButtonIndex]]];
     
     return YES;
+}
+
+#pragma mark - Navigation
+
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSString* fromPickNonprofitsSegue = @"PickItem";
+    
+    if ([[segue identifier] isEqualToString:fromPickNonprofitsSegue]) {
+        ItemController *controller = [segue destinationViewController];
+        NSIndexPath *indexPath = nil;
+        AuctionItemBasic *selectedItem = nil;
+        
+        
+        if (self.searchDisplayController.active) {
+            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            selectedItem = [searchResults objectAtIndex:indexPath.row];
+        } else {
+            indexPath = [self.tableView indexPathForSelectedRow];
+            selectedItem = [self.auctionItems objectAtIndex:indexPath.row];
+        }
+        
+        // Pass itemId off to controller
+        [controller setAuctionItemBasic:selectedItem];
+    }
 }
 
 
