@@ -74,7 +74,7 @@
     //[image setImage: [UIImage imageNamed:[array objectAtIndex:indexPath.row]]];
     
     [cell.layer setBorderWidth:2.0f];
-    [cell.layer setBorderColor:UIColorFromRGB(0xEBBF93).CGColor];
+    [cell.layer setBorderColor:UIColorFromRGB(0x067AB5).CGColor];
     
     return cell;
 }
