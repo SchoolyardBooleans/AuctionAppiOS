@@ -29,7 +29,7 @@
 }
 
 -(void)confirmAccount:(NSString *)code :(void (^)(NSDictionary * , NSString *))callback {
-    NSString *registerUrl = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/bidder";
+    NSString *registerUrl = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/bidders";
     NSDictionary *body = [[NSMutableDictionary alloc] init];
     
     [body setValue:code forKey:@"code"];
@@ -42,7 +42,28 @@
             if (jsonDict) {
                 if ([jsonDict isKindOfClass:[NSDictionary class]]) {
                     dict = (NSDictionary *) jsonDict;
-                }
+                } // ServerSide error if not true
+            }
+            
+            callback(dict, nil);
+        }
+    }];
+}
+
+-(void)login:(NSString *)email :(void (^)(NSDictionary *, NSString *))callback {
+    NSMutableString *registerUrl = [NSMutableString stringWithString: @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/login/"];
+    [registerUrl appendString:email];
+    
+    [ServerConnection httpGET:registerUrl : ^(id jsonDict, NSString *error) {
+        NSDictionary *dict = [[NSMutableDictionary alloc] init];
+        
+        if (error != nil) {
+            callback(dict, error);
+        } else {
+            if (jsonDict) {
+                if ([jsonDict isKindOfClass:[NSDictionary class]]) {
+                    dict = (NSDictionary *) jsonDict;
+                } // ServerSide error if not true 
             }
             
             callback(dict, nil);
