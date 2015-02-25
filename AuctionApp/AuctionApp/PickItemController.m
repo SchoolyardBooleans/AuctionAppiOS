@@ -88,7 +88,7 @@
         cell = [[ItemTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nonprofitCellID];
     }
     
-    AuctionItemBasic* item = nil;
+    AuctionItem* item = nil;
     // Grab cell from search table
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         item = [searchResults objectAtIndex:indexPath.row];
@@ -176,7 +176,7 @@
     if ([[segue identifier] isEqualToString:fromPickNonprofitsSegue]) {
         ItemController *controller = [segue destinationViewController];
         NSIndexPath *indexPath = nil;
-        AuctionItemBasic *selectedItem = nil;
+        AuctionItem *selectedItem = nil;
         
         
         if (self.searchDisplayController.active) {
@@ -188,7 +188,7 @@
         }
         
         // Pass itemId off to controller
-        [controller setAuctionItemBasic:selectedItem];
+        [controller setAuctionItem:selectedItem];
     }
 }
 
