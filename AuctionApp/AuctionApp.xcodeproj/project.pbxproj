@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1148C28E1A9D5D8F007F135A /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1148C28D1A9D5D8F007F135A /* AccountController.m */; };
+		1148C2911A9D5ED2007F135A /* AccountUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1148C2901A9D5ED2007F135A /* AccountUtility.m */; };
 		115996311A92AA33008BA47B /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115996301A92AA33008BA47B /* RegisterController.m */; };
 		115996341A92B8BF008BA47B /* RegisterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 115996331A92B8BF008BA47B /* RegisterModel.m */; };
-		116592511A80798C007321E4 /* AuctionItemBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 116592501A80798C007321E4 /* AuctionItemBasic.m */; };
+		116592511A80798C007321E4 /* AuctionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 116592501A80798C007321E4 /* AuctionItem.m */; };
 		116DB18A1A75C870004E8551 /* AuctionMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116DB1891A75C870004E8551 /* AuctionMainController.m */; };
 		1178C5A71A82A7000011F119 /* ItemTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178C5A61A82A7000011F119 /* ItemTableCell.m */; };
 		1178C5AB1A82A7F20011F119 /* PickItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178C5AA1A82A7F20011F119 /* PickItemController.m */; };
@@ -43,12 +45,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1148C28C1A9D5D8F007F135A /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountController.h; sourceTree = "<group>"; };
+		1148C28D1A9D5D8F007F135A /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountController.m; sourceTree = "<group>"; };
+		1148C28F1A9D5ED2007F135A /* AccountUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountUtility.h; sourceTree = "<group>"; };
+		1148C2901A9D5ED2007F135A /* AccountUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountUtility.m; sourceTree = "<group>"; };
 		1159962F1A92AA33008BA47B /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterController.h; sourceTree = "<group>"; };
 		115996301A92AA33008BA47B /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
 		115996321A92B8BF008BA47B /* RegisterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterModel.h; sourceTree = "<group>"; };
 		115996331A92B8BF008BA47B /* RegisterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterModel.m; sourceTree = "<group>"; };
-		1165924F1A80798C007321E4 /* AuctionItemBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionItemBasic.h; sourceTree = "<group>"; };
-		116592501A80798C007321E4 /* AuctionItemBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionItemBasic.m; sourceTree = "<group>"; };
+		1165924F1A80798C007321E4 /* AuctionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionItem.h; sourceTree = "<group>"; };
+		116592501A80798C007321E4 /* AuctionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionItem.m; sourceTree = "<group>"; };
 		116DB1881A75C870004E8551 /* AuctionMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionMainController.h; sourceTree = "<group>"; };
 		116DB1891A75C870004E8551 /* AuctionMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionMainController.m; sourceTree = "<group>"; };
 		1178C5A61A82A7000011F119 /* ItemTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableCell.m; sourceTree = "<group>"; };
@@ -141,6 +147,8 @@
 				DC744F111A2C00AB0066F329 /* AuctionsModel.m */,
 				DC744F101A2C00AB0066F329 /* ServerConnection.h */,
 				DC744F121A2C00AB0066F329 /* ServerConnection.m */,
+				1148C28F1A9D5ED2007F135A /* AccountUtility.h */,
+				1148C2901A9D5ED2007F135A /* AccountUtility.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -150,8 +158,8 @@
 			children = (
 				DC744F071A2C009B0066F329 /* AuctionInfo.h */,
 				DC744F091A2C009B0066F329 /* AuctionInfo.m */,
-				1165924F1A80798C007321E4 /* AuctionItemBasic.h */,
-				116592501A80798C007321E4 /* AuctionItemBasic.m */,
+				1165924F1A80798C007321E4 /* AuctionItem.h */,
+				116592501A80798C007321E4 /* AuctionItem.m */,
 			);
 			name = Info;
 			sourceTree = "<group>";
@@ -171,6 +179,8 @@
 				115996301A92AA33008BA47B /* RegisterController.m */,
 				11AC74241A95D1B0002E6809 /* ItemController.h */,
 				11AC74251A95D1B0002E6809 /* ItemController.m */,
+				1148C28C1A9D5D8F007F135A /* AccountController.h */,
+				1148C28D1A9D5D8F007F135A /* AccountController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -378,13 +388,15 @@
 				DCFA94AC1A102BB3006CB212 /* AppDelegate.m in Sources */,
 				115996341A92B8BF008BA47B /* RegisterModel.m in Sources */,
 				1198E1B21A6600A200B7E0F2 /* AuctionTableCell.m in Sources */,
-				116592511A80798C007321E4 /* AuctionItemBasic.m in Sources */,
+				1148C28E1A9D5D8F007F135A /* AccountController.m in Sources */,
+				116592511A80798C007321E4 /* AuctionItem.m in Sources */,
 				11A101A31A8D5468006592D0 /* LoginController.m in Sources */,
 				DCFA94A91A102BB3006CB212 /* main.m in Sources */,
 				1178C5AB1A82A7F20011F119 /* PickItemController.m in Sources */,
 				DCD21EA51A2E45380059394E /* PickAuctionController.m in Sources */,
 				116DB18A1A75C870004E8551 /* AuctionMainController.m in Sources */,
 				115996311A92AA33008BA47B /* RegisterController.m in Sources */,
+				1148C2911A9D5ED2007F135A /* AccountUtility.m in Sources */,
 				11AC74261A95D1B0002E6809 /* ItemController.m in Sources */,
 				DC744F0B1A2C009B0066F329 /* AuctionInfo.m in Sources */,
 				1178C5A71A82A7000011F119 /* ItemTableCell.m in Sources */,
