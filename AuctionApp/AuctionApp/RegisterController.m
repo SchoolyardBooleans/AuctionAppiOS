@@ -7,12 +7,15 @@
 //
 
 #import "RegisterController.h"
+#import "AccountUtility.h"
+#import "AppDelegate.h"
 
 @implementation RegisterController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // For now creates own model, will change
     self.model = [[RegisterModel alloc] init];
     self.confirmView.hidden = true;
     self.errorLabel.hidden = true;
@@ -20,7 +23,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadCodeIfPresent)
                                                  name:UIApplicationDidBecomeActiveNotification object:nil];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,8 +30,8 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) loadCodeIfPresent {
-    NSString *code = [[NSUserDefaults standardUserDefaults] stringForKey:@"code"];
+-(void)loadCodeIfPresent {
+    NSString *code = [AccountUtility getCode];
     
     if (code != nil) {
         [self.codeField setText:code];
@@ -45,10 +47,10 @@
                 self.errorLabel.text = error;
                 self.errorLabel.hidden = false;
             } else {
-                [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"code"];
-                [[NSUserDefaults standardUserDefaults] setValue:[dict valueForKey:@"Id"] forKey:@"userId"];
-                [[NSUserDefaults standardUserDefaults] setValue:[dict valueForKey:@"first"] forKey:@"firstName"];
-                [[NSUserDefaults standardUserDefaults] setValue:[dict valueForKey:@"flast"] forKey:@"lastName"];
+                AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                [AccountUtility removeCode];
+                [AccountUtility login: dict];
+                [appdelegate switchToAccountView];
                 NSLog(@"Success logging in");
             }
         });
