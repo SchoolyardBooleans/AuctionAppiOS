@@ -14,6 +14,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+-(void) switchToAccountView;
+-(void) switchToLoginView;
+-(void) selectSecondTab;
 
 @end
 

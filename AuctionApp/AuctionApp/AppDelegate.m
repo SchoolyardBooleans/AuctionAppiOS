@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AccountUtility.h"
 
 @interface AppDelegate ()
 
@@ -33,6 +34,12 @@
     // Set color of buttons
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
+    if ([AccountUtility loggedIn])
+    {
+        [self switchToAccountView];
+    }
+    
+    
     return YES;
 }
 
@@ -41,10 +48,26 @@
     
     NSLog(@"URL query: %@", [url query]);
     
-    [[NSUserDefaults standardUserDefaults] setValue:code forKey:@"code"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
+    [AccountUtility setCode:code];
     return YES;
+}
+
+-(void) switchToAccountView {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *mainNav = [storyboard instantiateViewControllerWithIdentifier:@"MainNav"];
+    UINavigationController *accountNav = [storyboard instantiateViewControllerWithIdentifier:@"AccountNav"];
+    NSArray *arr = @[mainNav, accountNav];
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    [tabBarController setViewControllers:arr];
+}
+
+-(void) switchToLoginView {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *mainNav = [storyboard instantiateViewControllerWithIdentifier:@"MainNav"];
+    UINavigationController *loginNav = [storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+    NSArray *arr = @[mainNav, loginNav];
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    [tabBarController setViewControllers:arr];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
