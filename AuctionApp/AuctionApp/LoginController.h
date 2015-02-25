@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RegisterModel.h"
 
 @interface LoginController : UIViewController
+
+@property (nonatomic) RegisterModel *model;
+
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+- (IBAction)login:(id)sender;
 
 @end
