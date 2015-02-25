@@ -10,4 +10,15 @@
 
 @interface AccountUtility : NSObject
 
++ (void)login :(NSDictionary *) accountInfo;
++ (void)logout;
++ (void)setCode :(NSString *) code;
++ (NSString *)getCode;
++ (void)removeCode;
++ (NSString *)getName;
++ (NSString *)getId;
++ (BOOL) loggedIn;
+
+
+
 @end
