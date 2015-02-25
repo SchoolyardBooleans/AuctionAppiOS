@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AuctionItemBasic : NSObject
+@interface AuctionItem : NSObject
 
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSString* itemID;
+@property (nonatomic) NSString* sponsorName;
 @property (nonatomic) NSNumber* currentBid;
+@property (nonatomic) NSNumber* estimatedValue;
 @property (nonatomic) BOOL featured;
 @property (nonatomic) NSString* imageURL;
+@property (nonatomic) NSString* descrip;
 
 
 @end

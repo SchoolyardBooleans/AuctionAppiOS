@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
 //
 
-#import "AuctionItemBasic.h"
+#import "AuctionItem.h"
 
-@implementation AuctionItemBasic
+@implementation AuctionItem
 
 @end
