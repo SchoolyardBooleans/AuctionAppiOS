@@ -18,9 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.nameLabel.text = self.auctionItemBasic.name;
-    self.currentBidLabel.text = [NSString stringWithFormat: @"$%@", [self.auctionItemBasic.currentBid stringValue]];
-    [self.itemImage setImageWithURL:[NSURL URLWithString: self.auctionItemBasic.imageURL]
+    self.nameLabel.text = self.auctionItem.name;
+    self.descriptionLabel.text = self.auctionItem.descrip;
+    self.sponsorLabel.text = self.auctionItem.sponsorName;
+    self.currentBidLabel.text = [NSString stringWithFormat: @"$%@", [self.auctionItem.currentBid stringValue]];
+    [self.itemImage setImageWithURL:[NSURL URLWithString: self.auctionItem.imageURL]
                    placeholderImage:[UIImage imageNamed:@"placeholder"]];
    // self.descriptionLabel.hidden = true;
    // self.sponsorView.hidden = true;

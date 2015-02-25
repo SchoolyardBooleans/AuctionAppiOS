@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AuctionItemBasic.h"
+#import "AuctionItem.h"
 
 @interface ItemController : UIViewController
 
-@property (nonatomic) AuctionItemBasic *auctionItemBasic;
+@property (nonatomic) AuctionItem *auctionItem;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sponsorLabel;
