@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AuctionController : UIViewController
+@interface AccountController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+- (IBAction)logout:(id)sender;
 
 @end

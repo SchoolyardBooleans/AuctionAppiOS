@@ -6,8 +6,29 @@
 //  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
 //
 
-#import "AuctionController.h"
+#import "AccountController.h"
+#import "AccountUtility.h"
+#import "AppDelegate.h"
 
-@implementation AuctionController
+@implementation AccountController
+{
+    NSString *userId;
+    NSString *userName;
+}
 
+- (void)viewDidLoad {
+    userId = [AccountUtility getId];
+    userName = [AccountUtility getName];
+    self.nameLabel.text = userName;
+}
+
+- (IBAction)logout:(id)sender {
+    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [AccountUtility logout];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [appdelegate switchToLoginView];
+    });
+    
+}
 @end
