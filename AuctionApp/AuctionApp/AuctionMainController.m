@@ -8,6 +8,7 @@
 
 #import "AuctionMainController.h"
 #import "PickItemController.h"
+#import "ItemController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface AuctionMainController ()
@@ -65,7 +66,7 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FeaturedCell" forIndexPath:indexPath];
     UILabel *label = (UILabel *) [cell viewWithTag: 100];
     UIImageView *image = (UIImageView *) [cell viewWithTag: 20];
-    AuctionItemBasic *item = [featuredItems objectAtIndex:indexPath.row];
+    AuctionItem *item = [featuredItems objectAtIndex:indexPath.row];
     
     label.text = item.name;
     
@@ -83,23 +84,33 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSString* fromPickNonprofitsSegue = @"ViewItems";
+    NSString* viewItemsSegue = @"ViewItems";
+    NSString* viewItemSeque = @"ViewItem";
     
-    if ([[segue identifier] isEqualToString:fromPickNonprofitsSegue]) {
+    if ([[segue identifier] isEqualToString:viewItemsSegue]) {
         PickItemController *controller = [segue destinationViewController];
         
         // Pass model and auctionId off to controller
         [controller setAuctionItems:auctionItems];
         [controller setModel:self.model];
         [controller setAuctionId:auctionInfo.aucId];
+    } else if ([[segue identifier] isEqualToString:viewItemSeque]) {
+        //Problem here
+        ItemController *controller = [segue destinationViewController];
+        NSArray *indexPaths = [self.featuredCollection indexPathsForSelectedItems];
+        NSIndexPath *selected = [indexPaths objectAtIndex:0];
+        AuctionItem *item = [featuredItems objectAtIndex:selected.row];
+        
+        [controller setAuctionItem:item];
     }
+    
 }
 
 #pragma mark - Utility
 
 - (NSArray *)getFeaturedItems:(NSArray *) items {
     
-    NSPredicate *featuredPredicate = [NSPredicate predicateWithBlock:^BOOL(AuctionItemBasic *item, NSDictionary *bindings) {
+    NSPredicate *featuredPredicate = [NSPredicate predicateWithBlock:^BOOL(AuctionItem *item, NSDictionary *bindings) {
         return item.featured == YES;
     }];
     
