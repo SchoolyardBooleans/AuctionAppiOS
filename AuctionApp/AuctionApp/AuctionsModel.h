@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AuctionInfo.h"
-#import "AuctionItemBasic.h"
+#import "AuctionItem.h"
 #import "ServerConnection.h"
 
 @interface AuctionsModel : NSObject

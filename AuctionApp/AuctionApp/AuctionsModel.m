@@ -81,16 +81,17 @@ int const COMPLETE = 2;
                                 NSArray *recordsList = (NSArray *) recordsJSON;
                                 
                                 for (id record in recordsList) {
-                                    AuctionItemBasic *add = [[AuctionItemBasic alloc] init];
+                                    AuctionItem *add = [[AuctionItem alloc] init];
                                 
                                     add.name = [record valueForKey:@"Name"];
+                                    add.descrip = [record valueForKey:@"Description__c"];
                                     add.itemID = [record valueForKey:@"Id"];
                                     add.currentBid = [record valueForKey:@"Current_Bid__c"];
                                     add.featured = [[record valueForKey:@"Featured__c"] boolValue];
                                     add.imageURL = [record valueForKey:@"Image_URL__c"];
+                                    add.sponsorName = [record valueForKey:@"Sponsor_Name__c"];
                                     [auctionItems addObject:add];
                                 }
-                            
                             }
                         }
                     }
