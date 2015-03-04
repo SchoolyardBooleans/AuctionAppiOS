@@ -134,40 +134,30 @@ int const COMPLETE = 2;
 }
 
 -(void) getCurrentBid:(NSString *) itemID :(void (^)(NSNumber *, NSString *))callback {
-//     NSMutableString *bidURL = [NSMutableString stringWithString:@"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/auctionitems/"];
-//    
-//    [bidURL appendString:itemID];
-//    
-//    [ServerConnection httpGET:bidURL :^(id retJSON, NSString *error) {
-//        if (error == nil) {
-//            if (retJSON) {
-//                if ([retJSON isKindOfClass:[NSDictionary class]]) {
-//                    NSDictionary *retDictionary = (NSDictionary *) retJSON;
-//                    id bidsJSON = [retDictionary valueForKey:@"bids"];
-//                    
-//                    if ([bidsJSON isKindOfClass:[NSArray class]]) {
-//                        NSArray *bidsArray = (NSArray *) bidsJSON;
-//                        
-//                        for (id bid in bidsArray) {
-//                            
-//                        }
-//                        
-//                        
-//                    }
-//
-//                    callback([retDictionary valueForKey:@"Current_Bid__c"], nil);
-//                    return;
-//                }
-//            }
-//        }
-//        
-//        callback(nil, @"Unable to connect to server");
-//    }];
+     NSMutableString *bidURL = [NSMutableString stringWithString:@"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/auctionitems/"];
+    
+    [bidURL appendString:itemID];
+    
+    [ServerConnection httpGET:bidURL :^(id retJSON, NSString *error) {
+        if (error == nil) {
+            if (retJSON) {
+                if ([retJSON isKindOfClass:[NSDictionary class]]) {
+                    NSDictionary *retDictionary = (NSDictionary *) retJSON;
+
+                    callback([retDictionary valueForKey:@"Current_Bid__c"], nil);
+                    return;
+                }
+            }
+        }
+        
+        callback(nil, @"Unable to connect to server");
+    }];
     
 }
 
 -(void)getBidsForUser:(NSString *)bidderID :(void (^)(NSMutableArray *, NSString *))callback {
     NSMutableString *bidsURL = [NSMutableString stringWithString:@"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/bidders/"];
+    NSMutableArray *bids = [[NSMutableArray alloc] init];
     
     [bidsURL appendString:bidderID];
     
@@ -175,7 +165,27 @@ int const COMPLETE = 2;
         if (error == nil) {
             if (retJSON) {
                 if ([retJSON isKindOfClass:[NSDictionary class]]) {
+                    NSDictionary *retDictionary = (NSDictionary *) retJSON;
+                    id bidsJSON = [retDictionary valueForKey:@"bids"];
                     
+                    if ([bidsJSON isKindOfClass:[NSArray class]]) {
+                        NSArray *bidsArray = (NSArray *) bidsJSON;
+                        
+                        for (id record in bidsArray) {
+                            Bid *bid = [[Bid alloc] init];
+                            bid.itemName = [record valueForKey:@"Name"];
+                            bid.itemID = [record valueForKey:@"ItemId"];
+                            bid.isWinning = [[record valueForKey:@"isWinning"] boolValue];
+                            bid.auctionName = [record valueForKey:@"AuctionName"];
+                            bid.amount = [record valueForKey:@"amount"];
+                            bid.imageURL = [record valueForKey:@"ImageURL"];
+                            
+                            [bids addObject:bid];
+                        }
+                        
+                        callback(bids, nil);
+                        return;
+                    }
                 }
             }
         }
