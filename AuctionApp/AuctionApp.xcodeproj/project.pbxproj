@@ -10,6 +10,7 @@
 		1148C28E1A9D5D8F007F135A /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1148C28D1A9D5D8F007F135A /* AccountController.m */; };
 		1148C2911A9D5ED2007F135A /* AccountUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1148C2901A9D5ED2007F135A /* AccountUtility.m */; };
 		11567E1D1AA68F380073173E /* Bid.m in Sources */ = {isa = PBXBuildFile; fileRef = 11567E1C1AA68F380073173E /* Bid.m */; };
+		11567E201AA6A0280073173E /* BidCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11567E1F1AA6A0280073173E /* BidCell.m */; };
 		115996311A92AA33008BA47B /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115996301A92AA33008BA47B /* RegisterController.m */; };
 		115996341A92B8BF008BA47B /* RegisterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 115996331A92B8BF008BA47B /* RegisterModel.m */; };
 		116592511A80798C007321E4 /* AuctionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 116592501A80798C007321E4 /* AuctionItem.m */; };
@@ -52,6 +53,8 @@
 		1148C2901A9D5ED2007F135A /* AccountUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountUtility.m; sourceTree = "<group>"; };
 		11567E1B1AA68F380073173E /* Bid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bid.h; sourceTree = "<group>"; };
 		11567E1C1AA68F380073173E /* Bid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bid.m; sourceTree = "<group>"; };
+		11567E1E1AA6A0280073173E /* BidCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BidCell.h; sourceTree = "<group>"; };
+		11567E1F1AA6A0280073173E /* BidCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BidCell.m; sourceTree = "<group>"; };
 		1159962F1A92AA33008BA47B /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterController.h; sourceTree = "<group>"; };
 		115996301A92AA33008BA47B /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
 		115996321A92B8BF008BA47B /* RegisterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterModel.h; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				1198E1B11A6600A200B7E0F2 /* AuctionTableCell.m */,
 				1178C5A61A82A7000011F119 /* ItemTableCell.m */,
 				1178C5A81A82A7140011F119 /* ItemTableCell.h */,
+				11567E1E1AA6A0280073173E /* BidCell.h */,
+				11567E1F1AA6A0280073173E /* BidCell.m */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11567E201AA6A0280073173E /* BidCell.m in Sources */,
 				DC744F131A2C00AB0066F329 /* AuctionsModel.m in Sources */,
 				DC744F151A2C00AB0066F329 /* ServerConnection.m in Sources */,
 				DCFA94AC1A102BB3006CB212 /* AppDelegate.m in Sources */,
