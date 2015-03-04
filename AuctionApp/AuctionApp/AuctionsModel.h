@@ -21,11 +21,11 @@ extern int const BEFORE;
 extern int const IN_PROGRESS;
 extern int const COMPLETE;
 
-/**
- Returns an AuctionInfo NSMutableArray, each containing an id and name
- */
 - (void) getAuctions :(void (^)(NSMutableArray*, NSString *)) callback;
 - (void) getAuctionItems:(NSString *) auctionID :(void (^)(NSMutableArray*, NSString *)) callback;
+- (void) makeBid:(NSString *) itemID : (NSString *) amount :(NSString *) bidderID :(void (^)(BOOL, NSString *)) callback;
+- (void) getCurrentBid:(NSString *) itemID :(void (^)(NSNumber *, NSString *))callback;
+- (void) getBidsForUser:(NSString *) bidderID : (void (^)(NSMutableArray*, NSString *)) callback;
 - (NSString *) statusMessageForAuction:(AuctionInfo *)auction;
 
 @end
