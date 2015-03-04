@@ -53,20 +53,22 @@
 }
 
 -(void) switchToAccountView {
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController *mainNav = [storyboard instantiateViewControllerWithIdentifier:@"MainNav"];
+    UINavigationController *mainNav = [[tabBarController viewControllers] objectAtIndex:0];
     UINavigationController *accountNav = [storyboard instantiateViewControllerWithIdentifier:@"AccountNav"];
     NSArray *arr = @[mainNav, accountNav];
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    
+    
     [tabBarController setViewControllers:arr];
 }
 
 -(void) switchToLoginView {
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController *mainNav = [storyboard instantiateViewControllerWithIdentifier:@"MainNav"];
+    UINavigationController *mainNav = [[tabBarController viewControllers] objectAtIndex:0];
     UINavigationController *loginNav = [storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
     NSArray *arr = @[mainNav, loginNav];
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     [tabBarController setViewControllers:arr];
 }
 
