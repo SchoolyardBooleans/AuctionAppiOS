@@ -189,6 +189,7 @@
         
         // Pass itemId off to controller
         [controller setAuctionItem:selectedItem];
+        [controller setModel:self.model];
     }
 }
 

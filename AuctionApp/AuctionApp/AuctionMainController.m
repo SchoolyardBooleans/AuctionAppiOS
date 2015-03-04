@@ -102,6 +102,7 @@
         AuctionItem *item = [featuredItems objectAtIndex:selected.row];
         
         [controller setAuctionItem:item];
+        [controller setModel:self.model];
     }
     
 }
