@@ -129,7 +129,7 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24D-o0-xWp" userLabel="ConfirmCode">
                                 <rect key="frame" x="54" y="351" width="449" height="192"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="An email has been sent with a verification code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSk-0V-B4z">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="An email has been sent with a verification code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSk-0V-B4z">
                                         <rect key="frame" x="29" y="20" width="400" height="23"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -146,7 +146,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dio-js-X9w">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dio-js-X9w">
                                         <rect key="frame" x="216" y="140" width="57" height="32"/>
                                         <state key="normal" title="Confrim">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -499,7 +499,7 @@
         <!--Item Controller-->
         <scene sceneID="CcS-LR-qa6">
             <objects>
-                <viewController id="jRG-Pc-pSx" customClass="ItemController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemController" id="jRG-Pc-pSx" customClass="ItemController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j1z-gF-fA6"/>
                         <viewControllerLayoutGuide type="bottom" id="y7g-z5-rtf"/>
@@ -574,6 +574,14 @@
                                     <action selector="bidChanged:" destination="jRG-Pc-pSx" eventType="valueChanged" id="NuL-98-qhS"/>
                                 </connections>
                             </slider>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGd-Y6-SL0">
+                                <rect key="frame" x="215" y="487" width="157" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="jRG-Pc-pSx" eventType="touchUpInside" id="JAi-QR-kGL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -581,6 +589,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="mFR-hY-n9P" secondAttribute="trailing" constant="56" id="6P9-Gd-Exh"/>
                             <constraint firstItem="dIE-Kn-FYC" firstAttribute="top" secondItem="j1z-gF-fA6" secondAttribute="bottom" constant="24" id="GMK-Rn-N0c"/>
                             <constraint firstItem="1MV-Vy-vvC" firstAttribute="leading" secondItem="Vzg-tn-ul4" secondAttribute="leadingMargin" id="GX8-fK-7tf"/>
+                            <constraint firstItem="uGd-Y6-SL0" firstAttribute="top" secondItem="qHv-AM-ETD" secondAttribute="bottom" constant="19" id="JIy-dw-m3Q"/>
                             <constraint firstAttribute="centerX" secondItem="3dy-4B-Dc6" secondAttribute="centerX" id="Nhe-Ih-BzX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b8U-IH-NjJ" secondAttribute="trailing" constant="23" id="TA9-AO-Io8"/>
                             <constraint firstItem="1MV-Vy-vvC" firstAttribute="top" secondItem="j1z-gF-fA6" secondAttribute="bottom" constant="10" id="TjZ-OM-LIV"/>
@@ -594,6 +603,7 @@
                             <constraint firstItem="b8U-IH-NjJ" firstAttribute="leading" secondItem="Vzg-tn-ul4" secondAttribute="leadingMargin" id="gkw-59-jpr"/>
                             <constraint firstItem="mFR-hY-n9P" firstAttribute="top" secondItem="b8U-IH-NjJ" secondAttribute="bottom" constant="19" id="h2d-bM-8RZ"/>
                             <constraint firstItem="3dy-4B-Dc6" firstAttribute="top" secondItem="qHv-AM-ETD" secondAttribute="bottom" constant="19" id="n3U-Xq-BGk"/>
+                            <constraint firstAttribute="centerX" secondItem="uGd-Y6-SL0" secondAttribute="centerX" id="rOm-SX-ItQ"/>
                             <constraint firstItem="b8U-IH-NjJ" firstAttribute="top" secondItem="1MV-Vy-vvC" secondAttribute="bottom" constant="16" id="v77-ee-54s"/>
                             <constraint firstItem="mFR-hY-n9P" firstAttribute="leading" secondItem="Vzg-tn-ul4" secondAttribute="leadingMargin" id="yH6-B6-4k5"/>
                             <constraint firstItem="vqP-85-GAw" firstAttribute="top" secondItem="mFR-hY-n9P" secondAttribute="bottom" constant="132" id="yZe-jp-uTH"/>
@@ -606,10 +616,12 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bidButton" destination="3dy-4B-Dc6" id="tC2-eF-j3p"/>
                         <outlet property="bidSlider" destination="qHv-AM-ETD" id="S3Z-pM-4QA"/>
                         <outlet property="currentBidLabel" destination="vqP-85-GAw" id="UVM-Wb-rn4"/>
                         <outlet property="descriptionLabel" destination="b8U-IH-NjJ" id="7Ue-dW-7FM"/>
                         <outlet property="itemImage" destination="1MV-Vy-vvC" id="13v-c3-puj"/>
+                        <outlet property="loginButton" destination="uGd-Y6-SL0" id="gxB-vw-9ud"/>
                         <outlet property="nameLabel" destination="dIE-Kn-FYC" id="EpD-Z1-6k7"/>
                         <outlet property="sponsorLabel" destination="TRJ-Aq-Q0s" id="3bB-LH-TkW"/>
                         <outlet property="sponsorView" destination="mFR-hY-n9P" id="8kW-ex-U7u"/>
@@ -701,7 +713,6 @@
                                     <outlet property="itemImage" destination="F2I-XQ-Vik" id="VDO-Md-f7f"/>
                                     <outlet property="itemNameLabel" destination="ZaC-ch-kzl" id="sFz-Ri-tLX"/>
                                     <outlet property="myBidLabel" destination="U3t-UK-TKo" id="CLN-KU-7Z2"/>
-                                    <segue destination="jRG-Pc-pSx" kind="show" identifier="ItemDetail" id="la4-eg-2oA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -741,6 +752,6 @@
         <image name="user_male3-25" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="la4-eg-2oA"/>
+        <segue reference="doL-Oo-jWa"/>
     </inferredMetricsTieBreakers>
 </document>

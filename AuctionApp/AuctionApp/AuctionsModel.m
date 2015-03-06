@@ -6,6 +6,39 @@ int const COMPLETE = 2;
 
 @implementation AuctionsModel
 
+-(void) getAuctionItem:(NSString *)itemId :(void (^)(AuctionItem *item, NSString *error))callback {
+    NSMutableString *itemURL = [NSMutableString stringWithString:@"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/auctionitems/"];
+    
+    [itemURL appendString:itemId];
+    
+    // Make synchronous request
+    [ServerConnection httpGET:itemURL :^(id itemJSON, NSString* error) {
+        if (error == nil) {
+            // Add to and return NonprofitInfo array
+            if (itemJSON) {
+                if ([itemJSON isKindOfClass:[NSDictionary class]]) {
+                    NSDictionary *itemDictionary = [(NSDictionary *) itemJSON valueForKey:@"item"];
+                    AuctionItem *item = [[AuctionItem alloc] init];
+                    
+                    
+                    item.name = [itemDictionary valueForKey:@"Name"];
+                    item.descrip = [itemDictionary valueForKey:@"Description__c"];
+                    item.itemID = [itemDictionary valueForKey:@"Id"];
+                    item.currentBid = [itemDictionary valueForKey:@"Current_Bid__c"];
+                    item.featured = [[itemDictionary valueForKey:@"Featured__c"] boolValue];
+                    item.imageURL = [itemDictionary valueForKey:@"Image_URL__c"];
+                    item.sponsorName = [itemDictionary valueForKey:@"Sponsor_Name__c"];
+                    callback(item, nil);
+                    return;
+                }
+            }
+        }
+        callback(nil, error);
+        NSLog(@"Error making auction item request %@", error);
+    }];
+    
+}
+
 - (void) getAuctions:(void (^)(NSMutableArray *, NSString *)) callback {
     
     NSMutableArray *auctions = [[NSMutableArray alloc] init];
@@ -142,7 +175,7 @@ int const COMPLETE = 2;
         if (error == nil) {
             if (retJSON) {
                 if ([retJSON isKindOfClass:[NSDictionary class]]) {
-                    NSDictionary *retDictionary = (NSDictionary *) retJSON;
+                    NSDictionary *retDictionary = (NSDictionary *) [retJSON valueForKey: @"item"];
 
                     callback([retDictionary valueForKey:@"Current_Bid__c"], nil);
                     return;

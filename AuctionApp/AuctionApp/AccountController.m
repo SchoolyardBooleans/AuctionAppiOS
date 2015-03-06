@@ -110,23 +110,7 @@
         cell = [[BidCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bidCellID];
     }
     
-    Bid *item = nil;
-    // Grab cell from search table
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        if (indexPath.section == 0) {
-            item = [winningSearchResults objectAtIndex:indexPath.row];
-        } else {
-            item = [losingSearchResults objectAtIndex:indexPath.row];
-        }
-    }
-    // Grab cell from normal table
-    else {
-        if (indexPath.section == 0) {
-            item = [winningBids objectAtIndex:indexPath.row];
-        } else {
-            item = [losingBids objectAtIndex:indexPath.row];
-        }
-    }
+    Bid *item = [self getBidFromTable:tableView atIndex:indexPath];
     
     [nameAndAuction appendString: item.itemName];
     [nameAndAuction appendString: @" - "];
@@ -215,6 +199,26 @@
     return YES;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Bid *bid = [self getBidFromTable:tableView atIndex:indexPath];
+    
+    [model getAuctionItem:bid.itemID :^(AuctionItem *item, NSString *error) {
+        if (error == nil) {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            ItemController *itemController = [storyboard instantiateViewControllerWithIdentifier:@"ItemController"];
+            [itemController setModel:model];
+            [itemController setAuctionItem:item];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.navigationController pushViewController:itemController animated:YES];
+            });
+        } else {
+            NSLog(@"Error: %@", error);
+        }
+    }];
+}
+
 #pragma mark - Navigation
 
 
@@ -241,4 +245,27 @@
 //        [controller setModel:self.model];
 //    }
 //}
+
+#pragma mark - Utility
+-(Bid *) getBidFromTable:(UITableView *)tableView atIndex:(NSIndexPath *)indexPath {
+    Bid *bid;
+    // Grab cell from search table
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        if (indexPath.section == 0) {
+            bid = [winningSearchResults objectAtIndex:indexPath.row];
+        } else {
+            bid = [losingSearchResults objectAtIndex:indexPath.row];
+        }
+    }
+    // Grab cell from normal table
+    else {
+        if (indexPath.section == 0) {
+            bid = [winningBids objectAtIndex:indexPath.row];
+        } else {
+            bid = [losingBids objectAtIndex:indexPath.row];
+        }
+    }
+    
+    return bid;
+}
 @end

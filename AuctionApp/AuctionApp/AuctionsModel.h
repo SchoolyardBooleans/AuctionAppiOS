@@ -22,11 +22,12 @@ extern int const BEFORE;
 extern int const IN_PROGRESS;
 extern int const COMPLETE;
 
-- (void) getAuctions :(void (^)(NSMutableArray*, NSString *)) callback;
-- (void) getAuctionItems:(NSString *) auctionID :(void (^)(NSMutableArray*, NSString *)) callback;
-- (void) makeBid:(NSString *) itemID : (NSString *) amount :(NSString *) bidderID :(void (^)(BOOL, NSString *)) callback;
-- (void) getCurrentBid:(NSString *) itemID :(void (^)(NSNumber *, NSString *))callback;
-- (void) getBidsForUser:(NSString *) bidderID : (void (^)(NSMutableArray*, NSString *)) callback;
+- (void) getAuctionItem :(NSString *) itemId :(void (^)(AuctionItem *item, NSString *error)) callback;
+- (void) getAuctions :(void (^)(NSMutableArray *auctions, NSString *error)) callback;
+- (void) getAuctionItems:(NSString *) auctionID :(void (^)(NSMutableArray *items, NSString *error)) callback;
+- (void) makeBid:(NSString *) itemID : (NSString *) amount :(NSString *) bidderID :(void (^)(BOOL success, NSString *error)) callback;
+- (void) getCurrentBid:(NSString *) itemID :(void (^)(NSNumber *currentBid, NSString *error))callback;
+- (void) getBidsForUser:(NSString *) bidderID : (void (^)(NSMutableArray *bids, NSString *error)) callback;
 - (NSString *) statusMessageForAuction:(AuctionInfo *)auction;
 
 @end

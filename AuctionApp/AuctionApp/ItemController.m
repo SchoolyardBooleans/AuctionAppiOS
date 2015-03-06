@@ -24,7 +24,8 @@
     self.sponsorLabel.text = self.auctionItem.sponsorName;
     [self.itemImage setImageWithURL:[NSURL URLWithString: self.auctionItem.imageURL]
                    placeholderImage:[UIImage imageNamed:@"placeholder"]];
-    [self updateCurrentBidLabel];
+    [self updateView];
+    
     
     // Add refresh button for currentBid
     UIBarButtonItem *button = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadCurrentBid)];
@@ -55,6 +56,10 @@
     }];
 }
 
+- (IBAction)login:(id)sender {
+    [self.tabBarController setSelectedIndex:1];
+}
+
 -(void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     [self loadCurrentBid];
 }
@@ -62,15 +67,25 @@
 -(void) loadCurrentBid {
     [self.model getCurrentBid:[self.auctionItem itemID] :^(NSNumber* currentBid, NSString *error) {
         [self.auctionItem setCurrentBid:currentBid];
-        [self performSelectorOnMainThread:@selector(updateCurrentBidLabel) withObject:nil waitUntilDone:NO];
+        [self performSelectorOnMainThread:@selector(updateView) withObject:nil waitUntilDone:NO];
     }];
 }
 
--(void) updateCurrentBidLabel {
+-(void) updateView {
     self.currentBidLabel.text = [NSString stringWithFormat: @"$%@", [self.auctionItem.currentBid stringValue]];
     self.bidSlider.minimumValue = [self.auctionItem.currentBid floatValue];
     self.bidSlider.maximumValue = self.bidSlider.minimumValue * 2.5 + 100;
     self.bidSlider.value = [self.auctionItem.currentBid floatValue];
+    
+    if (![AccountUtility loggedIn]) {
+        self.bidSlider.hidden = YES;
+        self.bidButton.hidden = YES;
+        self.loginButton.hidden = NO;
+    } else {
+        self.bidSlider.hidden = NO;
+        self.bidButton.hidden = NO;
+        self.loginButton.hidden = YES;
+    }
 }
 
 -(void) showErrorDialog:(NSString *)error {
