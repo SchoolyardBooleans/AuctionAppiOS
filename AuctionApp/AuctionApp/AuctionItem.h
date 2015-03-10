@@ -18,6 +18,7 @@
 @property (nonatomic) BOOL featured;
 @property (nonatomic) NSString* imageURL;
 @property (nonatomic) NSString* descrip;
+@property (nonatomic) NSNumber* minBid;
 
 
 @end

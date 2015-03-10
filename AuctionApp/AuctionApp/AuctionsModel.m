@@ -24,6 +24,7 @@ int const COMPLETE = 2;
                     item.name = [itemDictionary valueForKey:@"Name"];
                     item.descrip = [itemDictionary valueForKey:@"Description__c"];
                     item.itemID = [itemDictionary valueForKey:@"Id"];
+                    item.minBid = [itemDictionary valueForKey:@"Starting_Bid__c"];
                     item.currentBid = [itemDictionary valueForKey:@"Current_Bid__c"];
                     item.featured = [[itemDictionary valueForKey:@"Featured__c"] boolValue];
                     item.imageURL = [itemDictionary valueForKey:@"Image_URL__c"];
@@ -118,6 +119,7 @@ int const COMPLETE = 2;
                                     add.name = [record valueForKey:@"Name"];
                                     add.descrip = [record valueForKey:@"Description__c"];
                                     add.itemID = [record valueForKey:@"Id"];
+                                    add.minBid = [record valueForKey:@"Starting_Bid__c"];
                                     add.currentBid = [record valueForKey:@"Current_Bid__c"];
                                     add.featured = [[record valueForKey:@"Featured__c"] boolValue];
                                     add.imageURL = [record valueForKey:@"Image_URL__c"];
@@ -176,8 +178,14 @@ int const COMPLETE = 2;
             if (retJSON) {
                 if ([retJSON isKindOfClass:[NSDictionary class]]) {
                     NSDictionary *retDictionary = (NSDictionary *) [retJSON valueForKey: @"item"];
-
-                    callback([retDictionary valueForKey:@"Current_Bid__c"], nil);
+                    NSNumber *currentBid = [retDictionary valueForKey:@"Current_Bid__c"];
+                    NSNumber *minBid = [retDictionary valueForKey:@"Starting_Bid__c"];
+                    
+                    if (currentBid == nil || [minBid doubleValue] > [currentBid doubleValue]) {
+                        callback(minBid, nil);
+                    } else {
+                        callback(currentBid, nil);
+                    }
                     return;
                 }
             }

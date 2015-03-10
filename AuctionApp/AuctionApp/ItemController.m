@@ -39,21 +39,30 @@
     [sender setValue:(float)discreteValue];
     
     [newBid appendString:[[NSNumber numberWithFloat:discreteValue] stringValue]];
-    self.currentBidLabel.text = newBid;
+    self.bidField.text = newBid;
 }
 
 - (IBAction)makeBid:(id)sender {
     NSString *itemID = [NSString stringWithString:self.auctionItem.itemID];
-    NSString *currentBid = [self.currentBidLabel.text substringFromIndex:1];
+    NSString *currentBid = self.bidField.text;
     NSString *accountID = [AccountUtility getId];
+    NSString *currencyRegex = @"(?=.)^\\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\\.[0-9]{1,2})?$";
+    NSPredicate *currencyPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", currencyRegex];
     
-    [self.model makeBid:itemID :currentBid :accountID :^(BOOL success, NSString *error) {
-        if (error != nil || success == false) {
-            [self performSelectorOnMainThread:@selector(showErrorDialog:) withObject:error waitUntilDone:NO];
-        } else {
-            [self performSelectorOnMainThread:@selector(showSuccessDialog) withObject:nil waitUntilDone:NO];
-        }
-    }];
+    
+    if ([currencyPredicate evaluateWithObject:currentBid]) {
+        currentBid = [currentBid stringByReplacingOccurrencesOfString:@"$" withString:@""];
+        [self.model makeBid:itemID :currentBid :accountID :^(BOOL success, NSString *error) {
+            if (error != nil || success == false) {
+                [self performSelectorOnMainThread:@selector(showErrorDialog:) withObject:error waitUntilDone:NO];
+            } else {
+                [self performSelectorOnMainThread:@selector(showSuccessDialog) withObject:nil waitUntilDone:NO];
+            }
+        }];
+    } else {
+         [self performSelectorOnMainThread:@selector(showErrorDialog:) withObject:@"Invalid currency format" waitUntilDone:NO];
+    }
+    
 }
 
 - (IBAction)login:(id)sender {
@@ -72,7 +81,7 @@
 }
 
 -(void) updateView {
-    self.currentBidLabel.text = [NSString stringWithFormat: @"$%@", [self.auctionItem.currentBid stringValue]];
+    self.bidField.text = [NSString stringWithFormat: @"$%@", [self.auctionItem.currentBid stringValue]];
     self.bidSlider.minimumValue = [self.auctionItem.currentBid floatValue];
     self.bidSlider.maximumValue = self.bidSlider.minimumValue * 2.5 + 100;
     self.bidSlider.value = [self.auctionItem.currentBid floatValue];
@@ -90,7 +99,7 @@
 
 -(void) showErrorDialog:(NSString *)error {
     NSMutableString *errorMessage = [NSMutableString stringWithString: (error == nil) ? @"Someone placed a higher bid, please try again" : error];
-    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Sorry, a bid could not be made"
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Bid Failed!"
                                                      message:errorMessage
                                                     delegate:self
                                            cancelButtonTitle:@"Ok"

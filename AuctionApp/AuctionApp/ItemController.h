@@ -18,11 +18,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sponsorLabel;
 @property (weak, nonatomic) IBOutlet UIView *sponsorView;
-@property (weak, nonatomic) IBOutlet UILabel *currentBidLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *itemImage;
 @property (weak, nonatomic) IBOutlet UISlider *bidSlider;
 @property (weak, nonatomic) IBOutlet UIButton *bidButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UITextField *bidField;
 
 
 - (IBAction)bidChanged:(UISlider *)sender;

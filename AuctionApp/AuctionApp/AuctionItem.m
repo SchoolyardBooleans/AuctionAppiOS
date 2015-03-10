@@ -10,4 +10,14 @@
 
 @implementation AuctionItem
 
+@synthesize currentBid = _currentBid;  //Must do this
+
+-(NSNumber *)currentBid {
+    if (_currentBid == nil || [self.minBid doubleValue] > [_currentBid doubleValue]) {
+        return self.minBid;
+    } else {
+        return _currentBid;
+    }
+}
+
 @end

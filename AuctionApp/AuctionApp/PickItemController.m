@@ -99,7 +99,6 @@
     }
     
     cell.itemName.text = item.name;
-    cell.itemCurrentBid.text = @"Current Bid $50.00";
     cell.itemCurrentBid.text = currentBid;
     cell.itemCurrentBid.text = [cell.itemCurrentBid.text stringByAppendingString:[item.currentBid stringValue]];
     [cell.itemImage setImageWithURL:[NSURL URLWithString: item.imageURL]
