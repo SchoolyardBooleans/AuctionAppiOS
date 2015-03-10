@@ -1,11 +1,3 @@
-//
-//  AuctionAppTests.m
-//  AuctionAppTests
-//
-//  Created by Jon Vazquez on 11/9/14.
-//  Copyright (c) 2014 Schoolyard Booleans. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "ServerConnection.h"
@@ -30,15 +22,26 @@
 }
 
 - (void)testValidation {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-    [model validate:<#(NSString *)#> :<#(NSString *)#> :<#(NSString *)#>]
+    NSString *validFirst = @"Toby", *invalidFirst = @"_bill";
+    NSString *validLast = @"Keith", *invalidLast = @"45john";
+    NSString *validEmail = @"james@thefazios.com", *validEmail2 = @"bob4@cox.net", *invalidEmail = @"joe_rickdog.com";
+    
+    XCTAssertEqual(YES, [model validate:validFirst :validLast :validEmail]);
+    XCTAssertEqual(YES, [model validate:validFirst :validLast :validEmail2]);
+    XCTAssertEqual(NO, [model validate:invalidFirst :validLast :validEmail]);
+    XCTAssertEqual(NO, [model validate:validFirst :invalidLast :validEmail]);
+    XCTAssertEqual(NO, [model validate:validFirst :validLast :invalidEmail]);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+-(void)testLogin {
+    [model login:@"james@thefazios.com" :^(NSDictionary* json, NSString *error) {
+        XCTAssertNotNil(json);
+        XCTAssertNil(error);
+    }];
+    
+    [model login:@"dude@duely.co.uk" :^(NSDictionary* json, NSString *error) {
+        XCTAssertEqual(0, [json count]);
+        XCTAssertNotNil(error);
     }];
 }
 
