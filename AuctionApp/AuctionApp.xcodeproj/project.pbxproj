@@ -33,7 +33,7 @@
 		DCFA94B21A102BB3006CB212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA94B01A102BB3006CB212 /* Main.storyboard */; };
 		DCFA94B41A102BB3006CB212 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA94B31A102BB3006CB212 /* Images.xcassets */; };
 		DCFA94B71A102BB3006CB212 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCFA94B51A102BB3006CB212 /* LaunchScreen.xib */; };
-		DCFA94C31A102BB3006CB212 /* AuctionAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA94C21A102BB3006CB212 /* AuctionAppTests.m */; };
+		DCFA94C31A102BB3006CB212 /* RegisterModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA94C21A102BB3006CB212 /* RegisterModelTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +93,7 @@
 		DCFA94B61A102BB3006CB212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DCFA94BC1A102BB3006CB212 /* AuctionAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuctionAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA94C11A102BB3006CB212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCFA94C21A102BB3006CB212 /* AuctionAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuctionAppTests.m; sourceTree = "<group>"; };
+		DCFA94C21A102BB3006CB212 /* RegisterModelTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterModelTest.m; sourceTree = "<group>"; };
 		F98385EA5BB787ACA734744D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -244,7 +244,7 @@
 		DCFA94BF1A102BB3006CB212 /* AuctionAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				DCFA94C21A102BB3006CB212 /* AuctionAppTests.m */,
+				DCFA94C21A102BB3006CB212 /* RegisterModelTest.m */,
 				DCFA94C01A102BB3006CB212 /* Supporting Files */,
 			);
 			path = AuctionAppTests;
@@ -420,7 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC744F161A2C00AB0066F329 /* ServerConnection.m in Sources */,
-				DCFA94C31A102BB3006CB212 /* AuctionAppTests.m in Sources */,
+				DCFA94C31A102BB3006CB212 /* RegisterModelTest.m in Sources */,
 				DC744F141A2C00AB0066F329 /* AuctionsModel.m in Sources */,
 				DC744F0C1A2C009B0066F329 /* AuctionInfo.m in Sources */,
 			);
