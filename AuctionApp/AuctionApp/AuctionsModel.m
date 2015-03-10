@@ -28,7 +28,7 @@ int const COMPLETE = 2;
                     item.currentBid = [itemDictionary valueForKey:@"Current_Bid__c"];
                     item.featured = [[itemDictionary valueForKey:@"Featured__c"] boolValue];
                     item.imageURL = [itemDictionary valueForKey:@"Image_URL__c"];
-                    item.sponsorName = [itemDictionary valueForKey:@"Sponsor_Name__c"];
+                    item.sponsorName = [itemDictionary valueForKey:@"Sponsor_Name"];
                     callback(item, nil);
                     return;
                 }
@@ -123,7 +123,7 @@ int const COMPLETE = 2;
                                     add.currentBid = [record valueForKey:@"Current_Bid__c"];
                                     add.featured = [[record valueForKey:@"Featured__c"] boolValue];
                                     add.imageURL = [record valueForKey:@"Image_URL__c"];
-                                    add.sponsorName = [record valueForKey:@"Sponsor_Name__c"];
+                                    add.sponsorName = [[record valueForKey:@"Item_Sponsor__r"] valueForKey:@"Name"];
                                     [auctionItems addObject:add];
                                 }
                             }

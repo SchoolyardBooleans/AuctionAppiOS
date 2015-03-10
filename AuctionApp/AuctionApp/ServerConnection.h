@@ -2,8 +2,9 @@
 
 @interface ServerConnection : NSObject
 
-+ (void) httpGET:(NSString *) urlStr :(void (^)(id, NSString *)) callback;
-+ (void) httpPOST:(NSString *) urlStr :(NSDictionary *) mapBody :(void (^)(id, NSString *)) callback;
+extern int const TIMEOUT;
 
++ (void) httpGET:(NSString *) urlStr :(void (^)(id json, NSString *error)) callback;
++ (void) httpPOST:(NSString *) urlStr :(NSDictionary *) mapBody :(void (^)(id json, NSString *error)) callback;
 
 @end
