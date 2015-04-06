@@ -28,7 +28,7 @@
     [self.auctionName setText: auctionInfo.name];
     [self.auctionStatusMessage setText: [self.model statusMessageForAuction:auctionInfo]];
     
-    [self.model getAuctionItems:auctionInfo.aucId :^(NSMutableArray *items, NSString *error) {
+    [self.model getAuctionItemsForId:auctionInfo.aucId callback:^(NSMutableArray *items, NSString *error) {
         if (error == nil) {
             auctionItems = items;
             featuredItems = [self getFeaturedItems:auctionItems];

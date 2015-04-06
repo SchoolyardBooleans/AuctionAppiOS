@@ -21,7 +21,7 @@
 - (IBAction)login:(id)sender {
     NSString *email = self.emailField.text;
     if ([email length]) {
-        [self.model login:email :^(NSDictionary *dic, NSString *err) {
+        [self.model loginWithEmail:email callback:^(NSDictionary *dic, NSString *err) {
             if (err != nil) {
                 // Do stuff here
                 NSLog(@"Error");

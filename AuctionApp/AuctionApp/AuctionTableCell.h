@@ -1,10 +1,5 @@
-//
-//  AuctionTableCell.h
-//  AuctionApp
-//
-//  Created by James Fazio on 1/13/15.
-//  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
-//
+// Custom cell for the auctions tableview
+
 
 #import <UIKit/UIKit.h>
 

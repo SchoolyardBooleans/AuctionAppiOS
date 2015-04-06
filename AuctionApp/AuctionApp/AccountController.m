@@ -203,7 +203,7 @@
 {
     Bid *bid = [self getBidFromTable:tableView atIndex:indexPath];
     
-    [model getAuctionItem:bid.itemID :^(AuctionItem *item, NSString *error) {
+    [model getAuctionItemForId:bid.itemID callback:^(AuctionItem *item, NSString *error) {
         if (error == nil) {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             ItemController *itemController = [storyboard instantiateViewControllerWithIdentifier:@"ItemController"];

@@ -1,10 +1,4 @@
-//
-//  Bid.h
-//  AuctionApp
-//
-//  Created by James Fazio on 3/3/15.
-//  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
-//
+// Contains all the information for a bid object
 
 #import <Foundation/Foundation.h>
 

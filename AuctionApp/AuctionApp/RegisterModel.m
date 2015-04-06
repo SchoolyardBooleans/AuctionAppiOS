@@ -1,10 +1,11 @@
 #import "RegisterModel.h"
 #import "ServerConnection.h"
+#import "Constants.h"
 
 @implementation RegisterModel
 
--(void)registerAccount:(NSString *)firstName :(NSString *)lastName :(NSString *)email :(void (^)(BOOL, NSString *)) callback {
-    NSString *registerUrl = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/register";
+-(void)registerAccountwithFirstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email callback:(void (^)(BOOL, NSString *)) callback {
+    NSString *registerUrl = REGISTER_URL;
     NSDictionary *body = [[NSMutableDictionary alloc] init];
     
     [body setValue:firstName forKey:@"first"];
@@ -12,26 +13,29 @@
     [body setValue:email forKey:@"email"];
     
     [ServerConnection httpPOST:registerUrl :body :^(id JSON, NSString *error) {
+        // Error present
         if (error != nil) {
             callback(NO, error);
-        } else {
+        } else { // Success
             callback(YES, nil);
         }
     }];
 }
 
--(void)confirmAccount:(NSString *)code :(void (^)(NSDictionary * , NSString *))callback {
-    NSString *registerUrl = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/bidders";
+-(void)confirmAccountwithCode:(NSString *)code callback:(void (^)(NSDictionary * , NSString *))callback {
+    NSString *registerUrl = BIDDER_URL;
     NSDictionary *body = [[NSMutableDictionary alloc] init];
     
     [body setValue:code forKey:@"code"];
     
     [ServerConnection httpPOST:registerUrl :body :^(id jsonDict, NSString *error) {
         NSDictionary *dict = [[NSMutableDictionary alloc] init];
+        // Error present
         if (error != nil) {
             callback(dict, error);
         } else {
             if (jsonDict) {
+                // Valid return type
                 if ([jsonDict isKindOfClass:[NSDictionary class]]) {
                     dict = (NSDictionary *) jsonDict;
                 } // ServerSide error if not true
@@ -42,17 +46,20 @@
     }];
 }
 
--(void)login:(NSString *)email :(void (^)(NSDictionary *, NSString *))callback {
-    NSMutableString *registerUrl = [NSMutableString stringWithString: @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/login/"];
+-(void)loginWithEmail:(NSString *)email callback:(void (^)(NSDictionary *, NSString *))callback {
+    NSMutableString *registerUrl = [NSMutableString stringWithString: LOGIN_URL];
+    [registerUrl appendString:@"/"];
     [registerUrl appendString:email];
     
     [ServerConnection httpGET:registerUrl : ^(id jsonDict, NSString *error) {
         NSDictionary *dict = [[NSMutableDictionary alloc] init];
         
+        // Error present
         if (error != nil) {
             callback(dict, error);
         } else {
             if (jsonDict) {
+                // Valid return type
                 if ([jsonDict isKindOfClass:[NSDictionary class]]) {
                     dict = (NSDictionary *) jsonDict;
                 } // ServerSide error if not true 
@@ -63,7 +70,7 @@
     }];
 }
 
--(BOOL)validate:(NSString *)firstName :(NSString *)lastName :(NSString *)email {
+-(BOOL)validatefirstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email {
     return [self isValidName:firstName]
         && [self isValidName:lastName]
         && [self isValidEmail:email];

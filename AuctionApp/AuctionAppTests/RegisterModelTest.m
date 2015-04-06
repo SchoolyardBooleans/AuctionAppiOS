@@ -26,20 +26,20 @@
     NSString *validLast = @"Keith", *invalidLast = @"45john";
     NSString *validEmail = @"james@thefazios.com", *validEmail2 = @"bob4@cox.net", *invalidEmail = @"joe_rickdog.com";
     
-    XCTAssertEqual(YES, [model validate:validFirst :validLast :validEmail]);
-    XCTAssertEqual(YES, [model validate:validFirst :validLast :validEmail2]);
-    XCTAssertEqual(NO, [model validate:invalidFirst :validLast :validEmail]);
-    XCTAssertEqual(NO, [model validate:validFirst :invalidLast :validEmail]);
-    XCTAssertEqual(NO, [model validate:validFirst :validLast :invalidEmail]);
+    XCTAssertEqual(YES, [model validatefirstName:validFirst lastName:validLast email:validEmail]);
+    XCTAssertEqual(YES, [model validatefirstName:validFirst lastName:validLast email:validEmail2]);
+    XCTAssertEqual(NO, [model validatefirstName:invalidFirst lastName:validLast email:validEmail]);
+    XCTAssertEqual(NO, [model validatefirstName:validFirst lastName:invalidLast email:validEmail]);
+    XCTAssertEqual(NO, [model validatefirstName:validFirst lastName:validLast email:invalidEmail]);
 }
 
 -(void)testLogin {
-    [model login:@"james@thefazios.com" :^(NSDictionary* json, NSString *error) {
+    [model loginWithEmail:@"james@thefazios.com" callback:^(NSDictionary* json, NSString *error) {
         XCTAssertNotNil(json);
         XCTAssertNil(error);
     }];
     
-    [model login:@"dude@duely.co.uk" :^(NSDictionary* json, NSString *error) {
+    [model loginWithEmail:@"dude@duely.co.uk" callback:^(NSDictionary* json, NSString *error) {
         XCTAssertEqual(0, [json count]);
         XCTAssertNotNil(error);
     }];

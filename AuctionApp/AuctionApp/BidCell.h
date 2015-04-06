@@ -1,10 +1,4 @@
-//
-//  BidCell.h
-//  AuctionApp
-//
-//  Created by James Fazio on 3/3/15.
-//  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
-//
+// Custom cell for the my bids tableview
 
 #import <UIKit/UIKit.h>
 

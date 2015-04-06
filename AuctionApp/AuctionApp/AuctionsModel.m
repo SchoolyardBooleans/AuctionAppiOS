@@ -1,14 +1,11 @@
 #import "AuctionsModel.h"
 
-int const BEFORE = 0;
-int const IN_PROGRESS = 1;
-int const COMPLETE = 2;
-
 @implementation AuctionsModel
 
--(void) getAuctionItem:(NSString *)itemId :(void (^)(AuctionItem *item, NSString *error))callback {
-    NSMutableString *itemURL = [NSMutableString stringWithString:@"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/auctionitems/"];
+-(void) getAuctionItemForId:(NSString *)itemId callback:(void (^)(AuctionItem *item, NSString *error))callback {
+    NSMutableString *itemURL = [NSMutableString stringWithString:ITEM_URL];
     
+    [itemURL appendString:@"/"];
     [itemURL appendString:itemId];
     
     // Make synchronous request
@@ -43,8 +40,7 @@ int const COMPLETE = 2;
 - (void) getAuctions:(void (^)(NSMutableArray *, NSString *)) callback {
     
     NSMutableArray *auctions = [[NSMutableArray alloc] init];
-   // NSError *error;
-    NSString *nonprofitURL = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/nonprofits";
+    NSString *nonprofitURL = NONPROFIT_URL;
     
     // Make synchronous request
     [ServerConnection httpGET:nonprofitURL :^(id nonprofitListJSON, NSString* error) {
@@ -90,10 +86,11 @@ int const COMPLETE = 2;
     }];
 }
 
--(void) getAuctionItems:(NSString *)auctionID :(void (^)(NSMutableArray *, NSString *))callback {
+-(void) getAuctionItemsForId:(NSString *)auctionID callback:(void (^)(NSMutableArray *, NSString *))callback {
     NSMutableArray *auctionItems = [[NSMutableArray alloc] init];
-    NSMutableString *auctionURL = [NSMutableString stringWithString:@"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/auctions/"];
+    NSMutableString *auctionURL = [NSMutableString stringWithString:AUCTION_URL];
     
+    [auctionURL appendString:@"/"];
     [auctionURL appendString:auctionID];
     
     // Make synchronous request
@@ -140,10 +137,11 @@ int const COMPLETE = 2;
     }];
 }
 
--(void) makeBid:(NSString *)itemID :(NSString *)amount :(NSString *)bidderID :(void (^)(BOOL, NSString *))callback {
-    NSMutableString *bidURL = [NSMutableString stringWithString:@"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/auctionitems/"];
+-(void) makeBidForItem:(NSString *)itemID withAmount:(NSString *)amount withBidderId:(NSString *)bidderID callback:(void (^)(BOOL, NSString *))callback {
+    NSMutableString *bidURL = [NSMutableString stringWithString:ITEM_URL];
     NSDictionary *body = [[NSMutableDictionary alloc] init];
     
+    [bidURL appendString:@"/"];
     [bidURL appendString:itemID];
     [bidURL appendString: @"/bid"];
     
@@ -168,9 +166,10 @@ int const COMPLETE = 2;
     }];
 }
 
--(void) getCurrentBid:(NSString *) itemID :(void (^)(NSNumber *, NSString *))callback {
-     NSMutableString *bidURL = [NSMutableString stringWithString:@"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/auctionitems/"];
+-(void) getCurrentBidForItem:(NSString *) itemID callback:(void (^)(NSNumber *, NSString *))callback {
+     NSMutableString *bidURL = [NSMutableString stringWithString:ITEM_URL];
     
+    [bidURL appendString:@"/"];
     [bidURL appendString:itemID];
     
     [ServerConnection httpGET:bidURL :^(id retJSON, NSString *error) {
@@ -197,9 +196,10 @@ int const COMPLETE = 2;
 }
 
 -(void)getBidsForUser:(NSString *)bidderID :(void (^)(NSMutableArray *, NSString *))callback {
-    NSMutableString *bidsURL = [NSMutableString stringWithString:@"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/bidders/"];
+    NSMutableString *bidsURL = [NSMutableString stringWithString:BIDDER_URL];
     NSMutableArray *bids = [[NSMutableArray alloc] init];
     
+    [bidsURL appendString:@"/"];
     [bidsURL appendString:bidderID];
     
     [ServerConnection httpGET:bidsURL :^(id retJSON, NSString *error) {
@@ -236,10 +236,6 @@ int const COMPLETE = 2;
     
 }
 
-
-// Get the status message for an auction. Returns the end datetime
-// if the auction is in progress or the start time if the auction
-// occurs in the future
 - (NSString *) statusMessageForAuction:(AuctionInfo *)auction {
     NSMutableString *retVal;
     NSDateFormatter *df = [[NSDateFormatter alloc] init];

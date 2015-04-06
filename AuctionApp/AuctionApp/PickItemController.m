@@ -111,7 +111,7 @@
 
 - (void) getLatestItems {
     
-    [self.model getAuctionItems:self.auctionId :^(NSMutableArray *items, NSString *error) {
+    [self.model getAuctionItemsForId:self.auctionId callback:^(NSMutableArray *items, NSString *error) {
         if (error == nil) {
             self.auctionItems = items;
             [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];

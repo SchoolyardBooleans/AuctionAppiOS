@@ -52,7 +52,7 @@
     
     if ([currencyPredicate evaluateWithObject:currentBid]) {
         currentBid = [currentBid stringByReplacingOccurrencesOfString:@"$" withString:@""];
-        [self.model makeBid:itemID :currentBid :accountID :^(BOOL success, NSString *error) {
+        [self.model makeBidForItem:itemID withAmount:currentBid withBidderId:accountID callback:^(BOOL success, NSString *error) {
             if (error != nil || success == false) {
                 [self performSelectorOnMainThread:@selector(showErrorDialog:) withObject:error waitUntilDone:NO];
             } else {
@@ -74,7 +74,7 @@
 }
 
 -(void) loadCurrentBid {
-    [self.model getCurrentBid:[self.auctionItem itemID] :^(NSNumber* currentBid, NSString *error) {
+    [self.model getCurrentBidForItem:[self.auctionItem itemID] callback:^(NSNumber* currentBid, NSString *error) {
         [self.auctionItem setCurrentBid:currentBid];
         [self performSelectorOnMainThread:@selector(updateView) withObject:nil waitUntilDone:NO];
     }];

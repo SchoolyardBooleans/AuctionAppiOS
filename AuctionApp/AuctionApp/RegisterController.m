@@ -41,7 +41,7 @@
 - (IBAction)confirmAction:(UIButton *)sender {
     NSString *code = self.codeField.text;
     
-    [self.model confirmAccount:code :^(NSDictionary *dict, NSString *error) {
+    [self.model confirmAccountwithCode:code callback:^(NSDictionary *dict, NSString *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error != nil) {
                 self.errorLabel.text = error;
@@ -63,10 +63,10 @@
     NSString *lastName = self.lastNameField.text;
     NSString *email = self.emailField.text;
     
-    if ([self.model validate:firstName :lastName :email]) {
+    if ([self.model validatefirstName:firstName lastName:lastName email:email]) {
         self.errorLabel.hidden = true;
         
-        [self.model registerAccount:firstName :lastName :email :^(BOOL success, NSString *error) {
+        [self.model registerAccountwithFirstName:firstName lastName:lastName email:email callback:^(BOOL success, NSString *error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (error != nil) {
                     self.errorLabel.text = error;

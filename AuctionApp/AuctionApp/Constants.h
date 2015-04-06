@@ -1,13 +1,18 @@
-//
-//  Constants.h
-//  AuctionApp
-//
-//  Created by James Fazio on 4/5/15.
-//  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
-//
+// This file contains all of the constants for the bidfresh app
+#import <Foundation/Foundation.h>
 
-#ifndef AuctionApp_Constants_h
-#define AuctionApp_Constants_h
+// URLs for http requests
+extern NSString* const REGISTER_URL;
+extern NSString* const BIDDER_URL;
+extern NSString* const LOGIN_URL;
+extern NSString* const ITEM_URL;
+extern NSString* const NONPROFIT_URL;
+extern NSString* const AUCTION_URL;
 
+// Auction Statuses
+extern int const BEFORE;
+extern int const IN_PROGRESS;
+extern int const COMPLETE;
 
-#endif
+// Amount of time for http requests to try for
+extern int const TIMEOUT;

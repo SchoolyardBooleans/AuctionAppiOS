@@ -13,6 +13,8 @@
 		11567E201AA6A0280073173E /* BidCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11567E1F1AA6A0280073173E /* BidCell.m */; };
 		115996311A92AA33008BA47B /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115996301A92AA33008BA47B /* RegisterController.m */; };
 		115996341A92B8BF008BA47B /* RegisterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 115996331A92B8BF008BA47B /* RegisterModel.m */; };
+		116024EA1AD2315900579AEB /* AuctionsModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 116024E91AD2315900579AEB /* AuctionsModelTest.m */; };
+		116024F01AD2324D00579AEB /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 116024EF1AD2324D00579AEB /* Constants.m */; };
 		116592511A80798C007321E4 /* AuctionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 116592501A80798C007321E4 /* AuctionItem.m */; };
 		116DB18A1A75C870004E8551 /* AuctionMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116DB1891A75C870004E8551 /* AuctionMainController.m */; };
 		1178C5A71A82A7000011F119 /* ItemTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178C5A61A82A7000011F119 /* ItemTableCell.m */; };
@@ -59,6 +61,9 @@
 		115996301A92AA33008BA47B /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
 		115996321A92B8BF008BA47B /* RegisterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterModel.h; sourceTree = "<group>"; };
 		115996331A92B8BF008BA47B /* RegisterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterModel.m; sourceTree = "<group>"; };
+		116024E91AD2315900579AEB /* AuctionsModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionsModelTest.m; sourceTree = "<group>"; };
+		116024EF1AD2324D00579AEB /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		116024F11AD2325700579AEB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		1165924F1A80798C007321E4 /* AuctionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionItem.h; sourceTree = "<group>"; };
 		116592501A80798C007321E4 /* AuctionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionItem.m; sourceTree = "<group>"; };
 		116DB1881A75C870004E8551 /* AuctionMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionMainController.h; sourceTree = "<group>"; };
@@ -116,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		116024EC1AD2321300579AEB /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				116024EF1AD2324D00579AEB /* Constants.m */,
+				116024F11AD2325700579AEB /* Constants.h */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
 		1178C5A51A82A6CB0011F119 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +232,7 @@
 		DCFA94A51A102BB3006CB212 /* AuctionApp */ = {
 			isa = PBXGroup;
 			children = (
+				116024EC1AD2321300579AEB /* Global */,
 				1178C5A51A82A6CB0011F119 /* CustomViews */,
 				DC744F061A2C00850066F329 /* Info */,
 				DC744F051A2C007F0066F329 /* Model */,
@@ -246,6 +261,7 @@
 			children = (
 				DCFA94C21A102BB3006CB212 /* RegisterModelTest.m */,
 				DCFA94C01A102BB3006CB212 /* Supporting Files */,
+				116024E91AD2315900579AEB /* AuctionsModelTest.m */,
 			);
 			path = AuctionAppTests;
 			sourceTree = "<group>";
@@ -408,6 +424,7 @@
 				116DB18A1A75C870004E8551 /* AuctionMainController.m in Sources */,
 				115996311A92AA33008BA47B /* RegisterController.m in Sources */,
 				1148C2911A9D5ED2007F135A /* AccountUtility.m in Sources */,
+				116024F01AD2324D00579AEB /* Constants.m in Sources */,
 				11AC74261A95D1B0002E6809 /* ItemController.m in Sources */,
 				11567E1D1AA68F380073173E /* Bid.m in Sources */,
 				DC744F0B1A2C009B0066F329 /* AuctionInfo.m in Sources */,
@@ -422,6 +439,7 @@
 				DC744F161A2C00AB0066F329 /* ServerConnection.m in Sources */,
 				DCFA94C31A102BB3006CB212 /* RegisterModelTest.m in Sources */,
 				DC744F141A2C00AB0066F329 /* AuctionsModel.m in Sources */,
+				116024EA1AD2315900579AEB /* AuctionsModelTest.m in Sources */,
 				DC744F0C1A2C009B0066F329 /* AuctionInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
