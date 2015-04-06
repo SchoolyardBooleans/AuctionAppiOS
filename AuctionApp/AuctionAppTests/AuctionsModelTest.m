@@ -7,16 +7,20 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "AuctionsModel.h"
 
 @interface AuctionsModelTest : XCTestCase
 
 @end
 
-@implementation AuctionsModelTest
+@implementation AuctionsModelTest {
+    AuctionsModel *model;
+}
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    model = [[AuctionsModel alloc] init];
+    
 }
 
 - (void)tearDown {
@@ -24,16 +28,22 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testGetAuctionItem {
+    // Make sure an error occurs when an auction id does not exist
+    [model getAuctionItemForId:@"000" callback:^(AuctionItem *item, NSString *error) {
+        XCTAssertNotNil(error);
+    }];
+    
+    //Figure out a way to test getting an actual auction
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+-(void)testGetAuctions {
+    [model getAuctions:^(NSMutableArray *auctions, NSString *error) {
+        XCTAssertNil(error);
+        XCTAssertNotNil(auctions);
     }];
 }
+
+
 
 @end
