@@ -26,7 +26,8 @@
                     item.currentBid = [itemDictionary valueForKey:@"Current_Bid__c"];
                     item.featured = [[itemDictionary valueForKey:@"Featured__c"] boolValue];
                     item.imageURL = [itemDictionary valueForKey:@"Image_URL__c"];
-                    item.sponsorName = [itemDictionary valueForKey:@"Sponsor_Name"];
+                    item.sponsorName = [[itemDictionary valueForKey:@"Item_Sponsor__r"] valueForKey:@"Name"];
+                    item.status = [[[itemDictionary valueForKey:@"Auction__r"] valueForKey:@"Status__c"] integerValue];
                     callback(item, nil);
                     return;
                 }
@@ -119,6 +120,7 @@
                                 for (id record in recordsList) {
                                     AuctionItem *add = [[AuctionItem alloc] init];
                                 
+                                    add.status = [[auctionDictionary valueForKey:@"Status__c"] integerValue];
                                     add.name = [record valueForKey:@"Name"];
                                     add.descrip = [record valueForKey:@"Description__c"];
                                     add.itemID = [record valueForKey:@"Id"];
@@ -170,35 +172,6 @@
         
         callback(NO, @"Unable to send bid, please retry");
     }];
-}
-
--(void) getCurrentBidForItem:(NSString *) itemID callback:(void (^)(NSNumber *, NSString *))callback {
-     NSMutableString *bidURL = [NSMutableString stringWithString:ITEM_URL];
-    
-    [bidURL appendString:@"/"];
-    [bidURL appendString:itemID];
-    
-    [ServerConnection httpGET:bidURL :^(id retJSON, NSString *error) {
-        if (error == nil) {
-            if (retJSON) {
-                if ([retJSON isKindOfClass:[NSDictionary class]]) {
-                    NSDictionary *retDictionary = (NSDictionary *) [retJSON valueForKey: @"item"];
-                    NSNumber *currentBid = [retDictionary valueForKey:@"Current_Bid__c"];
-                    NSNumber *minBid = [retDictionary valueForKey:@"Starting_Bid__c"];
-                    
-                    if (currentBid == nil || [minBid doubleValue] > [currentBid doubleValue]) {
-                        callback(minBid, nil);
-                    } else {
-                        callback(currentBid, nil);
-                    }
-                    return;
-                }
-            }
-        }
-        
-        callback(nil, @"Unable to connect to server");
-    }];
-    
 }
 
 -(void)getBidsForUser:(NSString *)bidderID :(void (^)(NSMutableArray *, NSString *))callback {

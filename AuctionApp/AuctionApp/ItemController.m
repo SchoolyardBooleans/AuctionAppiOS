@@ -74,12 +74,13 @@
 }
 
 -(void) loadCurrentBid {
-    [self.model getCurrentBidForItem:[self.auctionItem itemID] callback:^(NSNumber* currentBid, NSString *error) {
-        [self.auctionItem setCurrentBid:currentBid];
+    [self.model getAuctionItemForId:[self.auctionItem itemID] callback:^(AuctionItem* item, NSString *error) {
+        self.auctionItem = item;
         [self performSelectorOnMainThread:@selector(updateView) withObject:nil waitUntilDone:NO];
     }];
 }
 
+// Add shit to check for closed auctions or auctions that are coming up
 -(void) updateView {
     self.bidField.text = [NSString stringWithFormat: @"$%@", [self.auctionItem.currentBid stringValue]];
     self.bidSlider.minimumValue = [self.auctionItem.currentBid floatValue];

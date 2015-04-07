@@ -27,10 +27,6 @@
 // error message.
 - (void) makeBidForItem:(NSString *) itemID withAmount: (NSString *) amount withBidderId:(NSString *) bidderID callback:(void (^)(BOOL success, NSString *error)) callback;
 
-// Get the most recent bid for the provided item id. The callback will be populated
-// with the most recent bid amount and an optional error message.
-- (void) getCurrentBidForItem:(NSString *) itemID callback:(void (^)(NSNumber *currentBid, NSString *error))callback;
-
 // Get the bids for the provided user id. The callback will be populated with
 // the user's bid objects and an optional error message.
 - (void) getBidsForUser:(NSString *) bidderID : (void (^)(NSMutableArray *bids, NSString *error)) callback;
