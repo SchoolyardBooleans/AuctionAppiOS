@@ -1,3 +1,5 @@
+// Utility class for making http requests
+
 #import <Foundation/Foundation.h>
 
 @interface ServerConnection : NSObject

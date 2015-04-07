@@ -11,8 +11,9 @@
     // Make synchronous request
     [ServerConnection httpGET:itemURL :^(id itemJSON, NSString* error) {
         if (error == nil) {
-            // Add to and return NonprofitInfo array
+            // JSON exists
             if (itemJSON) {
+                // JSON is expected type
                 if ([itemJSON isKindOfClass:[NSDictionary class]]) {
                     NSDictionary *itemDictionary = [(NSDictionary *) itemJSON valueForKey:@"item"];
                     AuctionItem *item = [[AuctionItem alloc] init];
@@ -45,8 +46,9 @@
     // Make synchronous request
     [ServerConnection httpGET:nonprofitURL :^(id nonprofitListJSON, NSString* error) {
         if (error == nil) {
-            // Add to and return NonprofitInfo array
+            // Make sure JSON exists
             if (nonprofitListJSON) {
+                // Make sure JSON is expected type Array
                 if ([nonprofitListJSON isKindOfClass:[NSArray class]]) {
                     for (id nonprofitJSON in nonprofitListJSON) {
                         
@@ -54,6 +56,7 @@
                         NSString *orgName = [nonprofitJSON valueForKey:@"Name"];
                         id auctionListJSON = [nonprofitJSON valueForKey:@"auctions"];
                         
+                        // Make sure json is expected type Array
                         if ([auctionListJSON isKindOfClass:[NSArray class]]) {
                             NSArray *auctionListArray = (NSArray *) auctionListJSON;
                             
@@ -95,14 +98,17 @@
     
     // Make synchronous request
     [ServerConnection httpGET:auctionURL :^(id auctionJSON, NSString* error) {
-        // Add to and return NonprofitInfo array
         if (error == nil) {
+            // Make sure JSON exists
             if (auctionJSON) {
+                // Make sure JSON is expected type Dictionary
                 if ([auctionJSON isKindOfClass:[NSDictionary class]]) {
                     NSDictionary *auctionDictionary = (NSDictionary *) auctionJSON;
                 
                     id itemsJSON = [auctionDictionary valueForKey:@"Auction_Items__r"];
+                    // Make sure auction has items
                     if (itemsJSON) {
+                        // Make sure auction items are in the right format Dictionary
                         if ([itemsJSON isKindOfClass:[NSDictionary class]]) {
                             NSDictionary *itemsDictionary = (NSDictionary *) itemsJSON;
                         
