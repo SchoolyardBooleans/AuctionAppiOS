@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *bidButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UITextField *bidField;
+@property (weak, nonatomic) IBOutlet UILabel *bidStatus;
+@property (weak, nonatomic) IBOutlet UILabel *bidLabel;
 
 
 - (IBAction)bidChanged:(UISlider *)sender;

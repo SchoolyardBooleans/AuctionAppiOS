@@ -82,19 +82,42 @@
 
 // Add shit to check for closed auctions or auctions that are coming up
 -(void) updateView {
-    self.bidField.text = [NSString stringWithFormat: @"$%@", [self.auctionItem.currentBid stringValue]];
-    self.bidSlider.minimumValue = [self.auctionItem.currentBid floatValue];
-    self.bidSlider.maximumValue = self.bidSlider.minimumValue * 2.5 + 100;
-    self.bidSlider.value = [self.auctionItem.currentBid floatValue];
+    NSInteger status = self.auctionItem.status;
+    NSString *currentBid = [NSString stringWithFormat: @"$%@", [self.auctionItem.currentBid stringValue]];
     
-    if (![AccountUtility loggedIn]) {
+    // Not logged in or the auction is not in progress
+    if (![AccountUtility loggedIn] || (status != IN_PROGRESS)) {
         self.bidSlider.hidden = YES;
         self.bidButton.hidden = YES;
-        self.loginButton.hidden = NO;
+        self.bidLabel.hidden = NO;
+        self.bidField.hidden = YES;
+        
+        // If the user is not logged in and the auction is in progress show the login button
+        if (![AccountUtility loggedIn] && status == IN_PROGRESS) {
+            self.loginButton.hidden = NO;
+        }
+        
+        self.bidLabel.text = currentBid;
     } else {
+        self.bidSlider.minimumValue = [self.auctionItem.currentBid floatValue];
+        self.bidSlider.maximumValue = self.bidSlider.minimumValue * 2.5 + 100;
+        self.bidSlider.value = [self.auctionItem.currentBid floatValue];
+        
         self.bidSlider.hidden = NO;
         self.bidButton.hidden = NO;
         self.loginButton.hidden = YES;
+        self.bidLabel.hidden = YES;
+        self.bidField.hidden = NO;
+
+        self.bidField.text = currentBid;
+    }
+    
+    if (status == COMPLETE) {
+        self.bidStatus.text = @"Winning Bid";
+    } else if (status == BEFORE) {
+        self.bidStatus.text = @"Starting Price";
+    } else  {
+        self.bidStatus.text = @"Current Bid";
     }
 }
 
