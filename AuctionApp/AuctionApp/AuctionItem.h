@@ -13,6 +13,7 @@
 @property (nonatomic) NSString* imageURL;
 @property (nonatomic) NSString* descrip;
 @property (nonatomic) NSNumber* minBid;
+@property (nonatomic) NSInteger status;
 
 
 @end
