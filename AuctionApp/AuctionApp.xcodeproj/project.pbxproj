@@ -328,6 +328,7 @@
 				TargetAttributes = {
 					DCFA94A21A102BB3006CB212 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = PY9957M84G;
 					};
 					DCFA94BB1A102BB3006CB212 = {
 						CreatedOnToolsVersion = 6.1;
@@ -561,6 +562,7 @@
 			baseConfigurationReference = CE69AF3ED66CE27C75F18543 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AuctionApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -573,6 +575,7 @@
 			baseConfigurationReference = 320D291C350A610A733A1020 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AuctionApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

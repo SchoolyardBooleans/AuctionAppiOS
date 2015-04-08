@@ -15,6 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.invalidEmail.hidden = YES;
     self.model = [[RegisterModel alloc] init];
 }
 
@@ -22,9 +23,11 @@
     NSString *email = self.emailField.text;
     if ([email length]) {
         [self.model loginWithEmail:email callback:^(NSDictionary *dic, NSString *err) {
-            if (err != nil) {
-                // Do stuff here
-                NSLog(@"Error");
+            if (err != nil || [[dic objectForKey:@"success"] boolValue] == NO) {
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.invalidEmail.hidden = NO;
+                });
             } else {
                 AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
                 

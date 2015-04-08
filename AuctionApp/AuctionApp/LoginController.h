@@ -14,6 +14,8 @@
 @property (nonatomic) RegisterModel *model;
 
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UILabel *invalidEmail;
+
 - (IBAction)login:(id)sender;
 
 @end
