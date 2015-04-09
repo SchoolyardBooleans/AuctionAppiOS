@@ -136,21 +136,6 @@
             winningBids = [recentBids filteredArrayUsingPredicate:winningPred];
             losingBids = [recentBids filteredArrayUsingPredicate:losingPred];
             
-            if ([winningBids count] == 0 && [losingBids count] == 0) {
-                // Display a message when the table is empty
-                messageLabel.text = @"You have not made any bids. Please pull down to refresh.";
-                messageLabel.textColor = [UIColor blackColor];
-                messageLabel.numberOfLines = 0;
-                messageLabel.textAlignment = NSTextAlignmentCenter;
-                messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
-                [messageLabel sizeToFit];
-                
-                self.tableView.backgroundView = messageLabel;
-                self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-            } else {
-                messageLabel.hidden = YES;
-            }
-            
             [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
         } else {
             NSLog(@"Error: %@", error);
@@ -160,6 +145,21 @@
 
 - (void)reloadData
 {
+    if ([winningBids count] == 0 && [losingBids count] == 0) {
+        // Display a message when the table is empty
+        messageLabel.text = @"You have not made any bids. Please pull down to refresh.";
+        messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+        [messageLabel sizeToFit];
+        
+        self.tableView.backgroundView = messageLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    } else {
+        messageLabel.hidden = YES;
+    }
+    
     // Reload table data
     [self.tableView reloadData];
     
