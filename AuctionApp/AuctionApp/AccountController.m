@@ -120,8 +120,12 @@
     
     cell.itemNameLabel.text = nameAndAuction;
     cell.myBidLabel.text = myBid;
-    [cell.itemImage setImageWithURL:[NSURL URLWithString: item.imageURL]
-                   placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    if (item.imageURL && ![item.imageURL isKindOfClass:[NSNull class]]) {
+        [cell.itemImage setImageWithURL:[NSURL URLWithString: item.imageURL]
+                       placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    } else {
+        [cell.itemImage setImage:[UIImage imageNamed:@"placeholder"]];
+    }
     
     return cell;
 }
