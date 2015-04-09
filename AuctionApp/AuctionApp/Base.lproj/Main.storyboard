@@ -561,21 +561,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Current Bid" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atx-fG-5Zf">
-                                <rect key="frame" x="16" y="343" width="88" height="21"/>
+                                <rect key="frame" x="16" y="298" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dy-4B-Dc6">
-                                <rect key="frame" x="215" y="487" width="157" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Make a Bid">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="makeBid:" destination="jRG-Pc-pSx" eventType="touchUpInside" id="QMa-fS-fsx"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="1MV-Vy-vvC">
                                 <rect key="frame" x="10" y="52" width="120" height="120"/>
                                 <constraints>
@@ -584,21 +574,21 @@
                                 </constraints>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qHv-AM-ETD">
-                                <rect key="frame" x="39" y="438" width="491" height="31"/>
+                                <rect key="frame" x="39" y="381" width="491" height="31"/>
                                 <connections>
                                     <action selector="bidChanged:" destination="jRG-Pc-pSx" eventType="valueChanged" id="NuL-98-qhS"/>
                                 </connections>
                             </slider>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGd-Y6-SL0">
-                                <rect key="frame" x="215" y="487" width="157" height="48"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGd-Y6-SL0">
+                                <rect key="frame" x="215" y="475" width="157" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                 <state key="normal" title="Login to Bid"/>
                                 <connections>
                                     <action selector="login:" destination="jRG-Pc-pSx" eventType="touchUpInside" id="JAi-QR-kGL"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$0" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KVA-l7-Qo6">
-                                <rect key="frame" x="223" y="376" width="141" height="40"/>
+                                <rect key="frame" x="223" y="326" width="141" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="141" id="OfM-yp-TBP"/>
                                 </constraints>
@@ -606,7 +596,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Bid Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTW-Cf-CJh" userLabel="BidLabel">
-                                <rect key="frame" x="223" y="395" width="141" height="21"/>
+                                <rect key="frame" x="223" y="345" width="141" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="141" id="Yub-JA-HXK"/>
                                 </constraints>
@@ -614,6 +604,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dy-4B-Dc6">
+                                <rect key="frame" x="215" y="475" width="157" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Make a Bid">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="makeBid:" destination="jRG-Pc-pSx" eventType="touchUpInside" id="QMa-fS-fsx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -622,23 +622,23 @@
                             <constraint firstAttribute="centerX" secondItem="GTW-Cf-CJh" secondAttribute="centerX" id="6ZQ-pW-GZf"/>
                             <constraint firstItem="dIE-Kn-FYC" firstAttribute="top" secondItem="j1z-gF-fA6" secondAttribute="bottom" constant="24" id="GMK-Rn-N0c"/>
                             <constraint firstItem="1MV-Vy-vvC" firstAttribute="leading" secondItem="Vzg-tn-ul4" secondAttribute="leadingMargin" id="GX8-fK-7tf"/>
-                            <constraint firstItem="uGd-Y6-SL0" firstAttribute="top" secondItem="qHv-AM-ETD" secondAttribute="bottom" constant="19" id="JIy-dw-m3Q"/>
-                            <constraint firstItem="KVA-l7-Qo6" firstAttribute="top" secondItem="mFR-hY-n9P" secondAttribute="bottom" constant="132" id="NUp-aB-4C1"/>
+                            <constraint firstItem="y7g-z5-rtf" firstAttribute="top" secondItem="uGd-Y6-SL0" secondAttribute="bottom" constant="28" id="Isf-rr-F8P"/>
+                            <constraint firstItem="KVA-l7-Qo6" firstAttribute="top" secondItem="mFR-hY-n9P" secondAttribute="bottom" constant="82" id="NUp-aB-4C1"/>
                             <constraint firstAttribute="centerX" secondItem="3dy-4B-Dc6" secondAttribute="centerX" id="Nhe-Ih-BzX"/>
-                            <constraint firstItem="qHv-AM-ETD" firstAttribute="top" secondItem="KVA-l7-Qo6" secondAttribute="bottom" constant="23" id="T7e-9b-BTF"/>
+                            <constraint firstItem="qHv-AM-ETD" firstAttribute="top" secondItem="KVA-l7-Qo6" secondAttribute="bottom" constant="18" id="T7e-9b-BTF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b8U-IH-NjJ" secondAttribute="trailing" constant="23" id="TA9-AO-Io8"/>
                             <constraint firstItem="1MV-Vy-vvC" firstAttribute="top" secondItem="j1z-gF-fA6" secondAttribute="bottom" constant="10" id="TjZ-OM-LIV"/>
                             <constraint firstItem="dIE-Kn-FYC" firstAttribute="leading" secondItem="1MV-Vy-vvC" secondAttribute="trailing" constant="38" id="UIQ-MY-t50"/>
                             <constraint firstItem="qHv-AM-ETD" firstAttribute="leading" secondItem="Vzg-tn-ul4" secondAttribute="leadingMargin" constant="25" id="X0K-D7-crh"/>
                             <constraint firstItem="atx-fG-5Zf" firstAttribute="leading" secondItem="Vzg-tn-ul4" secondAttribute="leadingMargin" id="Ywq-Do-bUM"/>
-                            <constraint firstItem="atx-fG-5Zf" firstAttribute="top" secondItem="mFR-hY-n9P" secondAttribute="bottom" constant="100" id="bLp-ay-dwK"/>
+                            <constraint firstItem="atx-fG-5Zf" firstAttribute="top" secondItem="mFR-hY-n9P" secondAttribute="bottom" constant="50" id="bLp-ay-dwK"/>
                             <constraint firstItem="dIE-Kn-FYC" firstAttribute="leading" secondItem="1MV-Vy-vvC" secondAttribute="trailing" constant="38" id="fSF-zt-y7Z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dIE-Kn-FYC" secondAttribute="trailing" constant="20" id="fUq-WM-eMi"/>
                             <constraint firstAttribute="centerX" secondItem="qHv-AM-ETD" secondAttribute="centerX" id="fyO-iD-hNk"/>
                             <constraint firstItem="b8U-IH-NjJ" firstAttribute="leading" secondItem="Vzg-tn-ul4" secondAttribute="leadingMargin" id="gkw-59-jpr"/>
                             <constraint firstItem="mFR-hY-n9P" firstAttribute="top" secondItem="b8U-IH-NjJ" secondAttribute="bottom" constant="19" id="h2d-bM-8RZ"/>
-                            <constraint firstItem="3dy-4B-Dc6" firstAttribute="top" secondItem="qHv-AM-ETD" secondAttribute="bottom" constant="19" id="n3U-Xq-BGk"/>
-                            <constraint firstItem="GTW-Cf-CJh" firstAttribute="top" secondItem="mFR-hY-n9P" secondAttribute="bottom" constant="140" id="odm-Sh-Vcq"/>
+                            <constraint firstItem="GTW-Cf-CJh" firstAttribute="top" secondItem="mFR-hY-n9P" secondAttribute="bottom" constant="90" id="odm-Sh-Vcq"/>
+                            <constraint firstItem="y7g-z5-rtf" firstAttribute="top" secondItem="3dy-4B-Dc6" secondAttribute="bottom" constant="28" id="p4a-eq-YRS"/>
                             <constraint firstAttribute="centerX" secondItem="uGd-Y6-SL0" secondAttribute="centerX" id="rOm-SX-ItQ"/>
                             <constraint firstItem="b8U-IH-NjJ" firstAttribute="top" secondItem="1MV-Vy-vvC" secondAttribute="bottom" constant="16" id="v77-ee-54s"/>
                             <constraint firstItem="mFR-hY-n9P" firstAttribute="leading" secondItem="Vzg-tn-ul4" secondAttribute="leadingMargin" id="yH6-B6-4k5"/>
