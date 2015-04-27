@@ -9,6 +9,7 @@
 #import "AuctionMainController.h"
 #import "PickItemController.h"
 #import "ItemController.h"
+#import "Constants.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface AuctionMainController ()
@@ -27,6 +28,11 @@
     [self.nonprofitName setText: auctionInfo.orgName];
     [self.auctionName setText: auctionInfo.name];
     [self.auctionStatusMessage setText: [self.model statusMessageForAuction:auctionInfo]];
+    
+    self.viewAllButton.backgroundColor = UIColorFromRGB(0x067AB5);
+    self.viewAllButton.layer.cornerRadius = 5;
+    [self.viewAllButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
     
     [self.model getAuctionItemsForId:auctionInfo.aucId callback:^(NSMutableArray *items, NSString *error) {
         if (error == nil) {
