@@ -15,19 +15,19 @@
             if (itemJSON) {
                 // JSON is expected type
                 if ([itemJSON isKindOfClass:[NSDictionary class]]) {
-                    NSDictionary *itemDictionary = [(NSDictionary *) itemJSON valueForKey:@"item"];
+                    NSDictionary *itemDictionary = [(NSDictionary *) itemJSON valueForKey:ITEM_KEY];
                     AuctionItem *item = [[AuctionItem alloc] init];
                     
                     
-                    item.name = [itemDictionary valueForKey:@"Name"];
-                    item.descrip = [itemDictionary valueForKey:@"Description__c"];
-                    item.itemID = [itemDictionary valueForKey:@"Id"];
-                    item.minBid = [itemDictionary valueForKey:@"Starting_Bid__c"];
-                    item.currentBid = [itemDictionary valueForKey:@"Current_Bid__c"];
-                    item.featured = [[itemDictionary valueForKey:@"Featured__c"] boolValue];
-                    item.imageURL = [itemDictionary valueForKey:@"Image_URL__c"];
-                    item.sponsorName = [[itemDictionary valueForKey:@"Item_Sponsor__r"] valueForKey:@"Name"];
-                    item.status = [[[itemDictionary valueForKey:@"Auction__r"] valueForKey:@"Status__c"] integerValue];
+                    item.name = [itemDictionary valueForKey:NAME_KEY];
+                    item.descrip = [itemDictionary valueForKey:AUCTION_ITEM_DESC_KEY];
+                    item.itemID = [itemDictionary valueForKey:ID_KEY];
+                    item.minBid = [itemDictionary valueForKey:AUCTION_ITEM_START_BID_KEY];
+                    item.currentBid = [itemDictionary valueForKey:AUCTION_ITEM_CUR_BID_KEY];
+                    item.featured = [[itemDictionary valueForKey:AUCTION_ITEM_FEATURED_KEY] boolValue];
+                    item.imageURL = [itemDictionary valueForKey:AUCTION_ITEM_IMAGE_KEY];
+                    item.sponsorName = [[itemDictionary valueForKey:AUCTION_ITEM_SPONSOR_KEY] valueForKey:NAME_KEY];
+                    item.status = [[[itemDictionary valueForKey:AUCTION_ITEM_AUCTION_KEY] valueForKey:AUCTION_ITEM_STATUS_KEY] integerValue];
                     callback(item, nil);
                     return;
                 }
@@ -53,9 +53,9 @@
                 if ([nonprofitListJSON isKindOfClass:[NSArray class]]) {
                     for (id nonprofitJSON in nonprofitListJSON) {
                         
-                        NSString *orgId = [nonprofitJSON valueForKey:@"Id"];
-                        NSString *orgName = [nonprofitJSON valueForKey:@"Name"];
-                        id auctionListJSON = [nonprofitJSON valueForKey:@"auctions"];
+                        NSString *orgId = [nonprofitJSON valueForKey:ID_KEY];
+                        NSString *orgName = [nonprofitJSON valueForKey:NAME_KEY];
+                        id auctionListJSON = [nonprofitJSON valueForKey:AUCTIONS_KEY];
                         
                         // Make sure json is expected type Array
                         if ([auctionListJSON isKindOfClass:[NSArray class]]) {
@@ -64,13 +64,13 @@
                             for (id auctionJSON in auctionListArray) {
                                 AuctionInfo *add = [[AuctionInfo alloc] init];
                                 // Don't show auctions that have completed
-                                if (![[auctionJSON valueForKey:@"Status"] isEqualToNumber:[NSNumber numberWithInt:COMPLETE]]) {
-                                    add.aucId = [auctionJSON valueForKey:@"Id"];
-                                    add.name = [auctionJSON valueForKey:@"Name"];
-                                    add.startDate = [auctionJSON valueForKey:@"Start_Time"];
-                                    add.status = [[auctionJSON valueForKey:@"Status"] integerValue];
-                                    add.endDate = [auctionJSON valueForKey:@"End_Time"];
-                                    add.location = [auctionJSON valueForKey:@"location"];
+                                if (![[auctionJSON valueForKey:AUCTION_STATUS_KEY] isEqualToNumber:[NSNumber numberWithInt:COMPLETE]]) {
+                                    add.aucId = [auctionJSON valueForKey:ID_KEY];
+                                    add.name = [auctionJSON valueForKey:NAME_KEY];
+                                    add.startDate = [auctionJSON valueForKey:AUCTION_START_KEY];
+                                    add.status = [[auctionJSON valueForKey:AUCTION_STATUS_KEY] integerValue];
+                                    add.endDate = [auctionJSON valueForKey:AUCTION_END_KEY];
+                                    add.location = [auctionJSON valueForKey:AUCTION_LOCATION_KEY];
                                     add.orgId = orgId;
                                     add.orgName = orgName;
                                     [auctions addObject:add];
@@ -106,29 +106,29 @@
                 if ([auctionJSON isKindOfClass:[NSDictionary class]]) {
                     NSDictionary *auctionDictionary = (NSDictionary *) auctionJSON;
                 
-                    id itemsJSON = [auctionDictionary valueForKey:@"Auction_Items__r"];
+                    id itemsJSON = [auctionDictionary valueForKey:AUCTION_ITEMS_KEY];
                     // Make sure auction has items
                     if (itemsJSON) {
                         // Make sure auction items are in the right format Dictionary
                         if ([itemsJSON isKindOfClass:[NSDictionary class]]) {
                             NSDictionary *itemsDictionary = (NSDictionary *) itemsJSON;
                         
-                            id recordsJSON = [itemsDictionary valueForKey:@"records"];
+                            id recordsJSON = [itemsDictionary valueForKey:RECORDS_KEY];
                             if ([recordsJSON isKindOfClass:[NSArray class]]) {
                                 NSArray *recordsList = (NSArray *) recordsJSON;
                                 
                                 for (id record in recordsList) {
                                     AuctionItem *add = [[AuctionItem alloc] init];
                                 
-                                    add.status = [[auctionDictionary valueForKey:@"Status__c"] integerValue];
-                                    add.name = [record valueForKey:@"Name"];
-                                    add.descrip = [record valueForKey:@"Description__c"];
-                                    add.itemID = [record valueForKey:@"Id"];
-                                    add.minBid = [record valueForKey:@"Starting_Bid__c"];
-                                    add.currentBid = [record valueForKey:@"Current_Bid__c"];
-                                    add.featured = [[record valueForKey:@"Featured__c"] boolValue];
-                                    add.imageURL = [record valueForKey:@"Image_URL__c"];
-                                    add.sponsorName = [[record valueForKey:@"Item_Sponsor__r"] valueForKey:@"Name"];
+                                    add.status = [[auctionDictionary valueForKey:AUCTION_ITEM_STATUS_KEY] integerValue];
+                                    add.name = [record valueForKey:NAME_KEY];
+                                    add.descrip = [record valueForKey:AUCTION_ITEM_DESC_KEY];
+                                    add.itemID = [record valueForKey:ID_KEY];
+                                    add.minBid = [record valueForKey:AUCTION_ITEM_START_BID_KEY];
+                                    add.currentBid = [record valueForKey:AUCTION_ITEM_CUR_BID_KEY];
+                                    add.featured = [[record valueForKey:AUCTION_ITEM_FEATURED_KEY] boolValue];
+                                    add.imageURL = [record valueForKey:AUCTION_ITEM_IMAGE_KEY];
+                                    add.sponsorName = [[record valueForKey:AUCTION_ITEM_SPONSOR_KEY] valueForKey:NAME_KEY];
                                     [auctionItems addObject:add];
                                 }
                             }
@@ -162,7 +162,7 @@
                 if ([retJSON isKindOfClass:[NSDictionary class]]) {
                     NSDictionary *retDictionary = (NSDictionary *) retJSON;
                     
-                    BOOL success = [[retDictionary valueForKey:@"success"] boolValue];
+                    BOOL success = [[retDictionary valueForKey:SUCCESS_KEY] boolValue];
                     callback(success, nil);
                     return;
                 }
@@ -193,12 +193,12 @@
                         
                         for (id record in bidsArray) {
                             Bid *bid = [[Bid alloc] init];
-                            bid.itemName = [record valueForKey:@"Name"];
-                            bid.itemID = [record valueForKey:@"ItemId"];
-                            bid.isWinning = [[record valueForKey:@"isWinning"] boolValue];
-                            bid.auctionName = [record valueForKey:@"AuctionName"];
-                            bid.amount = [record valueForKey:@"amount"];
-                            bid.imageURL = [record valueForKey:@"ImageURL"];
+                            bid.itemName = [record valueForKey:NAME_KEY];
+                            bid.itemID = [record valueForKey:BID_ID_KEY];
+                            bid.isWinning = [[record valueForKey:BID_WINNING_KEY] boolValue];
+                            bid.auctionName = [record valueForKey:BID_AUCTION_NAME_KEY];
+                            bid.amount = [record valueForKey:BID_AMOUNT_KEY];
+                            bid.imageURL = [record valueForKey:BID_IMAGE_KEY];
                             
                             [bids addObject:bid];
                         }

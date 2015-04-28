@@ -15,5 +15,35 @@ extern int const BEFORE;
 extern int const IN_PROGRESS;
 extern int const COMPLETE;
 
+// Keys for rest responses
+extern NSString *const AUCTIONS_KEY;
+extern NSString *const AUCTION_ITEMS_KEY;
+extern NSString *const RECORDS_KEY;
+extern NSString *const NAME_KEY;
+extern NSString *const ITEM_KEY;
+
+extern NSString *const AUCTION_START_KEY;
+extern NSString *const AUCTION_END_KEY;
+extern NSString *const AUCTION_LOCATION_KEY;
+extern NSString *const AUCTION_STATUS_KEY;
+
+extern NSString *const AUCTION_ITEM_DESC_KEY;
+extern NSString *const ID_KEY;
+extern NSString *const AUCTION_ITEM_START_BID_KEY;
+extern NSString *const AUCTION_ITEM_CUR_BID_KEY;
+extern NSString *const AUCTION_ITEM_FEATURED_KEY;
+extern NSString *const AUCTION_ITEM_IMAGE_KEY;
+extern NSString *const AUCTION_ITEM_SPONSOR_KEY;
+extern NSString *const AUCTION_ITEM_AUCTION_KEY;
+extern NSString *const AUCTION_ITEM_STATUS_KEY;
+
+extern NSString *const SUCCESS_KEY;
+
+extern NSString *const BID_ID_KEY;
+extern NSString *const BID_WINNING_KEY;
+extern NSString *const BID_AUCTION_NAME_KEY;
+extern NSString *const BID_AMOUNT_KEY;
+extern NSString *const BID_IMAGE_KEY;
+
 // Amount of time for http requests to try for
 extern int const TIMEOUT;
