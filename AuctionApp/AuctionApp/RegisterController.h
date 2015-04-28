@@ -19,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *confirmView;
 - (IBAction)confirmAction:(UIButton *)sender;
 - (IBAction)registerAction:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 @end
 

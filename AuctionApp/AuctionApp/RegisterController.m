@@ -9,6 +9,7 @@
 #import "RegisterController.h"
 #import "AccountUtility.h"
 #import "AppDelegate.h"
+#import "Constants.h"
 
 @implementation RegisterController
 
@@ -19,6 +20,14 @@
     self.model = [[RegisterModel alloc] init];
     self.confirmView.hidden = true;
     self.errorLabel.hidden = true;
+    
+    self.registerButton.backgroundColor = UIColorFromRGB(0x067AB5);
+    self.registerButton.layer.cornerRadius = 5;
+    [self.registerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.confirmButton.backgroundColor = UIColorFromRGB(0x067AB5);
+    self.confirmButton.layer.cornerRadius = 5;
+    [self.confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadCodeIfPresent)
