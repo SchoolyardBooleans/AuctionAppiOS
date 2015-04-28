@@ -9,6 +9,7 @@
 #import "LoginController.h"
 #import "AccountUtility.h"
 #import "AppDelegate.h"
+#import "Constants.h"
 
 @implementation LoginController
 
@@ -17,6 +18,14 @@
     
     self.invalidEmail.hidden = YES;
     self.model = [[RegisterModel alloc] init];
+    
+    self.loginButton.backgroundColor = UIColorFromRGB(0x067AB5);
+    self.loginButton.layer.cornerRadius = 5;
+    [self.loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.registerButton.backgroundColor = UIColorFromRGB(0x067AB5);
+    self.registerButton.layer.cornerRadius = 5;
+    [self.registerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (IBAction)login:(id)sender {
