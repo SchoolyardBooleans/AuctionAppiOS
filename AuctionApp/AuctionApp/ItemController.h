@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *bidField;
 @property (weak, nonatomic) IBOutlet UILabel *bidStatus;
 @property (weak, nonatomic) IBOutlet UILabel *bidLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 
 - (IBAction)bidChanged:(UISlider *)sender;

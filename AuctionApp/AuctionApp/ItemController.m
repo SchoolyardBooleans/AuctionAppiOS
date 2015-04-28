@@ -24,6 +24,7 @@
     self.sponsorLabel.text = self.auctionItem.sponsorName;
     [self.itemImage setImageWithURL:[NSURL URLWithString: self.auctionItem.imageURL]
                    placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    
     [self updateView];
     
     
