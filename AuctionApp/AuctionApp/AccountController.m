@@ -139,16 +139,17 @@
             NSPredicate *losingPred = [NSPredicate predicateWithFormat:@"isWinning == NO"];
             winningBids = [recentBids filteredArrayUsingPredicate:winningPred];
             losingBids = [recentBids filteredArrayUsingPredicate:losingPred];
-            
-            [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
         } else {
             NSLog(@"Error: %@", error);
         }
+        [self performSelectorOnMainThread:@selector(reloadData:) withObject:error waitUntilDone:NO];
     }];
 }
 
-- (void)reloadData
+- (void)reloadData:(NSString *)error
 {
+    NSString *title;
+    
     if ([winningBids count] == 0 && [losingBids count] == 0) {
         // Display a message when the table is empty
         messageLabel.text = @"You have not made any bids. Please pull down to refresh.";
@@ -170,10 +171,15 @@
     // End the refreshing
     if (self.refreshControl) {
         
-        // Set datetime of last refresh
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"MMM d, h:mm a"];
-        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        if (error != nil) {
+            title = error;
+        } else{
+            // Set datetime of last refresh
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"MMM d, h:mm a"];
+            title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        }
+        
         NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
                                                                     forKey:NSForegroundColorAttributeName];
         NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
