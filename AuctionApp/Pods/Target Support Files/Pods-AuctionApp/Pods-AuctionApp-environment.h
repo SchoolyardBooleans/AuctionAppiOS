@@ -6,6 +6,13 @@
 // project.
 
 
+// OpenSSL-Universal
+#define COCOAPODS_POD_AVAILABLE_OpenSSL_Universal
+// This library does not follow semantic-versioning,
+// so we were not able to define version macros.
+// Please contact the author.
+// Version: 1.0.1.k.
+
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3
@@ -17,4 +24,76 @@
 #define COCOAPODS_VERSION_MAJOR_SDWebImage_Core 3
 #define COCOAPODS_VERSION_MINOR_SDWebImage_Core 7
 #define COCOAPODS_VERSION_PATCH_SDWebImage_Core 1
+
+// SQLCipher
+#define COCOAPODS_POD_AVAILABLE_SQLCipher
+#define COCOAPODS_VERSION_MAJOR_SQLCipher 3
+#define COCOAPODS_VERSION_MINOR_SQLCipher 1
+#define COCOAPODS_VERSION_PATCH_SQLCipher 0
+
+// SQLCipher/common
+#define COCOAPODS_POD_AVAILABLE_SQLCipher_common
+#define COCOAPODS_VERSION_MAJOR_SQLCipher_common 3
+#define COCOAPODS_VERSION_MINOR_SQLCipher_common 1
+#define COCOAPODS_VERSION_PATCH_SQLCipher_common 0
+
+// SQLCipher/standard
+#define COCOAPODS_POD_AVAILABLE_SQLCipher_standard
+#define COCOAPODS_VERSION_MAJOR_SQLCipher_standard 3
+#define COCOAPODS_VERSION_MINOR_SQLCipher_standard 1
+#define COCOAPODS_VERSION_PATCH_SQLCipher_standard 0
+
+// SalesforceMobileSDK-iOS
+#define COCOAPODS_POD_AVAILABLE_SalesforceMobileSDK_iOS
+#define COCOAPODS_VERSION_MAJOR_SalesforceMobileSDK_iOS 3
+#define COCOAPODS_VERSION_MINOR_SalesforceMobileSDK_iOS 2
+#define COCOAPODS_VERSION_PATCH_SalesforceMobileSDK_iOS 0
+
+// SalesforceMobileSDK-iOS/SalesforceCommonUtils
+#define COCOAPODS_POD_AVAILABLE_SalesforceMobileSDK_iOS_SalesforceCommonUtils
+#define COCOAPODS_VERSION_MAJOR_SalesforceMobileSDK_iOS_SalesforceCommonUtils 3
+#define COCOAPODS_VERSION_MINOR_SalesforceMobileSDK_iOS_SalesforceCommonUtils 2
+#define COCOAPODS_VERSION_PATCH_SalesforceMobileSDK_iOS_SalesforceCommonUtils 0
+
+// SalesforceMobileSDK-iOS/SalesforceNetwork
+#define COCOAPODS_POD_AVAILABLE_SalesforceMobileSDK_iOS_SalesforceNetwork
+#define COCOAPODS_VERSION_MAJOR_SalesforceMobileSDK_iOS_SalesforceNetwork 3
+#define COCOAPODS_VERSION_MINOR_SalesforceMobileSDK_iOS_SalesforceNetwork 2
+#define COCOAPODS_VERSION_PATCH_SalesforceMobileSDK_iOS_SalesforceNetwork 0
+
+// SalesforceMobileSDK-iOS/SalesforceOAuth
+#define COCOAPODS_POD_AVAILABLE_SalesforceMobileSDK_iOS_SalesforceOAuth
+#define COCOAPODS_VERSION_MAJOR_SalesforceMobileSDK_iOS_SalesforceOAuth 3
+#define COCOAPODS_VERSION_MINOR_SalesforceMobileSDK_iOS_SalesforceOAuth 2
+#define COCOAPODS_VERSION_PATCH_SalesforceMobileSDK_iOS_SalesforceOAuth 0
+
+// SalesforceMobileSDK-iOS/SalesforceRestAPI
+#define COCOAPODS_POD_AVAILABLE_SalesforceMobileSDK_iOS_SalesforceRestAPI
+#define COCOAPODS_VERSION_MAJOR_SalesforceMobileSDK_iOS_SalesforceRestAPI 3
+#define COCOAPODS_VERSION_MINOR_SalesforceMobileSDK_iOS_SalesforceRestAPI 2
+#define COCOAPODS_VERSION_PATCH_SalesforceMobileSDK_iOS_SalesforceRestAPI 0
+
+// SalesforceMobileSDK-iOS/SalesforceSDKCommon
+#define COCOAPODS_POD_AVAILABLE_SalesforceMobileSDK_iOS_SalesforceSDKCommon
+#define COCOAPODS_VERSION_MAJOR_SalesforceMobileSDK_iOS_SalesforceSDKCommon 3
+#define COCOAPODS_VERSION_MINOR_SalesforceMobileSDK_iOS_SalesforceSDKCommon 2
+#define COCOAPODS_VERSION_PATCH_SalesforceMobileSDK_iOS_SalesforceSDKCommon 0
+
+// SalesforceMobileSDK-iOS/SalesforceSDKCore
+#define COCOAPODS_POD_AVAILABLE_SalesforceMobileSDK_iOS_SalesforceSDKCore
+#define COCOAPODS_VERSION_MAJOR_SalesforceMobileSDK_iOS_SalesforceSDKCore 3
+#define COCOAPODS_VERSION_MINOR_SalesforceMobileSDK_iOS_SalesforceSDKCore 2
+#define COCOAPODS_VERSION_PATCH_SalesforceMobileSDK_iOS_SalesforceSDKCore 0
+
+// SalesforceMobileSDK-iOS/SalesforceSecurity
+#define COCOAPODS_POD_AVAILABLE_SalesforceMobileSDK_iOS_SalesforceSecurity
+#define COCOAPODS_VERSION_MAJOR_SalesforceMobileSDK_iOS_SalesforceSecurity 3
+#define COCOAPODS_VERSION_MINOR_SalesforceMobileSDK_iOS_SalesforceSecurity 2
+#define COCOAPODS_VERSION_PATCH_SalesforceMobileSDK_iOS_SalesforceSecurity 0
+
+// SalesforceMobileSDK-iOS/SmartSync
+#define COCOAPODS_POD_AVAILABLE_SalesforceMobileSDK_iOS_SmartSync
+#define COCOAPODS_VERSION_MAJOR_SalesforceMobileSDK_iOS_SmartSync 3
+#define COCOAPODS_VERSION_MINOR_SalesforceMobileSDK_iOS_SmartSync 2
+#define COCOAPODS_VERSION_PATCH_SalesforceMobileSDK_iOS_SmartSync 0
 
