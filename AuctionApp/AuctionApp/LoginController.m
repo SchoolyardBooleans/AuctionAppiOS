@@ -10,6 +10,7 @@
 #import "AccountUtility.h"
 #import "AppDelegate.h"
 #import "Constants.h"
+#import <SalesforceSDKCore/SFPushNotificationManager.h>
 
 @implementation LoginController
 
@@ -41,6 +42,10 @@
                 AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
                 
                 [AccountUtility login:dic];
+                
+                NSLog(@"Trying to register for notifications...");
+                [[SFPushNotificationManager sharedInstance]
+                 registerForRemoteNotifications];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [appdelegate switchToAccountView];
