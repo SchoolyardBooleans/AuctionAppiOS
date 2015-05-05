@@ -47,10 +47,10 @@
 
 /** A builder to help create a returning statement.
  *
- * @param whereClause a description of how search results for the given object should be filtered, based on individual field values. If unspecified, the search retrieves all the rows in the object that are visible to the user
+ * @param where a description of how search results for the given object should be filtered, based on individual field values. If unspecified, the search retrieves all the rows in the object that are visible to the user
  * @return the builder
  */
-- (SFSmartSyncSoslReturningBuilder *) whereClause:(NSString *) whereClause;
+- (SFSmartSyncSoslReturningBuilder *) where:(NSString *) where;
 
 /** A builder to help create a returning statement.
  *

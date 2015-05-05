@@ -24,12 +24,6 @@
 
 #import "SFRootViewManager.h"
 
-@interface SFRootViewManager()
-
-@property (nonatomic, weak) UIWindow* previousKeyWindow;
-
-@end
-
 @implementation SFRootViewManager
 
 @synthesize mainWindow = _mainWindow;
@@ -95,8 +89,6 @@
         } else {
             [weakSelf log:SFLogLevelDebug format:@"pushViewController: Making view controller (%@) the root view controller.", viewController];
             weakSelf.mainWindow.rootViewController = viewController;
-            [self saveCurrentKeyWindow];
-            [weakSelf.mainWindow makeKeyAndVisible];
         }
     };
     
@@ -111,7 +103,6 @@
         if (currentViewController == viewController) {
             [weakSelf log:SFLogLevelDebug format:@"popViewController: Removing rootViewController (%@).", viewController];
             weakSelf.mainWindow.rootViewController = nil;
-            [self restorePreviousKeyWindow];
         } else {
             while ((currentViewController != nil) && (currentViewController != viewController)) {
                 currentViewController = [currentViewController presentedViewController];
@@ -127,24 +118,6 @@
     };
     
     dispatch_async(dispatch_get_main_queue(), popControllerBlock);
-}
-
-#pragma mark - Private
-
-- (void)saveCurrentKeyWindow
-{
-    for (UIWindow* w in [UIApplication sharedApplication].windows) {
-        if ([w isKeyWindow]) {
-            self.previousKeyWindow = w;
-            break;
-        }
-    }
-}
-
-- (void)restorePreviousKeyWindow
-{
-    [self.previousKeyWindow makeKeyAndVisible];
-    self.previousKeyWindow = nil;
 }
 
 @end

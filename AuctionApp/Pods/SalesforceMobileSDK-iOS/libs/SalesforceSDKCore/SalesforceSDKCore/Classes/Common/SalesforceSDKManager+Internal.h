@@ -1,9 +1,6 @@
 #import "SalesforceSDKManager.h"
-
 #import "SFUserAccountManager.h"
 #import "SFAuthenticationManager.h"
-#import "SFUserAccount.h"
-#import "SFSDKAppConfig.h"
 
 @protocol SalesforceSDKManagerFlow <NSObject>
 

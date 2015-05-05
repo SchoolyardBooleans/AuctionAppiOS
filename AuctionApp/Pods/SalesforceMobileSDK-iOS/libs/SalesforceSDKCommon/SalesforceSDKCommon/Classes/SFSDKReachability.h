@@ -49,79 +49,49 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <netinet/in.h>
 
-/*!
- * @typedef SFSDKReachabilityNetworkStatus
- * @abstract The different network statuses based on reachability.
- * @constant SFSDKReachabilityNotReachable The network is not reachable.
- * @constant SFSDKReachabilityReachableViaWiFi The network is reachable over WiFi.
- * @constant SFSDKReachabilityReachableViaWWAN The network is reachable over cellular.
- */
-typedef enum {
+
+typedef enum : NSInteger {
 	SFSDKReachabilityNotReachable = 0,
 	SFSDKReachabilityReachableViaWiFi,
 	SFSDKReachabilityReachableViaWWAN
 } SFSDKReachabilityNetworkStatus;
 
-/*!
- * @const kSFSDKReachabilityChangedNotification
- * @abstract String label for the reachability changed notification.
- */
+
 extern NSString *kSFSDKReachabilityChangedNotification;
 
-/*!
- * @class SFSDKReachability
- * @abstract Class used to determine network reachability status.
- */
+
 @interface SFSDKReachability : NSObject
 
 /*!
- * @brief Use to check the reachability of a given host name.
- * @param hostName The host name to check for reachability.
- * @return An instance of SFSDKReachability configured to reach the host name.
+ * Use to check the reachability of a given host name.
  */
 + (instancetype)reachabilityWithHostName:(NSString *)hostName;
 
 /*!
- * @brief Use to check the reachability of a given IP address.
- * @param hostAddress The IP address of the host to check for reachability.
- * @return An instance of SFSDKReachability configured to reach the IP address.
+ * Use to check the reachability of a given IP address.
  */
 + (instancetype)reachabilityWithAddress:(const struct sockaddr_in *)hostAddress;
 
 /*!
- * @brief Checks whether the default route is available.
- * @discussion Should be used by applications that do not connect to a particular host.
- * @return An instance of SFSDKReachability configured to reach the network via the default route.
+ * Checks whether the default route is available. Should be used by applications that do not connect to a particular host.
  */
 + (instancetype)reachabilityForInternetConnection;
 
 /*!
- * @brief Checks whether a local WiFi connection is available.
- * @return An instance of SFSDKReachability configured to reach the network via WiFi.
+ * Checks whether a local WiFi connection is available.
  */
 + (instancetype)reachabilityForLocalWiFi;
 
 /*!
- * @brief Start listening for reachability notifications on the current run loop.
- * @return YES if starting the notifier was successful, NO otherwise.
+ * Start listening for reachability notifications on the current run loop.
  */
 - (BOOL)startNotifier;
-
-/*!
- * @brief Stops listening for notifications.
- */
 - (void)stopNotifier;
 
-/*!
- * @brief The current reachability status.
- * @return SFSDKReachabilityNetworkStatus representing the current reachability status.
- */
 - (SFSDKReachabilityNetworkStatus)currentReachabilityStatus;
 
 /*!
- * @brief Determines whether a connection is required for network access.
- * @discussion WWAN may be available, but not active until a connection has been established. WiFi may require a connection for VPN on Demand.
- * @return YES if further network connections are required, NO otherwise.
+ * WWAN may be available, but not active until a connection has been established. WiFi may require a connection for VPN on Demand.
  */
 - (BOOL)connectionRequired;
 

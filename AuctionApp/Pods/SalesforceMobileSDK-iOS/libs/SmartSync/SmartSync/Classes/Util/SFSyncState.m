@@ -23,12 +23,10 @@
  */
 
 #import "SFSyncState.h"
-#import "SFSyncDownTarget.h"
+#import "SFSyncTarget.h"
 #import "SFSyncOptions.h"
-#import "SFSyncUpTarget.h"
 #import <SalesforceSDKCore/SFSmartStore.h>
 #import <SalesforceSDKCore/SFSoupIndex.h>
-#import <SalesforceSDKCore/SFJsonUtils.h>
 
 // soups and soup fields
 NSString * const kSFSyncStateSyncsSoupName = @"syncs_soup";
@@ -43,7 +41,6 @@ NSString * const kSFSyncStateOptions = @"options";
 NSString * const kSFSyncStateStatus = @"status";
 NSString * const kSFSyncStateProgress = @"progress";
 NSString * const kSFSyncStateTotalSize = @"totalSize";
-NSString * const kSyncStateMaxTimeStamp = @"maxTimeStamp";
 
 // Possible value for sync type
 NSString * const kSFSyncStateTypeDown = @"syncDown";
@@ -85,7 +82,7 @@ NSString * const kSFSyncStateMergeModeLeaveIfChanged = @"LEAVE_IF_CHANGED";
 
 #pragma mark - Factory methods
 
-+ (SFSyncState*) newSyncDownWithOptions:(SFSyncOptions*)options target:(SFSyncDownTarget*)target soupName:(NSString*)soupName store:(SFSmartStore*)store {
++ (SFSyncState*) newSyncDownWithOptions:(SFSyncOptions*)options target:(SFSyncTarget*)target soupName:(NSString*)soupName store:(SFSmartStore*)store {
     NSDictionary* dict = @{
                            kSFSyncStateType: kSFSyncStateTypeDown,
                            kSFSyncStateTarget: [target asDict],
@@ -100,18 +97,10 @@ NSString * const kSFSyncStateMergeModeLeaveIfChanged = @"LEAVE_IF_CHANGED";
     return sync;
 }
 
-+ (SFSyncState*)newSyncUpWithOptions:(SFSyncOptions *)options soupName:(NSString *)soupName store:(SFSmartStore *)store {
-    SFSyncUpTarget *target = [[SFSyncUpTarget alloc] init];
-    return [self newSyncUpWithOptions:options target:target soupName:soupName store:store];
-}
-
-+ (SFSyncState*) newSyncUpWithOptions:(SFSyncOptions*)options
-                               target:(SFSyncUpTarget*)target
-                             soupName:(NSString*)soupName
-                                store:(SFSmartStore*)store {
++ (SFSyncState*) newSyncUpWithOptions:(SFSyncOptions*)options soupName:(NSString*)soupName store:(SFSmartStore*)store {
     NSDictionary* dict = @{
                            kSFSyncStateType: kSFSyncStateTypeUp,
-                           kSFSyncStateTarget: [target asDict],
+                           kSFSyncStateTarget: @{},
                            kSFSyncStateSoupName: soupName,
                            kSFSyncStateOptions: [options asDict],
                            kSFSyncStateStatus: kSFSyncStateStatusNew,
@@ -153,28 +142,24 @@ NSString * const kSFSyncStateMergeModeLeaveIfChanged = @"LEAVE_IF_CHANGED";
 - (void) fromDict:(NSDictionary*) dict {
     self.syncId = [(NSNumber*) dict[kSFSyncStateId] integerValue];
     self.type = [SFSyncState syncTypeFromString:dict[kSFSyncStateType]];
-    self.target = (self.type == SFSyncStateSyncTypeDown
-                   ? [SFSyncDownTarget newFromDict:dict[kSFSyncStateTarget]]
-                   : [SFSyncUpTarget newFromDict:dict[kSFSyncStateTarget]]);
-    self.options = (dict[kSFSyncStateOptions] == nil ? nil : [SFSyncOptions newFromDict:dict[kSFSyncStateOptions]]);
+    self.target = [SFSyncTarget newFromDict:dict[kSFSyncStateTarget]];
     self.soupName = dict[kSFSyncStateSoupName];
+    self.options = [SFSyncOptions newFromDict:dict[kSFSyncStateOptions]];
     self.status = [SFSyncState syncStatusFromString:dict[kSFSyncStateStatus]];
     self.progress = [(NSNumber*) dict[kSFSyncStateProgress] integerValue];
     self.totalSize = [(NSNumber*) dict[kSFSyncStateTotalSize] integerValue];
-    self.maxTimeStamp = [(NSNumber*) dict[kSyncStateMaxTimeStamp] longLongValue];
 }
 
 - (NSDictionary*) asDict {
-    NSMutableDictionary* dict = [NSMutableDictionary new];
-    dict[SOUP_ENTRY_ID] = [NSNumber numberWithInteger:self.syncId];
-    dict[kSFSyncStateType] = [SFSyncState syncTypeToString:self.type];
-    if (self.target) dict[kSFSyncStateTarget] = [self.target asDict];
-    if (self.options) dict[kSFSyncStateOptions] = [self.options asDict];
-    dict[kSFSyncStateSoupName] = self.soupName;
-    dict[kSFSyncStateStatus] = [SFSyncState syncStatusToString:self.status];
-    dict[kSFSyncStateProgress] = [NSNumber numberWithInteger:self.progress];
-    dict[kSFSyncStateTotalSize] = [NSNumber numberWithInteger:self.totalSize];
-    dict[kSyncStateMaxTimeStamp] = [NSNumber numberWithLongLong:self.maxTimeStamp];
+    NSDictionary* dict = @{
+                           kSFSyncStateType: [SFSyncState syncTypeToString:self.type],
+                           kSFSyncStateTarget: [self.target asDict],
+                           kSFSyncStateSoupName: self.soupName,
+                           kSFSyncStateOptions: [self.options asDict],
+                           kSFSyncStateStatus: [SFSyncState syncStatusToString:self.status],
+                           kSFSyncStateProgress: [NSNumber numberWithInteger:self.progress],
+                           kSFSyncStateTotalSize: [NSNumber numberWithInteger:self.totalSize]
+                           };
     return dict;
 }
 
@@ -257,20 +242,5 @@ NSString * const kSFSyncStateMergeModeLeaveIfChanged = @"LEAVE_IF_CHANGED";
     }
 }
 
-#pragma mark - description
-
-- (NSString*)description
-{
-    return [SFJsonUtils JSONRepresentation:[self asDict]];
-}
-
-#pragma mark - copy
-
--(id)copyWithZone:(NSZone *)zone
-{
-    SFSyncState* clone = [SFSyncState new];
-    [clone fromDict:[self asDict]];
-    return clone;
-}
 
 @end

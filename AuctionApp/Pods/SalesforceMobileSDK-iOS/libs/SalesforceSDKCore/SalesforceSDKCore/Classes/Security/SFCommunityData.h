@@ -38,7 +38,7 @@
 
 /** The community description
  */
-@property (nonatomic, strong) NSString *descriptionText;
+@property (nonatomic, strong) NSString *description;
 
 /** The community siteUrl
  */

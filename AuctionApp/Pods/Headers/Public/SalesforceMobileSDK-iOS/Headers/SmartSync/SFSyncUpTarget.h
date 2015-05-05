@@ -1,1 +1,0 @@
-../../../../../SalesforceMobileSDK-iOS/libs/SmartSync/SmartSync/Classes/Util/SFSyncUpTarget.h

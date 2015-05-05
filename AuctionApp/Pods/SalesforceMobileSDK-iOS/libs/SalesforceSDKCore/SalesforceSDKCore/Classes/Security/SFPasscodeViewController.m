@@ -230,6 +230,7 @@ static NSUInteger   const kPasscodeDialogTag                = 111;
     self.errorLabel.textColor = [UIColor redColor];
     self.errorLabel.font = [UIFont fontWithName:kPasscodeHelperTextFontName size:kPasscodeHelperTextFontSize];
     self.errorLabel.textAlignment = NSTextAlignmentCenter;
+    self.errorLabel.accessibilityLabel = @"Error";
     [self.view addSubview:self.errorLabel];
 
     // Instructions label
@@ -240,6 +241,7 @@ static NSUInteger   const kPasscodeDialogTag                = 111;
     self.instructionsLabel.textColor = [UIColor whiteColor];
     self.instructionsLabel.font = [UIFont fontWithName:kPasscodeHelperTextFontName size:kPasscodeHelperTextFontSize];
     self.instructionsLabel.textAlignment = NSTextAlignmentCenter;
+    self.instructionsLabel.accessibilityLabel = @"Instructions";
     [self.view addSubview:self.instructionsLabel];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.view.autoresizesSubviews = YES;
@@ -251,7 +253,7 @@ static NSUInteger   const kPasscodeDialogTag                = 111;
     [self.forgotPasscodeButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
     [self.forgotPasscodeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.forgotPasscodeButton addTarget:self action:@selector(forgotPassAction) forControlEvents:UIControlEventTouchUpInside];
-    self.forgotPasscodeButton.accessibilityLabel = [SFSDKResourceUtils localizedString:@"forgotPasscodeTitle"];
+    self.forgotPasscodeButton.accessibilityLabel = @"Forgot Passcode?";
     self.forgotPasscodeButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15.0];
     [self.forgotPasscodeButton setHidden:YES];
     [self.view addSubview:self.forgotPasscodeButton];
@@ -426,14 +428,12 @@ static NSUInteger   const kPasscodeDialogTag                = 111;
 - (void)updateInstructionsLabel:(NSString *)newLabel
 {
     self.instructionsLabel.text = newLabel;
-    self.instructionsLabel.accessibilityLabel = newLabel;
     [self.instructionsLabel setNeedsDisplay];
 }
 
 - (void)updateErrorLabel:(NSString *)newLabel
 {
     self.errorLabel.text = newLabel;
-    self.errorLabel.accessibilityLabel = newLabel;
     [self.errorLabel setNeedsDisplay];
 }
 

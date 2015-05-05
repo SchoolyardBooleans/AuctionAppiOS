@@ -24,21 +24,15 @@
 
 #import <Foundation/Foundation.h>
 
-/*!
- * @category NSData(SFSDKUtils)
- * @abstract Mobile SDK utility additions to NSData.
- */
 @interface NSData (SFSDKUtils)
 
-/*!
- * @brief Creates a base64url string based on the data.  See RFC 4648.
- * @return The base64url string based on the data.
+/**
+ @return A base64url string based on the data.  See RFC 4648.
  */
 - (NSString *)msdkBase64UrlString;
 
-/*!
- * @brief Creates an SHA256 hash of the given data.
- * @return The SHA256 hash of the given data.
+/**
+ @return An SHA256 hash of the given data.
  */
 - (NSData *)msdkSha256Data;
 

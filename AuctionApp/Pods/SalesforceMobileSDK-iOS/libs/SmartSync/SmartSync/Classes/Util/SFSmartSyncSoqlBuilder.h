@@ -51,10 +51,10 @@
 
 /** A builder to help create a SOQL statement.
  *
- * @param whereClause a conditional statement
+ * @param where a conditional statement
  * @return the builder
  */
-- (SFSmartSyncSoqlBuilder *) whereClause:(NSString *) whereClause;
+- (SFSmartSyncSoqlBuilder *) where:(NSString *) where;
 
 /** A builder to help create a SOQL statement.
  *

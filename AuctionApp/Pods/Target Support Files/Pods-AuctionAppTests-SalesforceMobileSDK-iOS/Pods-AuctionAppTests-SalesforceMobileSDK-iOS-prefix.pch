@@ -3,6 +3,8 @@
 #endif
 
 #import "Pods-AuctionAppTests-environment.h"
+#import "MKNetworkKit.h"
 #import <SalesforceCommonUtils/SFLogger.h>
+#import <SalesforceCommonUtils/SalesforceCommonUtils.h>
 #import <SalesforceCommonUtils/SFLogger.h>
 #import "SalesforceSDKConstants.h"

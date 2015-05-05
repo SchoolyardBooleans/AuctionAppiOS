@@ -1,1 +1,0 @@
-../../../../../SalesforceMobileSDK-iOS/libs/SalesforceSecurity/SalesforceSecurity/SalesforceSecurity.h

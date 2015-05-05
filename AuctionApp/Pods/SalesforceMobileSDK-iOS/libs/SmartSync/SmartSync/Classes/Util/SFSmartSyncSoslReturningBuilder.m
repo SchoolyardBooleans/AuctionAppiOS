@@ -65,8 +65,8 @@
     return self;
 }
 
-- (SFSmartSyncSoslReturningBuilder *) whereClause:(NSString *) whereClause {
-    [properties setObject:whereClause forKey:@"whereClause"];
+- (SFSmartSyncSoslReturningBuilder *) where:(NSString *) where {
+    [properties setObject:where forKey:@"where"];
     return self;
 }
 
@@ -100,10 +100,10 @@
     NSString *fields = [properties objectForKey:@"fields"];
     if ([fields length] > 0) {
         [query appendFormat:@"(%@", fields];
-        NSString *whereClause = [properties objectForKey:@"whereClause"];
-        if ([whereClause length] > 0) {
+        NSString *where = [properties objectForKey:@"where"];
+        if ([where length] > 0) {
             [query appendString:@" where "];
-            [query appendString: whereClause];
+            [query appendString: where];
         }
         NSString *orderBy = [properties objectForKey:@"orderBy"];
         if ([orderBy length] > 0) {

@@ -27,9 +27,9 @@
 /**
  Mode constants indicating whether to create or verify an existing passcode.
  */
-typedef NS_ENUM(NSUInteger, SFPasscodeControllerMode) {
+typedef enum {
     SFPasscodeControllerModeCreate,
     SFPasscodeControllerModeVerify,
     SFPasscodeControllerModeChange
-};
+} SFPasscodeControllerMode;
 
