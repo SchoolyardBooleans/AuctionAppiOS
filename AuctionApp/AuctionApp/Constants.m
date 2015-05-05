@@ -1,5 +1,8 @@
 #import "Constants.h"
 
+NSString* const ISO_FORMAT = @"yyyy-MM-dd'T'HH:mm:ss.SSSZ";
+NSString* const DATE_VIEW_FORMAT = @"eeee, MMM dd @ hh:mm a";
+
 NSString *const REGISTER_URL = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/bidfresh/register";
 NSString *const BIDDER_URL = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/bidfresh/bidders";
 NSString *const LOGIN_URL = @"https://schooolyardbooleans-developer-edition.na16.force.com/public/services/apexrest/bidfresh/login";
@@ -30,11 +33,18 @@ NSString *const AUCTION_ITEM_STATUS_KEY = @"bidfresh__Status__c";
 
 NSString *const SUCCESS_KEY = @"success";
 
+NSString *const BIDS_KEY =@"bids";
+
 NSString *const BID_ID_KEY = @"ItemId";
 NSString *const BID_WINNING_KEY = @"isWinning";
 NSString *const BID_AUCTION_NAME_KEY = @"AuctionName";
 NSString *const BID_AMOUNT_KEY = @"amount";
 NSString *const BID_IMAGE_KEY = @"ImageURL";
+
+NSString *const USER_ID_KEY =@"userId";
+NSString *const USER_FIRST_KEY =@"firstName";
+NSString *const USER_LAST_KEY =@"lastName";
+NSString *const USER_CODE_KEY =@"code";
 
 int const BEFORE = 0;
 int const IN_PROGRESS = 1;

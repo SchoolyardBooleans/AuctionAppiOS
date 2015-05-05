@@ -1,45 +1,46 @@
 #import "AccountUtility.h"
+#import "Constants.h"
 
 @implementation AccountUtility
 
 + (void) setCode :(NSString *) code {
-    [[NSUserDefaults standardUserDefaults] setValue:code forKey:@"code"];
+    [[NSUserDefaults standardUserDefaults] setValue:code forKey:USER_CODE_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (void) login:(NSDictionary *)accountInfo {
-    [[NSUserDefaults standardUserDefaults] setValue:[accountInfo valueForKey:@"Id"] forKey:@"userId"];
-    [[NSUserDefaults standardUserDefaults] setValue:[accountInfo valueForKey:@"first"] forKey:@"firstName"];
-    [[NSUserDefaults standardUserDefaults] setValue:[accountInfo valueForKey:@"last"] forKey:@"lastName"];
+    [[NSUserDefaults standardUserDefaults] setValue:[accountInfo valueForKey:@"Id"] forKey:USER_ID_KEY];
+    [[NSUserDefaults standardUserDefaults] setValue:[accountInfo valueForKey:@"first"] forKey:USER_FIRST_KEY];
+    [[NSUserDefaults standardUserDefaults] setValue:[accountInfo valueForKey:@"last"] forKey:USER_LAST_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (void) logout {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userId"];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"firstName"];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"lastName"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:USER_ID_KEY];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:USER_FIRST_KEY];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:USER_LAST_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (NSString *) getCode {
-    return [[NSUserDefaults standardUserDefaults] stringForKey:@"code"];
+    return [[NSUserDefaults standardUserDefaults] stringForKey:USER_CODE_KEY];
 }
 
 + (void) removeCode {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"code"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:USER_CODE_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 +(NSString *) getId {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
+    return [[NSUserDefaults standardUserDefaults] objectForKey:USER_ID_KEY];
 }
 
 +(NSString *) getName {
     NSMutableString *name = [NSMutableString stringWithString:
-                             [[NSUserDefaults standardUserDefaults] objectForKey:@"firstName"]];
+                             [[NSUserDefaults standardUserDefaults] objectForKey:USER_FIRST_KEY]];
     
     [name appendString:@" "];
-    [name appendString:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastName"]];
+    [name appendString:[[NSUserDefaults standardUserDefaults] objectForKey:USER_LAST_KEY]];
     
     return name;
 }
@@ -51,9 +52,5 @@
         return NO;
     }
 }
-
-
-
-
 
 @end

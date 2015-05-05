@@ -186,7 +186,7 @@
             if (retJSON) {
                 if ([retJSON isKindOfClass:[NSDictionary class]]) {
                     NSDictionary *retDictionary = (NSDictionary *) retJSON;
-                    id bidsJSON = [retDictionary valueForKey:@"bids"];
+                    id bidsJSON = [retDictionary valueForKey:BIDS_KEY];
                     
                     if ([bidsJSON isKindOfClass:[NSArray class]]) {
                         NSArray *bidsArray = (NSArray *) bidsJSON;
@@ -220,7 +220,7 @@
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     NSDate *date = [[NSDate alloc] init];
     // ISO format
-    [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+    [df setDateFormat:ISO_FORMAT];
     
     if (auction.status == BEFORE) {
         retVal = [NSMutableString stringWithString:@"Auction begins on "];
@@ -230,7 +230,7 @@
         date = [df dateFromString:auction.endDate];
     }
     
-    [df setDateFormat: @"eeee, MMM dd @ hh:mm a"];
+    [df setDateFormat: DATE_VIEW_FORMAT];
     [retVal appendString: [df stringFromDate:date]];
     
     return retVal;
