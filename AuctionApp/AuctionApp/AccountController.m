@@ -1,11 +1,3 @@
-//
-//  AuctionController.m
-//  AuctionApp
-//
-//  Created by James Fazio on 2/24/15.
-//  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
-//
-
 #import "AccountController.h"
 #import "AccountUtility.h"
 #import "AppDelegate.h"
@@ -228,33 +220,6 @@
         }
     }];
 }
-
-#pragma mark - Navigation
-
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    NSString* fromPickNonprofitsSegue = @"ItemDetail";
-//    
-//    if ([[segue identifier] isEqualToString:fromPickNonprofitsSegue]) {
-//        ItemController *controller = [segue destinationViewController];
-//        NSIndexPath *indexPath = nil;
-//        AuctionItem *selectedItem = nil;
-//        
-//        
-//        if (self.searchDisplayController.active) {
-//            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-//            selectedItem = [searchResults objectAtIndex:indexPath.row];
-//        } else {
-//            indexPath = [self.tableView indexPathForSelectedRow];
-//            selectedItem = [self.auctionItems objectAtIndex:indexPath.row];
-//        }
-//        
-//        // Pass itemId off to controller
-//        [controller setAuctionItem:selectedItem];
-//        [controller setModel:self.model];
-//    }
-//}
 
 #pragma mark - Utility
 -(Bid *) getBidFromTable:(UITableView *)tableView atIndex:(NSIndexPath *)indexPath {

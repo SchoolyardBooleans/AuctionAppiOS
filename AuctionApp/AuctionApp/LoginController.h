@@ -1,10 +1,4 @@
-//
-//  LoginController.h
-//  AuctionApp
-//
-//  Created by James Fazio on 2/12/15.
-//  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
-//
+// View Controller for the Loign page
 
 #import <UIKit/UIKit.h>
 #import "RegisterModel.h"

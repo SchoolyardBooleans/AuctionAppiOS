@@ -1,10 +1,4 @@
-//
-//  AuctionMainController.h
-//  AuctionApp
-//
-//  Created by James Fazio on 1/25/15.
-//  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
-//
+// Controller for viewing an Auction
 
 #import <UIKit/UIKit.h>
 #import "AuctionsModel.h"

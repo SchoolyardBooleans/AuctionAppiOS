@@ -1,10 +1,4 @@
-//
-//  ItemController.h
-//  AuctionApp
-//
-//  Created by James Fazio on 2/19/15.
-//  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
-//
+// View Controller for the Auction Item page
 
 #import <UIKit/UIKit.h>
 #import "AuctionItem.h"

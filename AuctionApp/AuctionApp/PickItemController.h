@@ -1,10 +1,4 @@
-//
-//  PickItemController.h
-//  AuctionApp
-//
-//  Created by James Fazio on 2/4/15.
-//  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
-//
+// Controller for picking an Auction Item
 
 #import <UIKit/UIKit.h>
 #import "AuctionsModel.h"

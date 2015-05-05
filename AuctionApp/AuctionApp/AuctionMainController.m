@@ -1,11 +1,3 @@
-//
-//  AuctionMainController.m
-//  AuctionApp
-//
-//  Created by James Fazio on 1/25/15.
-//  Copyright (c) 2015 Schoolyard Booleans. All rights reserved.
-//
-
 #import "AuctionMainController.h"
 #import "PickItemController.h"
 #import "ItemController.h"
@@ -123,9 +115,5 @@
     
     return [items filteredArrayUsingPredicate:featuredPredicate];
 }
-
-
-
-
 
 @end
