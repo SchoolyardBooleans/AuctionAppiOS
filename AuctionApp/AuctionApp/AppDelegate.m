@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "AccountUtility.h"
 #import "Constants.h"
+#import <SalesforceSDKCore/SFPushNotificationManager.h>
+#import <SFUserAccountManager.h>
+#import <SFAuthenticationManager.h>
 
 @interface AppDelegate ()
 
@@ -37,6 +40,10 @@
     
     if ([AccountUtility loggedIn])
     {
+        NSLog(@"Trying to register...");
+        [[SFPushNotificationManager sharedInstance]
+         registerForRemoteNotifications];
+        
         [self switchToAccountView];
     }
     
@@ -71,6 +78,28 @@
     UINavigationController *loginNav = [storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
     NSArray *arr = @[mainNav, loginNav];
     [tabBarController setViewControllers:arr];
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:
+(NSData*)deviceToken
+{
+    //
+    // Register your device token with
+    // the push notification manager
+    //
+    [[SFPushNotificationManager sharedInstance]
+     didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+    
+    NSLog(@"Registering for notifications with deviceToken %@", deviceToken);
+
+    
+    NSLog(@"User stuff %@", [SFUserAccountManager sharedInstance].currentUser.credentials);
+    
+//    if ([SFUserAccountManager sharedInstance].currentUser.credentials.accessToken != nil){
+//        NSLog(@"Registering for notifications with deviceToken %@", deviceToken);
+//        [[SFPushNotificationManager sharedInstance]
+//         registerForSalesforceNotifications];
+//    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
