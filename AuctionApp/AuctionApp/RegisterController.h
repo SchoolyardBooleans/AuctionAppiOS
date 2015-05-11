@@ -15,5 +15,6 @@
 - (IBAction)registerAction:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
+@property (weak, nonatomic) IBOutlet UILabel *bottomErrorLabel;
 @end
 

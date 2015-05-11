@@ -11,8 +11,9 @@
     
     // For now creates own model, will change
     self.model = [[RegisterModel alloc] init];
-    self.confirmView.hidden = true;
-    self.errorLabel.hidden = true;
+    self.confirmView.hidden = YES;
+    self.errorLabel.hidden = YES;
+    self.bottomErrorLabel.hidden = YES;
     
     self.registerButton.backgroundColor = UIColorFromRGB(0x067AB5);
     self.registerButton.layer.cornerRadius = 5;
@@ -22,9 +23,24 @@
     self.confirmButton.layer.cornerRadius = 5;
     [self.confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
+    // When user clicks on screen close keyboard
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadCodeIfPresent)
                                                  name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+// Close keyboard on click
+-(void)dismissKeyboard {
+    [self.firstNameField resignFirstResponder];
+    [self.lastNameField resignFirstResponder];
+    [self.codeField resignFirstResponder];
+    [self.emailField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,9 +61,10 @@
     
     [self.model confirmAccountwithCode:code callback:^(NSDictionary *dict, NSString *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (error != nil) {
-                self.errorLabel.text = error;
-                self.errorLabel.hidden = false;
+            BOOL success = [[dict valueForKey:@"success"] boolValue];
+            if (error != nil || success == NO) {
+                self.bottomErrorLabel.text = error != nil ? error : @"Invalid code";
+                self.bottomErrorLabel.hidden = NO;
             } else {
                 AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
                 [AccountUtility removeCode];
@@ -56,7 +73,6 @@
                 NSLog(@"Trying to register for notifications...");
                 [[SFPushNotificationManager sharedInstance]
                  registerForRemoteNotifications];
-                
                 [appdelegate switchToAccountView];
                 NSLog(@"Success logging in");
             }
@@ -77,9 +93,10 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (error != nil) {
                     self.errorLabel.text = error;
-                    self.errorLabel.hidden = false;
+                    self.errorLabel.hidden = NO;
                 } else {
-                    self.confirmView.hidden = false;
+                    self.errorLabel.hidden = YES;
+                    self.confirmView.hidden = NO;
                 }
             });
         }];

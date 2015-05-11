@@ -27,6 +27,17 @@
     self.registerButton.backgroundColor = UIColorFromRGB(0x067AB5);
     self.registerButton.layer.cornerRadius = 5;
     [self.registerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    // When user clicks on screen close keyboard
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+// Close keyboard on click
+-(void)dismissKeyboard {
+    [self.emailField resignFirstResponder];
 }
 
 - (IBAction)login:(id)sender {

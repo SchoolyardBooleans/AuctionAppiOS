@@ -19,10 +19,20 @@
     
     [self updateView];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    
     
     // Add refresh button for currentBid
     UIBarButtonItem *button = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadCurrentBid)];
     self.navigationItem.rightBarButtonItem = button;
+}
+
+-(void)dismissKeyboard {
+    [self.bidField resignFirstResponder];
 }
 
 - (IBAction)bidChanged:(UISlider *)sender {

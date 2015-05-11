@@ -252,6 +252,12 @@
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Error: Invalid name or email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClL-xD-Esc">
+                                                <rect key="frame" x="189" y="444" width="178" height="23"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -264,9 +270,11 @@
                                             <constraint firstItem="24D-o0-xWp" firstAttribute="leading" secondItem="eTv-57-H0Z" secondAttribute="leading" constant="20" id="NNj-nD-7Nn"/>
                                             <constraint firstItem="GYj-G3-5el" firstAttribute="leading" secondItem="FwV-Wt-ABH" secondAttribute="trailing" constant="20" id="Nna-VB-29l"/>
                                             <constraint firstItem="6hn-gT-7li" firstAttribute="top" secondItem="eTv-57-H0Z" secondAttribute="top" id="OF9-SK-Hpg"/>
+                                            <constraint firstAttribute="centerX" secondItem="ClL-xD-Esc" secondAttribute="centerX" id="Ou0-J2-mqi"/>
                                             <constraint firstItem="FwV-Wt-ABH" firstAttribute="width" secondItem="0Uv-QM-ctL" secondAttribute="width" id="PEa-eA-pIa"/>
                                             <constraint firstAttribute="centerX" secondItem="rEJ-YX-IwY" secondAttribute="centerX" id="Q1N-tv-GGe"/>
                                             <constraint firstItem="b3s-Es-LHK" firstAttribute="top" secondItem="GYj-G3-5el" secondAttribute="bottom" constant="30" id="Q54-z6-TqQ"/>
+                                            <constraint firstItem="ClL-xD-Esc" firstAttribute="top" secondItem="24D-o0-xWp" secondAttribute="bottom" constant="15" id="S5g-MQ-KyC"/>
                                             <constraint firstAttribute="centerX" secondItem="24D-o0-xWp" secondAttribute="centerX" id="UP8-Kp-7CL"/>
                                             <constraint firstItem="ZdS-WV-ikk" firstAttribute="top" secondItem="rEJ-YX-IwY" secondAttribute="bottom" constant="20" id="Vh4-cR-d8a"/>
                                             <constraint firstItem="FwV-Wt-ABH" firstAttribute="leading" secondItem="eTv-57-H0Z" secondAttribute="leading" constant="10" id="VnS-hl-BmJ"/>
@@ -298,6 +306,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomErrorLabel" destination="ClL-xD-Esc" id="LRJ-ZP-KFx"/>
                         <outlet property="codeField" destination="VH8-sB-WSt" id="A3f-Qv-tSh"/>
                         <outlet property="confirmButton" destination="dio-js-X9w" id="sCm-k5-Edl"/>
                         <outlet property="confirmView" destination="24D-o0-xWp" id="tjJ-cW-dQn"/>
