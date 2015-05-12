@@ -17,18 +17,27 @@
     [self.itemImage setImageWithURL:[NSURL URLWithString: self.auctionItem.imageURL]
                    placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
-    [self updateView];
+    // Style buttons
+    self.loginButton.backgroundColor = UIColorFromRGB(0x067AB5);
+    self.loginButton.layer.cornerRadius = 5;
+    [self.loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
+    self.bidButton.backgroundColor = UIColorFromRGB(0x067AB5);
+    self.bidButton.layer.cornerRadius = 5;
+    [self.bidButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    // Close keyboard on outside tap
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
     
-    
     // Add refresh button for currentBid
     UIBarButtonItem *button = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadCurrentBid)];
     self.navigationItem.rightBarButtonItem = button;
+    
+    [self updateView];
 }
 
 -(void)dismissKeyboard {

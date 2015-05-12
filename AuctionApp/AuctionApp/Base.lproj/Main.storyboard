@@ -750,9 +750,9 @@
                                                     <action selector="bidChanged:" destination="jRG-Pc-pSx" eventType="valueChanged" id="NuL-98-qhS"/>
                                                 </connections>
                                             </slider>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGd-Y6-SL0">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGd-Y6-SL0">
                                                 <rect key="frame" x="245" y="463" width="157" height="48"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <state key="normal" title="Login to Bid"/>
                                                 <connections>
                                                     <action selector="login:" destination="jRG-Pc-pSx" eventType="touchUpInside" id="JAi-QR-kGL"/>
@@ -777,7 +777,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dy-4B-Dc6">
                                                 <rect key="frame" x="245" y="463" width="157" height="48"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Make a Bid">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -804,6 +804,7 @@
                                             <constraint firstItem="mFR-hY-n9P" firstAttribute="top" secondItem="b8U-IH-NjJ" secondAttribute="bottom" constant="18" id="aXy-Jy-0ah"/>
                                             <constraint firstItem="GTW-Cf-CJh" firstAttribute="top" secondItem="mFR-hY-n9P" secondAttribute="bottom" constant="57" id="dtg-yi-hPD"/>
                                             <constraint firstItem="KVA-l7-Qo6" firstAttribute="top" secondItem="mFR-hY-n9P" secondAttribute="bottom" constant="38" id="eVk-RE-NMr"/>
+                                            <constraint firstAttribute="centerX" secondItem="uGd-Y6-SL0" secondAttribute="centerX" id="ime-lh-SvN"/>
                                             <constraint firstItem="1MV-Vy-vvC" firstAttribute="leading" secondItem="TQ5-5H-34y" secondAttribute="leading" constant="-10" id="mCj-cD-Opa"/>
                                             <constraint firstItem="atx-fG-5Zf" firstAttribute="top" secondItem="mFR-hY-n9P" secondAttribute="bottom" constant="20" id="nBJ-x0-tIM"/>
                                             <constraint firstAttribute="trailing" secondItem="b8U-IH-NjJ" secondAttribute="trailing" id="sTE-pf-8Pn"/>
