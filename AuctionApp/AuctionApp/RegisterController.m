@@ -43,6 +43,12 @@
     [self.emailField resignFirstResponder];
 }
 
+//Close keyboard on return/done press
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

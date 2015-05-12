@@ -40,6 +40,13 @@
     [self.emailField resignFirstResponder];
 }
 
+
+//Close keyboard on return/done press
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 - (IBAction)login:(id)sender {
     NSString *email = self.emailField.text;
     if ([email length]) {

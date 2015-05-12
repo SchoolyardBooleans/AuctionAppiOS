@@ -40,8 +40,15 @@
     [self updateView];
 }
 
+//Close keyboard on outside tap
 -(void)dismissKeyboard {
     [self.bidField resignFirstResponder];
+}
+
+//Close keyboard on return/done press
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 - (IBAction)bidChanged:(UISlider *)sender {
