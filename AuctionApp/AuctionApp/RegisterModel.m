@@ -13,8 +13,11 @@
     [body setValue:email forKey:@"email"];
     
     [ServerConnection httpPOST:registerUrl :body :^(id JSON, NSString *error) {
+        NSDictionary *dict = (NSDictionary *) JSON;
+        BOOL success = [[dict valueForKey:SUCCESS_KEY] boolValue];
+        
         // Error present
-        if (error != nil) {
+        if (error != nil || success == NO) {
             callback(NO, error);
         } else { // Success
             callback(YES, nil);

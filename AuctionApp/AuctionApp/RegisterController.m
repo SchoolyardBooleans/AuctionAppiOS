@@ -97,8 +97,8 @@
         
         [self.model registerAccountwithFirstName:firstName lastName:lastName email:email callback:^(BOOL success, NSString *error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                if (error != nil) {
-                    self.errorLabel.text = error;
+                if (error != nil || success == NO) {
+                    self.errorLabel.text = error != nil ? error : @"An account with this email already exists";
                     self.errorLabel.hidden = NO;
                 } else {
                     self.errorLabel.hidden = YES;
