@@ -40,6 +40,19 @@
     [self updateView];
 }
 
+#pragma Keyboard
+
+// Move the textfield up when keyboard is present
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    CGPoint scrollPoint = CGPointMake(0, textField.frame.origin.y - 30);
+    [self.scrollView setContentOffset:scrollPoint animated:YES];
+}
+
+// Return view to where it was
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self.scrollView setContentOffset:CGPointZero animated:YES];
+}
+
 //Close keyboard on outside tap
 -(void)dismissKeyboard {
     [self.bidField resignFirstResponder];
@@ -50,6 +63,9 @@
     [textField resignFirstResponder];
     return NO;
 }
+
+
+#pragma IBActions
 
 - (IBAction)bidChanged:(UISlider *)sender {
     NSMutableString *newBid = [NSMutableString stringWithString:@"$"];
@@ -87,6 +103,9 @@
 - (IBAction)login:(id)sender {
     [self.tabBarController setSelectedIndex:1];
 }
+
+
+#pragma Updating
 
 -(void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     [self loadCurrentBid];
@@ -139,6 +158,8 @@
         self.bidStatus.text = @"Current Bid";
     }
 }
+
+#pragma Dialogs
 
 -(void) showErrorDialog:(NSString *)error {
     NSMutableString *errorMessage = [NSMutableString stringWithString: (error == nil) ? @"Someone placed a higher bid, please try again" : error];

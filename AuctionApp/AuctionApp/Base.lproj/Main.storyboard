@@ -331,6 +331,7 @@
                         <outlet property="firstNameField" destination="6hn-gT-7li" id="Fev-W1-nq0"/>
                         <outlet property="lastNameField" destination="GYj-G3-5el" id="rRP-N6-80L"/>
                         <outlet property="registerButton" destination="rEJ-YX-IwY" id="yKV-ah-qQJ"/>
+                        <outlet property="scrollView" destination="j9G-rZ-Bsw" id="l9Z-hy-xVy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juY-x1-JqN" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -4,7 +4,9 @@
 #import "Constants.h"
 #import <SalesforceSDKCore/SFPushNotificationManager.h>
 
-@implementation RegisterController
+@implementation RegisterController {
+    UITextField *activeField;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,16 +25,63 @@
     self.confirmButton.layer.cornerRadius = 5;
     [self.confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    // When user clicks on screen close keyboard
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    
-    [self.view addGestureRecognizer:tap];
+    [self registerForKeyboardNotifications];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadCodeIfPresent)
                                                  name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma Keyboard Events
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
+        [self.scrollView scrollRectToVisible:activeField.frame animated:YES];
+    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+// Register for keyboard notifications
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+    // When user clicks on screen close keyboard
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
 }
 
 // Close keyboard on click
@@ -49,18 +98,22 @@
     return NO;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma TextField Delegate
+
+// Set active textfield
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    activeField = textField;
 }
 
--(void)loadCodeIfPresent {
-    NSString *code = [AccountUtility getCode];
-    
-    if (code != nil) {
-        [self.codeField setText:code];
-    }
+// Release active textfield
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    activeField = nil;
 }
+
+#pragma Actions
 
 - (IBAction)confirmAction:(UIButton *)sender {
     NSString *code = self.codeField.text;
@@ -93,6 +146,7 @@
     NSString *email = self.emailField.text;
     
     if ([self.model validatefirstName:firstName lastName:lastName email:email]) {
+        [self.emailField resignFirstResponder];
         self.errorLabel.hidden = true;
         
         [self.model registerAccountwithFirstName:firstName lastName:lastName email:email callback:^(BOOL success, NSString *error) {
@@ -113,4 +167,15 @@
     }
     
 }
+
+#pragma Other
+
+-(void)loadCodeIfPresent {
+    NSString *code = [AccountUtility getCode];
+    
+    if (code != nil) {
+        [self.codeField setText:code];
+    }
+}
+
 @end

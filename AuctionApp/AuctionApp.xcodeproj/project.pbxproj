@@ -21,6 +21,8 @@
 		1178C5A71A82A7000011F119 /* ItemTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178C5A61A82A7000011F119 /* ItemTableCell.m */; };
 		1178C5AB1A82A7F20011F119 /* PickItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1178C5AA1A82A7F20011F119 /* PickItemController.m */; };
 		1198E1B21A6600A200B7E0F2 /* AuctionTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1198E1B11A6600A200B7E0F2 /* AuctionTableCell.m */; };
+		119B65221B02D878000CD57C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B65201B02D878000CD57C /* Fabric.framework */; };
+		119B65231B02D878000CD57C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B65211B02D878000CD57C /* Crashlytics.framework */; };
 		11A101A31A8D5468006592D0 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A101A21A8D5468006592D0 /* LoginController.m */; };
 		11AC74261A95D1B0002E6809 /* ItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AC74251A95D1B0002E6809 /* ItemController.m */; };
 		916EBC63D1C6DF459329EA20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F98385EA5BB787ACA734744D /* libPods.a */; };
@@ -76,6 +78,8 @@
 		1178C5AA1A82A7F20011F119 /* PickItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickItemController.m; sourceTree = "<group>"; };
 		1198E1B01A65D62C00B7E0F2 /* AuctionTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuctionTableCell.h; sourceTree = "<group>"; };
 		1198E1B11A6600A200B7E0F2 /* AuctionTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionTableCell.m; sourceTree = "<group>"; };
+		119B65201B02D878000CD57C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		119B65211B02D878000CD57C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		11A101A11A8D5468006592D0 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		11A101A21A8D5468006592D0 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		11AC74241A95D1B0002E6809 /* ItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemController.h; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				916EBC63D1C6DF459329EA20 /* libPods.a in Frameworks */,
+				119B65231B02D878000CD57C /* Crashlytics.framework in Frameworks */,
+				119B65221B02D878000CD57C /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +240,8 @@
 		DCFA94A51A102BB3006CB212 /* AuctionApp */ = {
 			isa = PBXGroup;
 			children = (
+				119B65201B02D878000CD57C /* Fabric.framework */,
+				119B65211B02D878000CD57C /* Crashlytics.framework */,
 				116024EC1AD2321300579AEB /* Global */,
 				1178C5A51A82A6CB0011F119 /* CustomViews */,
 				DC744F061A2C00850066F329 /* Info */,
@@ -289,6 +297,7 @@
 				DCFA94A01A102BB3006CB212 /* Frameworks */,
 				DCFA94A11A102BB3006CB212 /* Resources */,
 				9AB3D3BDF129BF8918F1E8E5 /* Copy Pods Resources */,
+				119B651F1B02D80E000CD57C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -376,6 +385,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		119B651F1B02D80E000CD57C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 58f7ca2034b1c62570bcd5081f3cab2f91c3c89b 15f567cfe9a63271dfd44c3c77d77aecf5354cc0065716e1cb169df439ff5603";
+		};
 		68F7688079835E6A42C9FD82 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -565,8 +587,13 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AuctionApp",
+				);
 				INFOPLIST_FILE = AuctionApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -582,8 +609,13 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AuctionApp",
+				);
 				INFOPLIST_FILE = AuctionApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

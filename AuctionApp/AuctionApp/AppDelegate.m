@@ -12,6 +12,9 @@
 #import <SalesforceSDKCore/SFPushNotificationManager.h>
 #import <SFUserAccountManager.h>
 #import <SFAuthenticationManager.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @interface AppDelegate ()
 
@@ -47,7 +50,7 @@
         [self switchToAccountView];
     }
     
-    
+    [Fabric with:@[CrashlyticsKit]];
     return YES;
 }
 
