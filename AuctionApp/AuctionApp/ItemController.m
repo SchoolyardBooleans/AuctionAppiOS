@@ -98,6 +98,7 @@
          [self performSelectorOnMainThread:@selector(showErrorDialog:) withObject:@"Invalid currency format" waitUntilDone:NO];
     }
     
+    [self.bidField resignFirstResponder];
 }
 
 - (IBAction)login:(id)sender {
