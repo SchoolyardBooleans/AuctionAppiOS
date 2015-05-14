@@ -70,7 +70,7 @@
 - (IBAction)bidChanged:(UISlider *)sender {
     NSMutableString *newBid = [NSMutableString stringWithString:@"$"];
     // Round float value to integer and set slider to that value
-    int discreteValue = roundl([sender value]);
+    int discreteValue = ((int)(([sender value] + 2.5) / 5) * 5);
     [sender setValue:(float)discreteValue];
     
     [newBid appendString:[[NSNumber numberWithFloat:discreteValue] stringValue]];
